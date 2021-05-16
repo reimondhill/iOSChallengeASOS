@@ -10,6 +10,11 @@
 		CF7D17F126510D7B003A3DA9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17E726510D7B003A3DA9 /* Data.framework */; };
 		CF7D17F626510D7B003A3DA9 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D17F526510D7B003A3DA9 /* DataTests.swift */; };
 		CF7D17F826510D7B003A3DA9 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17EA26510D7B003A3DA9 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */; };
+		CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */; };
+		CF7D18402651270A003A3DA9 /* strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* strings.strings */; };
+		CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */; };
+		CF7D185C26513F59003A3DA9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D185B26513F59003A3DA9 /* Core.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,12 @@
 		CF7D17F026510D7B003A3DA9 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D17F526510D7B003A3DA9 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		CF7D17F726510D7B003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
+		CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
+		CF7D183F2651270A003A3DA9 /* strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = strings.strings; sourceTree = "<group>"; };
+		CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworkManager.swift; sourceTree = "<group>"; };
+		CF7D185926513E52003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF7D185B26513F59003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7D185C26513F59003A3DA9 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,7 @@
 				CF7D17E926510D7B003A3DA9 /* Data */,
 				CF7D17F426510D7B003A3DA9 /* DataTests */,
 				CF7D17E826510D7B003A3DA9 /* Products */,
+				CF7D185826513E52003A3DA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				CF7D17EA26510D7B003A3DA9 /* Data.h */,
-				CF7D17EB26510D7B003A3DA9 /* Info.plist */,
+				CF7D184426512D4B003A3DA9 /* Interactors */,
+				CF7D183E2651240B003A3DA9 /* Helpers */,
 				CF7D183926511002003A3DA9 /* Network */,
+				CF7D18412651272F003A3DA9 /* SupportingFiles */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -90,8 +105,43 @@
 		CF7D183926511002003A3DA9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */,
+				CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CF7D183E2651240B003A3DA9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CF7D18412651272F003A3DA9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D17EB26510D7B003A3DA9 /* Info.plist */,
+				CF7D183F2651270A003A3DA9 /* strings.strings */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF7D184426512D4B003A3DA9 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CF7D185826513E52003A3DA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D185B26513F59003A3DA9 /* Core.framework */,
+				CF7D185926513E52003A3DA9 /* Core.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +205,7 @@
 				TargetAttributes = {
 					CF7D17E626510D7B003A3DA9 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					CF7D17EF26510D7B003A3DA9 = {
 						CreatedOnToolsVersion = 12.5;
@@ -185,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7D18402651270A003A3DA9 /* strings.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */,
+				CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */,
+				CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Data/Info.plist;
+				INFOPLIST_FILE = Data/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Data/Info.plist;
+				INFOPLIST_FILE = Data/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,6 +452,7 @@
 		CF7D17FB26510D7B003A3DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -470,6 +526,7 @@
 		CF7D17FC26510D7B003A3DA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CF7D17D426510D4A003A3DA9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17CA26510D4A003A3DA9 /* Core.framework */; };
-		CF7D17D926510D4A003A3DA9 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D17D826510D4A003A3DA9 /* CoreTests.swift */; };
 		CF7D17DB26510D4A003A3DA9 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17CD26510D4A003A3DA9 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF7D184926512E93003A3DA9 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */; };
+		CF7D184B26512F95003A3DA9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D184A26512F95003A3DA9 /* URL+Extensions.swift */; };
+		CF7D185226513676003A3DA9 /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D185126513676003A3DA9 /* URLExtensionsTests.swift */; };
+		CF7D1855265139BD003A3DA9 /* URLRequestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D1854265139BD003A3DA9 /* URLRequestExtensionsTests.swift */; };
+		CF7D1857265139FB003A3DA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D1856265139FB003A3DA9 /* Constants.swift */; };
+		CF7D18602651406C003A3DA9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D185F2651406C003A3DA9 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +32,14 @@
 		CF7D17CD26510D4A003A3DA9 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		CF7D17CE26510D4A003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF7D17D326510D4A003A3DA9 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF7D17D826510D4A003A3DA9 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		CF7D17DA26510D4A003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		CF7D184A26512F95003A3DA9 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		CF7D185026513676003A3DA9 /* CoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF7D185126513676003A3DA9 /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
+		CF7D1854265139BD003A3DA9 /* URLRequestExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensionsTests.swift; sourceTree = "<group>"; };
+		CF7D1856265139FB003A3DA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF7D185F2651406C003A3DA9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				CF7D17CD26510D4A003A3DA9 /* Core.h */,
-				CF7D17CE26510D4A003A3DA9 /* Info.plist */,
+				CF7D184726512DF1003A3DA9 /* Entities */,
+				CF7D18612651407B003A3DA9 /* Helpers */,
+				CF7D184626512DDF003A3DA9 /* Extensions */,
+				CF7D184526512D68003A3DA9 /* SupportingFiles */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -80,10 +94,69 @@
 		CF7D17D726510D4A003A3DA9 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF7D17D826510D4A003A3DA9 /* CoreTests.swift */,
-				CF7D17DA26510D4A003A3DA9 /* Info.plist */,
+				CF7D1856265139FB003A3DA9 /* Constants.swift */,
+				CF7D184D26513424003A3DA9 /* Extensions */,
+				CF7D186226514182003A3DA9 /* Helpers */,
+				CF7D184C2651319C003A3DA9 /* SupportingFiles */,
 			);
 			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		CF7D184526512D68003A3DA9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D17CE26510D4A003A3DA9 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF7D184626512DDF003A3DA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D184A26512F95003A3DA9 /* URL+Extensions.swift */,
+				CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF7D184726512DF1003A3DA9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CF7D184C2651319C003A3DA9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D17DA26510D4A003A3DA9 /* Info.plist */,
+				CF7D185026513676003A3DA9 /* CoreTests-Bridging-Header.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF7D184D26513424003A3DA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D185126513676003A3DA9 /* URLExtensionsTests.swift */,
+				CF7D1854265139BD003A3DA9 /* URLRequestExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF7D18612651407B003A3DA9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D185F2651406C003A3DA9 /* Logger.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CF7D186226514182003A3DA9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +220,11 @@
 				TargetAttributes = {
 					CF7D17C926510D4A003A3DA9 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					CF7D17D226510D4A003A3DA9 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -194,6 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7D184926512E93003A3DA9 /* URLRequest+Extensions.swift in Sources */,
+				CF7D18602651406C003A3DA9 /* Logger.swift in Sources */,
+				CF7D184B26512F95003A3DA9 /* URL+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7D17D926510D4A003A3DA9 /* CoreTests.swift in Sources */,
+				CF7D185226513676003A3DA9 /* URLExtensionsTests.swift in Sources */,
+				CF7D1855265139BD003A3DA9 /* URLRequestExtensionsTests.swift in Sources */,
+				CF7D1857265139FB003A3DA9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Core/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Core/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,6 +469,7 @@
 		CF7D17DE26510D4A003A3DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -439,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CoreTests/Info.plist;
+				INFOPLIST_FILE = CoreTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,6 +534,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "CoreTests/SupportingFiles/CoreTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,6 +544,7 @@
 		CF7D17DF26510D4A003A3DA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -506,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CoreTests/Info.plist;
+				INFOPLIST_FILE = CoreTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +602,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "CoreTests/SupportingFiles/CoreTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
