@@ -2,7 +2,7 @@
 //  SpaceXAppUITests.swift
 //  SpaceXAppUITests
 //
-//  Created by Ramon Haro Marques on 15/05/2021.
+//  Created by Ramon Haro Marque
 //
 
 import XCTest

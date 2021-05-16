@@ -16,7 +16,7 @@ enum HTTPMethodType: String{
 }
 
 /// A list of recognised errors
-enum NetworkFetcherError: LocalizedError {
+enum NetworkError: LocalizedError {
     /// Error returned when there is a developer issue mostly
     case invalid
     

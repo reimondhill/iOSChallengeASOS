@@ -2,7 +2,7 @@
 //  NativeNetworkManager.swift
 //  Data
 //
-//  Created by Ramon Haro Marques on 16/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 import Foundation
@@ -21,8 +21,6 @@ fileprivate extension HTTPMethodType {
 
 @objc class NativeNetworkManager: NSObject {
     //MARK: - Properties
-    private let jsonHeaders: [String: String] = ["Content-Type" : "application/json", "Accept" : "application/json"]
-    
     private lazy var urlSession: URLSession = {
         let sessionConfig = URLSessionConfiguration.default
         
@@ -49,7 +47,7 @@ private extension NativeNetworkManager {
         switch httpMethodType {
         case .get:
             guard let params = params as? [String:String] else {
-                throw NetworkFetcherError.invalidParams
+                throw NetworkError.invalidParams
             }
             urlRequest = urlRequest.appending(getParams: params)
         case .post:
@@ -73,7 +71,7 @@ private extension NativeNetworkManager {
     
     func performRequest(_ urlRequest: URLRequest, completion: @escaping ((Result<Data, Error>)->Void)) {
         guard urlRequest.url != nil else {
-            completion(.failure(NetworkFetcherError.invalidURL))
+            completion(.failure(NetworkError.invalidURL))
             return
         }
         
@@ -86,12 +84,12 @@ private extension NativeNetworkManager {
 
             guard let response = response as? HTTPURLResponse,
                   (200 ..< 300) ~= response.statusCode else {
-                completion(.failure(NetworkFetcherError.networkError))
+                completion(.failure(NetworkError.networkError))
                 return
             }
             
             guard let data = data else {
-                completion(.failure(NetworkFetcherError.dataCorrupted))
+                completion(.failure(NetworkError.dataCorrupted))
                 return
             }
 
@@ -107,7 +105,7 @@ extension NativeNetworkManager: NetworkFetcher {
     func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
         let urlRequest: URLRequest
         do {
-            urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers.merging(jsonHeaders, uniquingKeysWith: { (first, _) in first }), params: params)
+            urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers, params: params)
         } catch {
             completion(.failure(error))
             return
@@ -131,7 +129,7 @@ extension NativeNetworkManager: NetworkFetcher {
     func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<Data,Error>) -> Void) {
         let urlRequest: URLRequest
         do {
-            urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers.merging(jsonHeaders, uniquingKeysWith: { (first, _) in first }), params: params)
+            urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers, params: params)
         } catch {
             completion(.failure(error))
             return

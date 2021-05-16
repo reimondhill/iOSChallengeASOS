@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CF7D17F126510D7B003A3DA9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17E726510D7B003A3DA9 /* Data.framework */; };
-		CF7D17F626510D7B003A3DA9 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D17F526510D7B003A3DA9 /* DataTests.swift */; };
 		CF7D17F826510D7B003A3DA9 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17EA26510D7B003A3DA9 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */; };
 		CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */; };
 		CF7D18402651270A003A3DA9 /* strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* strings.strings */; };
 		CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */; };
 		CF7D185C26513F59003A3DA9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D185B26513F59003A3DA9 /* Core.framework */; };
+		CFB991E226514C7800F84BD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E126514C7800F84BD0 /* Constants.swift */; };
+		CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */; };
+		CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */; };
+		CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
+		CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +36,6 @@
 		CF7D17EA26510D7B003A3DA9 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		CF7D17EB26510D7B003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF7D17F026510D7B003A3DA9 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF7D17F526510D7B003A3DA9 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		CF7D17F726510D7B003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
 		CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
@@ -40,6 +43,12 @@
 		CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworkManager.swift; sourceTree = "<group>"; };
 		CF7D185926513E52003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D185B26513F59003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFB991E126514C7800F84BD0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcherInterface.swift; sourceTree = "<group>"; };
+		CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcher.swift; sourceTree = "<group>"; };
+		CFB991EC2651648D00F84BD0 /* DataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +105,9 @@
 		CF7D17F426510D7B003A3DA9 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF7D17F526510D7B003A3DA9 /* DataTests.swift */,
-				CF7D17F726510D7B003A3DA9 /* Info.plist */,
+				CFB991EA2651643200F84BD0 /* Network */,
+				CFB991EB2651644800F84BD0 /* Interactors */,
+				CFB991EF265164C000F84BD0 /* SupportingFiles */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -114,6 +124,7 @@
 		CF7D183E2651240B003A3DA9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CFB991E126514C7800F84BD0 /* Constants.swift */,
 				CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */,
 			);
 			path = Helpers;
@@ -131,6 +142,7 @@
 		CF7D184426512D4B003A3DA9 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				CFB991E326514D3500F84BD0 /* CompanyInfo */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -142,6 +154,40 @@
 				CF7D185926513E52003A3DA9 /* Core.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFB991E326514D3500F84BD0 /* CompanyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */,
+				CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */,
+			);
+			path = CompanyInfo;
+			sourceTree = "<group>";
+		};
+		CFB991EA2651643200F84BD0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CFB991EB2651644800F84BD0 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CFB991EF265164C000F84BD0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D17F726510D7B003A3DA9 /* Info.plist */,
+				CFB991EC2651648D00F84BD0 /* DataTests-Bridging-Header.h */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +255,7 @@
 					};
 					CF7D17EF26510D7B003A3DA9 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -256,7 +303,10 @@
 			files = (
 				CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */,
 				CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */,
+				CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */,
+				CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */,
 				CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */,
+				CFB991E226514C7800F84BD0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7D17F626510D7B003A3DA9 /* DataTests.swift in Sources */,
+				CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */,
+				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = DataTests/Info.plist;
+				INFOPLIST_FILE = DataTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,6 +568,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "DataTests/SupportingFiles/DataTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = DataTests/Info.plist;
+				INFOPLIST_FILE = DataTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,6 +636,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "DataTests/SupportingFiles/DataTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -2,7 +2,7 @@
 //  Core.h
 //  Core
 //
-//  Created by Ramon Haro Marques on 16/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 #import <Foundation/Foundation.h>
