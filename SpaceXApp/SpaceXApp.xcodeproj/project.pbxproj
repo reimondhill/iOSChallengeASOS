@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D569326503C6200E33199 /* AppDelegate.swift */; };
-		CF4D569626503C6200E33199 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D569526503C6200E33199 /* SceneDelegate.swift */; };
 		CF4D569826503C6200E33199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D569726503C6200E33199 /* ViewController.swift */; };
-		CF4D569B26503C6200E33199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569926503C6200E33199 /* Main.storyboard */; };
 		CF4D569D26503C6400E33199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569C26503C6400E33199 /* Assets.xcassets */; };
 		CF4D56A026503C6400E33199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */; };
 		CF4D56AB26503C6400E33199 /* SpaceXAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56AA26503C6400E33199 /* SpaceXAppTests.swift */; };
@@ -37,9 +35,7 @@
 /* Begin PBXFileReference section */
 		CF4D569026503C6200E33199 /* SpaceXApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4D569326503C6200E33199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF4D569526503C6200E33199 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CF4D569726503C6200E33199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF4D569A26503C6200E33199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF4D569C26503C6400E33199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF4D569F26503C6400E33199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF4D56A126503C6400E33199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,9 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4D569326503C6200E33199 /* AppDelegate.swift */,
-				CF4D569526503C6200E33199 /* SceneDelegate.swift */,
 				CF4D569726503C6200E33199 /* ViewController.swift */,
-				CF4D569926503C6200E33199 /* Main.storyboard */,
 				CF4D569C26503C6400E33199 /* Assets.xcassets */,
 				CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */,
 				CF4D56A126503C6400E33199 /* Info.plist */,
@@ -233,7 +227,6 @@
 			files = (
 				CF4D56A026503C6400E33199 /* LaunchScreen.storyboard in Resources */,
 				CF4D569D26503C6400E33199 /* Assets.xcassets in Resources */,
-				CF4D569B26503C6200E33199 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +253,6 @@
 			files = (
 				CF4D569826503C6200E33199 /* ViewController.swift in Sources */,
 				CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */,
-				CF4D569626503C6200E33199 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +288,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF4D569926503C6200E33199 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF4D569A26503C6200E33199 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
