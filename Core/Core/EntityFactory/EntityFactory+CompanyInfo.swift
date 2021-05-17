@@ -13,6 +13,7 @@ public extension EntityFactory {
                                                             summary: "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
                                                             founder: "Elon Musk",
                                                             founded: 2002,
+                                                            headquarters: EntityFactory.rocketRoadHeadquarters,
                                                             valuation: 27500000000,
                                                             employees: 7000,
                                                             vehicles: 3,

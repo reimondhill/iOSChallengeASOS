@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF6CEAC126523D10004C22AD /* Headquarters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC026523D10004C22AD /* Headquarters.swift */; };
+		CF6CEAC326524090004C22AD /* EntityFactory+Headquarters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */; };
 		CF7D17D426510D4A003A3DA9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17CA26510D4A003A3DA9 /* Core.framework */; };
 		CF7D17DB26510D4A003A3DA9 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17CD26510D4A003A3DA9 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D184926512E93003A3DA9 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF6CEAC026523D10004C22AD /* Headquarters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headquarters.swift; sourceTree = "<group>"; };
+		CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Headquarters.swift"; sourceTree = "<group>"; };
 		CF7D17CA26510D4A003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D17CD26510D4A003A3DA9 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		CF7D17CE26510D4A003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CFB991E626514E5800F84BD0 /* CompanyInfo.swift */,
+				CF6CEAC026523D10004C22AD /* Headquarters.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				CFB991F32651773800F84BD0 /* EntityFactory.swift */,
 				CFB991F5265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift */,
+				CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */,
 			);
 			path = EntityFactory;
 			sourceTree = "<group>";
@@ -286,9 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6CEAC326524090004C22AD /* EntityFactory+Headquarters.swift in Sources */,
 				CFB991F42651773800F84BD0 /* EntityFactory.swift in Sources */,
 				CF7D184926512E93003A3DA9 /* URLRequest+Extensions.swift in Sources */,
 				CF7D18602651406C003A3DA9 /* Logger.swift in Sources */,
+				CF6CEAC126523D10004C22AD /* Headquarters.swift in Sources */,
 				CFB991F6265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift in Sources */,
 				CF7D184B26512F95003A3DA9 /* URL+Extensions.swift in Sources */,
 				CFB991E726514E5800F84BD0 /* CompanyInfo.swift in Sources */,
