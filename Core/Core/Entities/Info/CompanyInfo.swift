@@ -9,11 +9,12 @@ import Foundation
 
 public struct CompanyInfo {
     //MARK: - Properties
+    let id: String
     let name: String
     let summary: String
     let founder: String
     let founded: Int
-    let headquarters: Headquarters?
+    let headquarters: Headquarters
     let valuation: Int
     let employees: Int
     let vehicles: Int
@@ -23,10 +24,12 @@ public struct CompanyInfo {
     let cto: String
     let coo: String
     let ctoPropulsion: String
+    let links: Links?
     
     
     //MARK: - Constructor
-    init(name: String, summary: String, founder: String, founded: Int, headquarters: Headquarters?, valuation: Int, employees: Int, vehicles: Int, launchSites: Int, testSites: Int, ceo: String, cto: String, coo: String, ctoPropulsion: String) {
+    init(id: String, name: String, summary: String, founder: String, founded: Int, headquarters: Headquarters, valuation: Int, employees: Int, vehicles: Int, launchSites: Int, testSites: Int, ceo: String, cto: String, coo: String, ctoPropulsion: String, links: Links) {
+        self.id = id
         self.name = name
         self.summary = summary
         self.founder = founder
@@ -41,12 +44,35 @@ public struct CompanyInfo {
         self.cto = cto
         self.coo = coo
         self.ctoPropulsion = ctoPropulsion
+        self.links = links
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(String.self, forKey: CodingKeys.id)
+        name = try container.decode(String.self, forKey: CodingKeys.name)
+        summary = try container.decode(String.self, forKey: CodingKeys.summary)
+        founder = try container.decode(String.self, forKey: CodingKeys.founder)
+        founded = try container.decode(Int.self, forKey: CodingKeys.founded)
+        headquarters = try container.decode(Headquarters.self, forKey: CodingKeys.headquarters)
+        valuation = try container.decode(Int.self, forKey: CodingKeys.valuation)
+        employees = try container.decode(Int.self, forKey: CodingKeys.employees)
+        vehicles = try container.decode(Int.self, forKey: CodingKeys.vehicles)
+        launchSites = try container.decode(Int.self, forKey: CodingKeys.launchSites)
+        testSites = try container.decode(Int.self, forKey: CodingKeys.testSites)
+        ceo = try container.decode(String.self, forKey: CodingKeys.ceo)
+        cto = try container.decode(String.self, forKey: CodingKeys.cto)
+        coo = try container.decode(String.self, forKey: CodingKeys.coo)
+        ctoPropulsion = try container.decode(String.self, forKey: CodingKeys.ctoPropulsion)
+        links = try container.decodeIfPresent(Links.self, forKey: CodingKeys.links)
     }
 }
 
 //MARK: - Codable implementation
 extension CompanyInfo: Codable {
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case summary
         case founder
@@ -61,6 +87,7 @@ extension CompanyInfo: Codable {
         case cto
         case coo
         case ctoPropulsion = "cto_propulsion"
+        case links
     }
 }
 
@@ -69,6 +96,7 @@ extension CompanyInfo: Codable {
 extension CompanyInfo: Equatable {
     static public func ==(lhs: CompanyInfo, rhs: CompanyInfo) -> Bool {
         return
+            lhs.id == rhs.id &&
             lhs.name == rhs.name &&
             lhs.summary == rhs.summary &&
             lhs.founder == rhs.founder &&
@@ -82,6 +110,7 @@ extension CompanyInfo: Equatable {
             lhs.ceo == rhs.ceo &&
             lhs.cto == rhs.cto &&
             lhs.coo == rhs.coo &&
-            lhs.ctoPropulsion == rhs.ctoPropulsion
+            lhs.ctoPropulsion == rhs.ctoPropulsion &&
+            lhs.links == rhs.links
     }
 }

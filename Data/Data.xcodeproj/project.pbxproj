@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF6CEAC6265244D4004C22AD /* LaunchesFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */; };
+		CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A2D2653964E00C25819 /* BaseDataTest.swift */; };
 		CF7D17F126510D7B003A3DA9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17E726510D7B003A3DA9 /* Data.framework */; };
 		CF7D17F826510D7B003A3DA9 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17EA26510D7B003A3DA9 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */; };
@@ -19,6 +21,10 @@
 		CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */; };
 		CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
 		CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */; };
+		CFC201B12652940A008C5E8D /* LaunchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B02652940A008C5E8D /* LaunchesFetcher.swift */; };
+		CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B2265294B0008C5E8D /* BaseFetcher.swift */; };
+		CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B4265295B8008C5E8D /* APIVersionControl.swift */; };
+		CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFetcherInterface.swift; sourceTree = "<group>"; };
+		CF700A2D2653964E00C25819 /* BaseDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataTest.swift; sourceTree = "<group>"; };
 		CF7D17E726510D7B003A3DA9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D17EA26510D7B003A3DA9 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		CF7D17EB26510D7B003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		CFB991EC2651648D00F84BD0 /* DataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcherTests.swift; sourceTree = "<group>"; };
+		CFC201B02652940A008C5E8D /* LaunchesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFetcher.swift; sourceTree = "<group>"; };
+		CFC201B2265294B0008C5E8D /* BaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFetcher.swift; sourceTree = "<group>"; };
+		CFC201B4265295B8008C5E8D /* APIVersionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIVersionControl.swift; sourceTree = "<group>"; };
+		CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFetcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,15 @@
 			);
 			sourceTree = "<group>";
 		};
+		CF6CEAC4265244AE004C22AD /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */,
+				CFC201B02652940A008C5E8D /* LaunchesFetcher.swift */,
+			);
+			path = Launches;
+			sourceTree = "<group>";
+		};
 		CF7D17E826510D7B003A3DA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +126,7 @@
 		CF7D17F426510D7B003A3DA9 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF700A2D2653964E00C25819 /* BaseDataTest.swift */,
 				CFB991EA2651643200F84BD0 /* Network */,
 				CFB991EB2651644800F84BD0 /* Interactors */,
 				CFB991EF265164C000F84BD0 /* SupportingFiles */,
@@ -142,7 +164,10 @@
 		CF7D184426512D4B003A3DA9 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				CFC201B2265294B0008C5E8D /* BaseFetcher.swift */,
 				CFB991E326514D3500F84BD0 /* CompanyInfo */,
+				CF6CEAC4265244AE004C22AD /* Launches */,
+				CFC201B4265295B8008C5E8D /* APIVersionControl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -177,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */,
+				CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -304,9 +330,13 @@
 				CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */,
 				CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */,
 				CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */,
+				CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */,
 				CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */,
+				CFC201B12652940A008C5E8D /* LaunchesFetcher.swift in Sources */,
+				CF6CEAC6265244D4004C22AD /* LaunchesFetcherInterface.swift in Sources */,
 				CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */,
 				CFB991E226514C7800F84BD0 /* Constants.swift in Sources */,
+				CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +344,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */,
 				CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */,
+				CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */,
 				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

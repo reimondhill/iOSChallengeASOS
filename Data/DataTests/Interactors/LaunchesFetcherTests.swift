@@ -1,5 +1,5 @@
 //
-//  CompanyInfoFetcherTests.swift
+//  LaunchesFetcherTests.swift
 //  DataTests
 //
 //  Created by Ramon Haro Marques
@@ -9,7 +9,7 @@ import XCTest
 @testable import Core
 @testable import Data
 
-class CompanyInfoFetcherTests: BaseDataTest {
+class LaunchesFetcherTests: BaseDataTest {
     //MARK: - Properties
     
     
@@ -24,22 +24,22 @@ class CompanyInfoFetcherTests: BaseDataTest {
 
     
     //MARK: - Test functions
-    func test_GivenCompanyInfoFetcher_ThenAssertCorrectConfigurationAndCompletion() {
-        let injectedResponse: CompanyInfo = EntityFactory.spaceXCompanyInfo
+    func test_GivenLaunchesFetcher_ThenAssertCorrectConfigurationAndCompletion() {
+        let injectedResponse: [Launch] = [EntityFactory.sv05Launch]
         networkFetcher.injectedCodable = injectedResponse
         
-        let companyInfoFetcher = CompanyInfoFetcher(networkFetcher: networkFetcher, baseURL: baseURL)
+        let launchesFetcher = LaunchesFetcher(networkFetcher: networkFetcher, baseURL: baseURL)
         
         let expectedURL: URL = baseURL
-            .appendingPathComponent(CompanyInfoFetcher.apiVersion)
-            .appendingPathComponent(CompanyInfoFetcher.Endpoints.info.rawValue)
-        let expectedHTTPMethodType: HTTPMethodType = .get
+            .appendingPathComponent(LaunchesFetcher.apiVersion)
+            .appendingPathComponent(LaunchesFetcher.Endpoints.allLaunches.rawValue)
+        let expectedHTTPMethodType: HTTPMethodType = .get        
         
-        expect(description: "Testing CompanyInfoFetcher", completion: { [weak self] expectation in
-            companyInfoFetcher.getInfo { [weak self] result in
+        expect(description: "Testing LaunchesFetcher", completion: { [weak self] expectation in
+            launchesFetcher.getLaunch { result in
                 switch result {
-                case .success(let companyInfo):
-                    XCTAssertEqual(injectedResponse, companyInfo)
+                case .success(let launches):
+                    XCTAssertEqual(launches, injectedResponse)
                     XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
                     XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
                 case .failure(let error):

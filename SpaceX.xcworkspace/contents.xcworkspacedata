@@ -16,4 +16,7 @@
    <FileRef
       location = "group:SpaceXApp/SpaceXApp.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:InfoModule/InfoModule.xcodeproj">
+   </FileRef>
 </Workspace>

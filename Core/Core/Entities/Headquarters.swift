@@ -30,6 +30,14 @@ extension Headquarters: Codable {
         case city
         case state
     }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        address = try container.decode(String.self, forKey: CodingKeys.address)
+        city = try container.decode(String.self, forKey: CodingKeys.city)
+        state = try container.decode(String.self, forKey: CodingKeys.state)
+    }
 }
 
 

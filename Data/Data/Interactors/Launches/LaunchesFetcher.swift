@@ -1,5 +1,5 @@
 //
-//  CompanyInfoFetcher.swift
+//  LaunchesFetcher.swift
 //  Data
 //
 //  Created by Ramon Haro Marques
@@ -8,19 +8,19 @@
 import Foundation
 import Core
 
-public class CompanyInfoFetcher: BaseFetcher {
+public class LaunchesFetcher: BaseFetcher {
     enum Endpoints: String, CaseIterable {
-        case info = "company"
+        case allLaunches = "launches"
     }
 }
 
 
-//MARK: - CompanyInfoFetcherInterface implementation
-extension CompanyInfoFetcher: CompanyInfoFetcherInterface {
-    func getInfo(completion: @escaping (Result<CompanyInfo, Error>) -> Void) {
+//MARK: - LaunchesFetcherInterface implementation
+extension LaunchesFetcher: LaunchesFetcherInterface {
+    func getLaunch(completion: @escaping (Result<[Launch], Error>) -> Void) {
         let url = baseURL
             .appendingPathComponent(Self.apiVersion)
-            .appendingPathComponent(Endpoints.info.rawValue)
+            .appendingPathComponent(Endpoints.allLaunches.rawValue)
         
         let headers:[String:String] = [:]
         let params:[String:Any] = [:]
