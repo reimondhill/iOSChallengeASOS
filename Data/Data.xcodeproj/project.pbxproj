@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		CF6CEAC6265244D4004C22AD /* LaunchesFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */; };
 		CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A2D2653964E00C25819 /* BaseDataTest.swift */; };
+		CF700A7B2653AF4E00C25819 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D185B26513F59003A3DA9 /* Core.framework */; };
 		CF7D17F126510D7B003A3DA9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D17E726510D7B003A3DA9 /* Data.framework */; };
 		CF7D17F826510D7B003A3DA9 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17EA26510D7B003A3DA9 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */; };
 		CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */; };
 		CF7D18402651270A003A3DA9 /* strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* strings.strings */; };
 		CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */; };
-		CF7D185C26513F59003A3DA9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D185B26513F59003A3DA9 /* Core.framework */; };
 		CFB991E226514C7800F84BD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E126514C7800F84BD0 /* Constants.swift */; };
 		CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */; };
 		CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */; };
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7D185C26513F59003A3DA9 /* Core.framework in Frameworks */,
+				CF700A7B2653AF4E00C25819 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

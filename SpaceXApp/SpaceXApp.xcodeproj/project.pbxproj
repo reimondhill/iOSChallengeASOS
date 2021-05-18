@@ -13,6 +13,7 @@
 		CF4D56A026503C6400E33199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */; };
 		CF4D56AB26503C6400E33199 /* SpaceXAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56AA26503C6400E33199 /* SpaceXAppTests.swift */; };
 		CF4D56B626503C6400E33199 /* SpaceXAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56B526503C6400E33199 /* SpaceXAppUITests.swift */; };
+		CF700A782653AE8B00C25819 /* Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A732653AABB00C25819 /* Info.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		CF4D56B126503C6400E33199 /* SpaceXAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4D56B526503C6400E33199 /* SpaceXAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAppUITests.swift; sourceTree = "<group>"; };
 		CF4D56B726503C6400E33199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF700A732653AABB00C25819 /* Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF700A782653AE8B00C25819 /* Info.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 				CF4D56A926503C6400E33199 /* SpaceXAppTests */,
 				CF4D56B426503C6400E33199 /* SpaceXAppUITests */,
 				CF4D569126503C6200E33199 /* Products */,
+				CF700A722653AABB00C25819 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +101,7 @@
 			children = (
 				CF4D569326503C6200E33199 /* AppDelegate.swift */,
 				CF4D569726503C6200E33199 /* ViewController.swift */,
-				CF4D569C26503C6400E33199 /* Assets.xcassets */,
-				CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */,
-				CF4D56A126503C6400E33199 /* Info.plist */,
+				CF700A772653AAEB00C25819 /* SupportingFiles */,
 			);
 			path = SpaceXApp;
 			sourceTree = "<group>";
@@ -120,6 +122,24 @@
 				CF4D56B726503C6400E33199 /* Info.plist */,
 			);
 			path = SpaceXAppUITests;
+			sourceTree = "<group>";
+		};
+		CF700A722653AABB00C25819 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF700A732653AABB00C25819 /* Info.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF700A772653AAEB00C25819 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF4D569C26503C6400E33199 /* Assets.xcassets */,
+				CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */,
+				CF4D56A126503C6400E33199 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,7 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = SpaceXApp/Info.plist;
+				INFOPLIST_FILE = SpaceXApp/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = SpaceXApp/Info.plist;
+				INFOPLIST_FILE = SpaceXApp/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
