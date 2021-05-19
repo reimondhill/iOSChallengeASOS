@@ -29,6 +29,7 @@
 		CFF43E7826544AE00029698D /* LaunchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7726544AE00029698D /* LaunchItemTableViewCell.swift */; };
 		CFF43E7A26544D510029698D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7926544D510029698D /* ReusableView.swift */; };
 		CFF43E7E265462010029698D /* CompanyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7D265462010029698D /* CompanyInfoTableViewCell.swift */; };
+		CFFF1CD126554D7B0018B57D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		CFF43E7726544AE00029698D /* LaunchItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemTableViewCell.swift; sourceTree = "<group>"; };
 		CFF43E7926544D510029698D /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		CFF43E7D265462010029698D /* CompanyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				CF5F751E2654FB1300E38C2C /* String+Extensions.swift */,
 				CFF43E5A2654366A0029698D /* UITableView+Extensions.swift */,
+				CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				CFF43E6E2654472E0029698D /* BaseLabel.swift in Sources */,
 				CFF43E58265434DD0029698D /* BaseTableView.swift in Sources */,
 				CF700A572653A6D000C25819 /* BaseCollectionView.swift in Sources */,
+				CFFF1CD126554D7B0018B57D /* UIViewController+Extensions.swift in Sources */,
 				CF5F75122654DDF700E38C2C /* Sizes.swift in Sources */,
 				CF5F751F2654FB1300E38C2C /* String+Extensions.swift in Sources */,
 				CFF43E7826544AE00029698D /* LaunchItemTableViewCell.swift in Sources */,
@@ -585,7 +589,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = UITests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,7 +657,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = UITests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

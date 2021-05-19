@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D569326503C6200E33199 /* AppDelegate.swift */; };
-		CF4D569826503C6200E33199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D569726503C6200E33199 /* ViewController.swift */; };
 		CF4D569D26503C6400E33199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569C26503C6400E33199 /* Assets.xcassets */; };
 		CF4D56A026503C6400E33199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4D569E26503C6400E33199 /* LaunchScreen.storyboard */; };
 		CF4D56AB26503C6400E33199 /* SpaceXAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56AA26503C6400E33199 /* SpaceXAppTests.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		CF4D569026503C6200E33199 /* SpaceXApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4D569326503C6200E33199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF4D569726503C6200E33199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF4D569C26503C6400E33199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF4D569F26503C6400E33199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF4D56A126503C6400E33199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				CF4D569326503C6200E33199 /* AppDelegate.swift */,
-				CF4D569726503C6200E33199 /* ViewController.swift */,
 				CF700A772653AAEB00C25819 /* SupportingFiles */,
 			);
 			path = SpaceXApp;
@@ -287,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF4D569826503C6200E33199 /* ViewController.swift in Sources */,
 				CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,6 +538,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
 				INFOPLIST_FILE = SpaceXAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

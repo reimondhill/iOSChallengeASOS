@@ -8,7 +8,9 @@
 import Foundation
 import Core
 import Data
+import Routing
 import Presentation
+
 
 public enum InfoGeneralPresenterCellType {
     case info
@@ -32,6 +34,7 @@ class InfoGeneralPresenter {
     //MARK: - Properties
     private let companyFetcher: CompanyInfoFetcherInterface
     private let launchesFetcher: LaunchesFetcherInterface
+    private let router: InfoGeneralRouterInterface & WebRouter
     
     private let queue = DispatchQueue(label: "InfoGeneralPresenter", qos: .background, attributes: [])
     
@@ -63,9 +66,12 @@ class InfoGeneralPresenter {
     
     
     //MARK: - Constructor
-    init(companyFetcher: CompanyInfoFetcherInterface, launchesFetcher: LaunchesFetcherInterface) {
+    init(companyFetcher: CompanyInfoFetcherInterface,
+         launchesFetcher: LaunchesFetcherInterface,
+         router: InfoGeneralRouterInterface & WebRouter) {
         self.companyFetcher = companyFetcher
         self.launchesFetcher = launchesFetcher
+        self.router = router
     }
 }
 
@@ -190,7 +196,17 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     }
     
     func didSeclect(indexPath: IndexPath) {
-        
+        switch indexPath.section {
+        case 1:
+            guard let links = launches?[safe: indexPath.row]?.links,
+                  let url = links.articleURL ?? links.wikipediaURL ?? links.webcastURL else {
+                return
+            }
+            
+            router.route(url: url, type: .external)
+        default:
+            return
+        }
     }
     
     

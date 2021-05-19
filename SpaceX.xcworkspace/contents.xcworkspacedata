@@ -11,6 +11,9 @@
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Routing/Routing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UI/UI.xcodeproj">
    </FileRef>
    <FileRef

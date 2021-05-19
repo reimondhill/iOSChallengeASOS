@@ -20,8 +20,9 @@
 		CF700A8A2653B33900C25819 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A892653B33900C25819 /* Data.framework */; };
 		CF700A8D2653B33F00C25819 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A8C2653B33F00C25819 /* Presentation.framework */; };
 		CF700A902653B34400C25819 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A8F2653B34400C25819 /* UI.framework */; };
-		CFF43E492653F6F00029698D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CFF43E482653F6F00029698D /* SnapKit */; };
 		CFF43E6F265448BC0029698D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFF43E71265448BC0029698D /* Localizable.strings */; };
+		CFFF1CCB26553BF60018B57D /* Routing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1CCA26553BF60018B57D /* Routing.framework */; };
+		CFFF1CCC26553BF60018B57D /* Routing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1CCA26553BF60018B57D /* Routing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,20 @@
 			remoteInfo = Info;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFFF1CCD26553BF60018B57D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CFFF1CCC26553BF60018B57D /* Routing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
@@ -56,6 +71,7 @@
 		CF700A8C2653B33F00C25819 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF700A8F2653B34400C25819 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF43E70265448BC0029698D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CFFF1CCA26553BF60018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +83,7 @@
 				CF700A852653AFE400C25819 /* Core.framework in Frameworks */,
 				CF700A902653B34400C25819 /* UI.framework in Frameworks */,
 				CF700A8D2653B33F00C25819 /* Presentation.framework in Frameworks */,
-				CFF43E492653F6F00029698D /* SnapKit in Frameworks */,
+				CFFF1CCB26553BF60018B57D /* Routing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +185,7 @@
 		CF700A632653A8C800C25819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFFF1CCA26553BF60018B57D /* Routing.framework */,
 				CF700A8F2653B34400C25819 /* UI.framework */,
 				CF700A8C2653B33F00C25819 /* Presentation.framework */,
 				CF700A892653B33900C25819 /* Data.framework */,
@@ -203,6 +220,7 @@
 				CF700A3726539F6900C25819 /* Sources */,
 				CF700A3826539F6900C25819 /* Frameworks */,
 				CF700A3926539F6900C25819 /* Resources */,
+				CFFF1CCD26553BF60018B57D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +228,6 @@
 			);
 			name = Info;
 			packageProductDependencies = (
-				CFF43E482653F6F00029698D /* SnapKit */,
 			);
 			productName = Info;
 			productReference = CF700A3B26539F6900C25819 /* Info.framework */;
@@ -563,7 +580,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = InfoTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +648,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = InfoTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,14 +709,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CFF43E482653F6F00029698D /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CFF43E472653F6F00029698D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF700A3026539F3200C25819 /* Project object */;
 }

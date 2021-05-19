@@ -13,5 +13,5 @@ public protocol RocketFetcherInterface {
     /// - Parameters:
     ///   - id: The rocket ID
     ///   - completion: Callback called when the process finishes
-    func getRocket(id: String, completion: @escaping (Result<[Launch], Error>)->Void)
+    func getRocket(id: String, completion: @escaping (Result<Rocket, Error>)->Void)
 }

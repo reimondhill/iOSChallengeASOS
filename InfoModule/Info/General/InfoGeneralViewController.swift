@@ -145,19 +145,6 @@ extension InfoGeneralViewController: UITableViewDelegate {
         return 24
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
-        } else {
-            return 150
-        }
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let presenter = presenter,
               let title = presenter.headerTitle(section: section) else {
@@ -168,5 +155,30 @@ extension InfoGeneralViewController: UITableViewDelegate {
         view.text = title
         
         return view
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return 150
+        }
+    }
+    
+    //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        <#code#>
+    //    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        guard let presenter = presenter else {
+            return false
+        }
+        
+        return presenter.canSelect(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSeclect(indexPath: indexPath)
     }
 }

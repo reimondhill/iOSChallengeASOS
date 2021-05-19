@@ -27,6 +27,7 @@
 		CFB991F42651773800F84BD0 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991F32651773800F84BD0 /* EntityFactory.swift */; };
 		CFB991F6265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991F5265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift */; };
 		CFC201B92652E1A6008C5E8D /* EntityFactory+Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B82652E1A6008C5E8D /* EntityFactory+Launch.swift */; };
+		CFC984CB26551A35005C7743 /* EntityFactory+Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */; };
 		CFF43E82265467AE0029698D /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E81265467AE0029698D /* Collection+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		CFB991F32651773800F84BD0 /* EntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
 		CFB991F5265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+CompanyInfo.swift"; sourceTree = "<group>"; };
 		CFC201B82652E1A6008C5E8D /* EntityFactory+Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Launch.swift"; sourceTree = "<group>"; };
+		CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Rocket.swift"; sourceTree = "<group>"; };
 		CFF43E81265467AE0029698D /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 				CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */,
 				CF6CEAC926524794004C22AD /* EntityFactory+Links.swift */,
 				CFC201B82652E1A6008C5E8D /* EntityFactory+Launch.swift */,
+				CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */,
 			);
 			path = EntityFactory;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				CF6CEACA26524794004C22AD /* EntityFactory+Links.swift in Sources */,
 				CF7D18602651406C003A3DA9 /* Logger.swift in Sources */,
 				CF6CEAC8265245BD004C22AD /* Links.swift in Sources */,
+				CFC984CB26551A35005C7743 /* EntityFactory+Rocket.swift in Sources */,
 				CF6CEAC126523D10004C22AD /* Headquarters.swift in Sources */,
 				CFB991F6265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift in Sources */,
 				CF7D184B26512F95003A3DA9 /* URL+Extensions.swift in Sources */,
@@ -605,7 +609,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = CoreTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,7 +678,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = CoreTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

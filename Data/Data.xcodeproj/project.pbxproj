@@ -28,6 +28,7 @@
 		CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B2265294B0008C5E8D /* BaseFetcher.swift */; };
 		CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B4265295B8008C5E8D /* APIVersionControl.swift */; };
 		CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */; };
+		CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984C82655142F005C7743 /* RocketFetcherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		CFC201B2265294B0008C5E8D /* BaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFetcher.swift; sourceTree = "<group>"; };
 		CFC201B4265295B8008C5E8D /* APIVersionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIVersionControl.swift; sourceTree = "<group>"; };
 		CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFetcherTests.swift; sourceTree = "<group>"; };
+		CFC984C82655142F005C7743 /* RocketFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketFetcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			children = (
 				CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */,
 				CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */,
+				CFC984C82655142F005C7743 /* RocketFetcherTests.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */,
+				CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */,
 				CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */,
 				CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */,
 				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
@@ -615,7 +619,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = DataTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +688,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = DataTests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
