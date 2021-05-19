@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Router: class {
+public protocol Router: AnyObject {
     var parent: Router? { get set }
     
     func start()

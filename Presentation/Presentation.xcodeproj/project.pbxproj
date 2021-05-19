@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF21C32E2655A5BF00CBD7F8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D3126556E920018B57D /* Core.framework */; };
+		CF21C32F2655A5BF00CBD7F8 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D3126556E920018B57D /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF7D180E26510DBF003A3DA9 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D180426510DBF003A3DA9 /* Presentation.framework */; };
 		CF7D181526510DBF003A3DA9 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D180726510DBF003A3DA9 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFF43E462653F6570029698D /* ListPresesnter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E452653F6570029698D /* ListPresesnter.swift */; };
@@ -15,7 +17,6 @@
 		CFF43E6A265442230029698D /* ViewReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E69265442230029698D /* ViewReloader.swift */; };
 		CFF43E7C26545FED0029698D /* LaunchPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7B26545FED0029698D /* LaunchPresentableItem.swift */; };
 		CFF43E80265462460029698D /* CompanyInfoPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7F265462460029698D /* CompanyInfoPresentableItem.swift */; };
-		CFFF1D3226556E920018B57D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D3126556E920018B57D /* Core.framework */; };
 		CFFF1E59265590110018B57D /* HeaderPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1E58265590110018B57D /* HeaderPresentableItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,20 @@
 			remoteInfo = Presentation;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF21C3302655A5BF00CBD7F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF21C32F2655A5BF00CBD7F8 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF7D180426510DBF003A3DA9 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFF1D3226556E920018B57D /* Core.framework in Frameworks */,
+				CF21C32E2655A5BF00CBD7F8 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +189,7 @@
 				CF7D180026510DBF003A3DA9 /* Sources */,
 				CF7D180126510DBF003A3DA9 /* Frameworks */,
 				CF7D180226510DBF003A3DA9 /* Resources */,
+				CF21C3302655A5BF00CBD7F8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

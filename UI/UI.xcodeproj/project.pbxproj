@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF21C3352655A84400CBD7F8 /* LightNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF21C3342655A84400CBD7F8 /* LightNavigationController.swift */; };
 		CF5F750D2654DCDB00E38C2C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CF5F750C2654DCDB00E38C2C /* SDWebImage */; };
 		CF5F750F2654DCDB00E38C2C /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CF5F750E2654DCDB00E38C2C /* SDWebImageMapKit */; };
 		CF5F75122654DDF700E38C2C /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75112654DDF700E38C2C /* Sizes.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF21C3342655A84400CBD7F8 /* LightNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightNavigationController.swift; sourceTree = "<group>"; };
 		CF5F75112654DDF700E38C2C /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		CF5F75132654DEEC00E38C2C /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
 		CF5F75162654E5D100E38C2C /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				CFF43E55265432E60029698D /* BaseLoaderIndicator.swift */,
 				CF5F751A2654E73E00E38C2C /* BaseStackView.swift */,
 				CFF43E57265434DD0029698D /* BaseTableView.swift */,
+				CF21C3342655A84400CBD7F8 /* LightNavigationController.swift */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				CF5F75122654DDF700E38C2C /* Sizes.swift in Sources */,
 				CFFF1DC12655803C0018B57D /* Colors.swift in Sources */,
 				CF5F751F2654FB1300E38C2C /* String+Extensions.swift in Sources */,
+				CF21C3352655A84400CBD7F8 /* LightNavigationController.swift in Sources */,
 				CFF43E7826544AE00029698D /* LaunchItemTableViewCell.swift in Sources */,
 				CF5F75142654DEEC00E38C2C /* BaseImageView.swift in Sources */,
 				CFF43E5126542D1A0029698D /* LoaderDisplayable.swift in Sources */,

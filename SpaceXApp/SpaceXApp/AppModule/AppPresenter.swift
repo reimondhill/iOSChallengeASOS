@@ -13,7 +13,7 @@ public protocol AppPresenterInterface {
     func setupApplication()
 }
 
-public protocol AppPresenterOutput: class {}
+public protocol AppPresenterOutput: AnyObject {}
 
 
 public class AppPresenter {

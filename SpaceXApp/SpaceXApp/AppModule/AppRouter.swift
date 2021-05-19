@@ -9,6 +9,7 @@ import Data
 import Presentation
 import Routing
 import Info
+import UI
 import UIKit
 
 public protocol AppRouterInterface: Router {
@@ -31,7 +32,7 @@ public class AppRouter: AppRouterInterface {
     public weak var parent: Router?
     
     public func start() {
-        navigationController = UINavigationController()
+        navigationController = LightNavigationController()
         window.rootViewController = navigationController
     }
     
