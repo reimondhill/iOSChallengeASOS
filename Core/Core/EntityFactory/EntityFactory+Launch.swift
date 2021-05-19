@@ -50,7 +50,9 @@ public extension EntityFactory {
                                                                 webcastURL: URL(string: "https://youtu.be/bnChQbxLkkI"),
                                                                 youtubeID: "bnChQbxLkkI",
                                                                 articleURL: URL(string: "https://spaceflightnow.com/2020/11/16/astronauts-ride-spacex-crew-capsule-in-landmark-launch-for-commercial-spaceflight/"),
-                                                                wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/SpaceX_Crew-1")))
+                                                                wikipediaURL: URL(string: "https://en.wikipedia.org/wiki/SpaceX_Crew-1"),
+                                                                patch: Launch.Links.Patch(smallURL: URL(string: "https://imgur.com/6RnqgLW.png"),
+                                                                                          largeURL: URL(string: "https://imgur.com/2XsSLUM.png"))))
     
     
     ///Launch 'GPS III SV05' in 2021
@@ -71,7 +73,7 @@ public extension EntityFactory {
                                            capsules: [],
                                            payloads: [
                                             "5eb0e4d2b6c3bb0006eeb261"
-                                        ],
+                                           ],
                                            autoUpdate: true,
                                            launchLibraryID: nil,
                                            tbd: false,
@@ -82,5 +84,7 @@ public extension EntityFactory {
                                                                webcastURL: nil,
                                                                youtubeID: nil,
                                                                articleURL: nil,
-                                                               wikipediaURL: nil))
+                                                               wikipediaURL: nil,
+                                                               patch: Launch.Links.Patch(smallURL: URL(string: "https://imgur.com/6RnqgLW.png"),
+                                                                                         largeURL: URL(string: "https://imgur.com/2XsSLUM.png"))))
 }

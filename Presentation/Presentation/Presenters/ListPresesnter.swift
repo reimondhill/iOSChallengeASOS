@@ -12,6 +12,8 @@ public protocol ListPresesnter: Presenter {
     
     func numberOfItems(section: Int) -> Int
     
+    func canShowHeader(section: Int) -> Bool
+    
     func headerTitle(section: Int) -> String?
     
     func canSelect(indexPath: IndexPath) -> Bool

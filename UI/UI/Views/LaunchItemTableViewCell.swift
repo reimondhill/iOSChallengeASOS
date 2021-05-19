@@ -26,8 +26,6 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var wrapperView: UIView = {
         let view = UIView()
         
-        view.backgroundColor = .red
-        
         return view
     }()
     
@@ -71,14 +69,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         return view
     }()
     private lazy var missionTitleLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .bodyBold)
         
         view.text = LocalisedStrings.missionTitle
         
         return view
     }()
     private lazy var missionLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .body)
         
         return view
     }()
@@ -96,14 +94,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         return view
     }()
     private lazy var dateTitleLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .bodyBold)
         
         view.text = LocalisedStrings.dateTitle
         
         return view
     }()
     private lazy var dateLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .body)
         
         return view
     }()
@@ -121,14 +119,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         return view
     }()
     private lazy var rocketTitleLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .bodyBold)
         
         view.text = LocalisedStrings.rocketTitle
         
         return view
     }()
     private lazy var rocketLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .body)
         
         return view
     }()
@@ -146,14 +144,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         return view
     }()
     private lazy var daysTitleLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .bodyBold)
         
         view.text = LocalisedStrings.dateDays
         
         return view
     }()
     private lazy var daysLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .body)
         
         return view
     }()
@@ -186,6 +184,8 @@ extension LaunchItemTableViewCell {
 //MARK: - Private methods
 private extension LaunchItemTableViewCell {
     func setupUI() {
+        backgroundColor = .clear
+        
         addSubview(wrapperView)
         wrapperView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview().inset(Style.wrapperViewInsets)
@@ -216,7 +216,7 @@ private extension LaunchItemTableViewCell {
 //MARK: - LaunchPresentableItem implementation
 extension LaunchItemTableViewCell: LaunchPresentableItem {
     public func setup(launchItem: Launch) {
-        missionImageView.sd_setImage(with: URL(string: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"))
+        missionImageView.sd_setImage(with: launchItem.links?.patch?.smallURL ?? launchItem.links?.patch?.largeURL)
         statusImageView.image = UIImage(named: "SuccessIcon", in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
         
         missionLabel.text = "MMM"

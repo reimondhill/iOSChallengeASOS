@@ -29,6 +29,7 @@
 		CFC201B92652E1A6008C5E8D /* EntityFactory+Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B82652E1A6008C5E8D /* EntityFactory+Launch.swift */; };
 		CFC984CB26551A35005C7743 /* EntityFactory+Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */; };
 		CFF43E82265467AE0029698D /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E81265467AE0029698D /* Collection+Extensions.swift */; };
+		CFFF1E61265598D60018B57D /* Launch+Links+Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1E60265598D60018B57D /* Launch+Links+Patch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		CFC201B82652E1A6008C5E8D /* EntityFactory+Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Launch.swift"; sourceTree = "<group>"; };
 		CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Rocket.swift"; sourceTree = "<group>"; };
 		CFF43E81265467AE0029698D /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		CFFF1E60265598D60018B57D /* Launch+Links+Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+Links+Patch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				CF6CEACD26524BEF004C22AD /* Launch.swift */,
 				CF6CEAD126526BEE004C22AD /* Launch+Links.swift */,
+				CFFF1E60265598D60018B57D /* Launch+Links+Patch.swift */,
 			);
 			path = Launches;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				CFC201B92652E1A6008C5E8D /* EntityFactory+Launch.swift in Sources */,
 				CFB991E726514E5800F84BD0 /* CompanyInfo.swift in Sources */,
 				CFF43E82265467AE0029698D /* Collection+Extensions.swift in Sources */,
+				CFFF1E61265598D60018B57D /* Launch+Links+Patch.swift in Sources */,
 				CF5F752A2655062B00E38C2C /* Rocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

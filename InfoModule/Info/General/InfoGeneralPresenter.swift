@@ -18,6 +18,8 @@ public enum InfoGeneralPresenterCellType {
 }
 
 public protocol InfoGeneralPresenterInterface: ListPresesnter {
+    func setup(header: HeaderPresentableItem, section: Int)
+    
     func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType
     
     func setup(cell: LaunchPresentableItem, indexPath: IndexPath)
@@ -25,9 +27,7 @@ public protocol InfoGeneralPresenterInterface: ListPresesnter {
     func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath)
 }
 
-public protocol InfoGeneralPresenterOutput: ViewReloader {
-    
-}
+public protocol InfoGeneralPresenterOutput: ViewReloader {}
 
 
 class InfoGeneralPresenter {
@@ -179,6 +179,10 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
+    func canShowHeader(section: Int) -> Bool {
+        headerTitle(section: section) != nil
+    }
+    
     func headerTitle(section: Int) -> String? {
         switch section {
         case 0:
@@ -214,6 +218,10 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     
     
     //MARK: InfoGeneralPresenterInterface implementation
+    func setup(header: HeaderPresentableItem, section: Int) {
+        header.set(title: headerTitle(section: section))
+    }
+    
     func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType {
         if indexPath.section == 0 {
             return .info

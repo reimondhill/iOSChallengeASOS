@@ -7,6 +7,7 @@
 
 import UIKit
 import Data
+import UI
 import Info
 
 @main
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
         
+        StyleManager.setupNavigationStyle()
         let result = AppModule.setup(window: window!, isUITest: false)
         result.router.start()
         result.presenter.setupApplication()

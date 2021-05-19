@@ -16,6 +16,7 @@
 		CFF43E7C26545FED0029698D /* LaunchPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7B26545FED0029698D /* LaunchPresentableItem.swift */; };
 		CFF43E80265462460029698D /* CompanyInfoPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E7F265462460029698D /* CompanyInfoPresentableItem.swift */; };
 		CFFF1D3226556E920018B57D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D3126556E920018B57D /* Core.framework */; };
+		CFFF1E59265590110018B57D /* HeaderPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1E58265590110018B57D /* HeaderPresentableItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		CFFF1D2C26556E880018B57D /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1D3126556E920018B57D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1D4D26556FDD0018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1E58265590110018B57D /* HeaderPresentableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresentableItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CFF43E7F265462460029698D /* CompanyInfoPresentableItem.swift */,
+				CFFF1E58265590110018B57D /* HeaderPresentableItem.swift */,
 				CFF43E7B26545FED0029698D /* LaunchPresentableItem.swift */,
 				CFF43E452653F6570029698D /* ListPresesnter.swift */,
 				CFF43E4A265414A90029698D /* Presenter.swift */,
@@ -260,6 +263,7 @@
 			files = (
 				CFF43E80265462460029698D /* CompanyInfoPresentableItem.swift in Sources */,
 				CFF43E4B265414A90029698D /* Presenter.swift in Sources */,
+				CFFF1E59265590110018B57D /* HeaderPresentableItem.swift in Sources */,
 				CFF43E4F2654254F0029698D /* ProcessingDisplayable.swift in Sources */,
 				CFF43E6A265442230029698D /* ViewReloader.swift in Sources */,
 				CFF43E462653F6570029698D /* ListPresesnter.swift in Sources */,

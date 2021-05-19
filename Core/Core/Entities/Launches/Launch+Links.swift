@@ -16,14 +16,17 @@ extension Launch {
         public let articleURL: URL?
         public let wikipediaURL: URL?
         
+        public let patch: Launch.Links.Patch?
+        
         
         //MARK: - Constructor
-        init(presskitURL: URL?, webcastURL: URL?, youtubeID: String?, articleURL: URL?, wikipediaURL: URL?) {
+        init(presskitURL: URL?, webcastURL: URL?, youtubeID: String?, articleURL: URL?, wikipediaURL: URL?, patch: Launch.Links.Patch?) {
             self.presskitURL = presskitURL
             self.webcastURL = webcastURL
             self.youtubeID = youtubeID
             self.articleURL = articleURL
             self.wikipediaURL = wikipediaURL
+            self.patch = patch
         }
     }
 }
@@ -37,6 +40,7 @@ extension Launch.Links: Codable {
         case youtubeID = "youtube_id"
         case articleURL = "article"
         case wikipediaURL = "wikipedia"
+        case patch
     }
     
     public init(from decoder: Decoder) throws {
@@ -47,6 +51,7 @@ extension Launch.Links: Codable {
         youtubeID = try container.decodeIfPresent(String.self, forKey: CodingKeys.youtubeID)
         articleURL = try container.decodeIfPresent(URL.self, forKey: CodingKeys.articleURL)
         wikipediaURL = try container.decodeIfPresent(URL.self, forKey: CodingKeys.wikipediaURL)
+        patch = try container.decodeIfPresent(Launch.Links.Patch.self, forKey: CodingKeys.patch)
     }
 }
 
@@ -59,6 +64,7 @@ extension Launch.Links: Equatable {
             lhs.webcastURL == rhs.webcastURL &&
             lhs.youtubeID == rhs.youtubeID &&
             lhs.articleURL == rhs.articleURL &&
-            lhs.wikipediaURL == rhs.wikipediaURL
+            lhs.wikipediaURL == rhs.wikipediaURL &&
+            lhs.patch == rhs.patch
     }
 }

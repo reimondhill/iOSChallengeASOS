@@ -30,6 +30,7 @@ class InfoGeneralViewController: UIViewController {
         view.rowHeight = UITableView.automaticDimension
         view.estimatedRowHeight = UITableView.automaticDimension
         
+        view.register(header: ReusableTableViewHeaderFooter.self)
         view.registerEmptyCell()
         view.register(CompanyInfoTableViewCell.self)
         view.register(LaunchItemTableViewCell.self)
@@ -70,9 +71,8 @@ extension InfoGeneralViewController {
 //MARK: - Private methods
 private extension InfoGeneralViewController {
     func setupUI() {
+        view.backgroundColor = UIColor.primaryBackgroundColor
         title = LocalisedStrings.companyInfoTitle
-        //STYLE HERE!!!
-        view.backgroundColor = .white
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { maker in
@@ -121,7 +121,6 @@ extension InfoGeneralViewController: UITableViewDataSource {
             return tableView.dequeueEmptyCell(forIndexPath: indexPath)
         }
         
-        
         switch presenter.cellType(indexPath: indexPath) {
         case .info:
             let cell: CompanyInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -137,25 +136,26 @@ extension InfoGeneralViewController: UITableViewDataSource {
 
 //MARK: UITableViewDataSource implementation
 extension InfoGeneralViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let presenter = presenter,
-              let _ = presenter.headerTitle(section: section) else {
+              presenter.canShowHeader(section: section) else {
             return 0
         }
         
-        return 24
+        return 48
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let presenter = presenter,
-              let title = presenter.headerTitle(section: section) else {
+              presenter.canShowHeader(section: section) else {
             return nil
         }
         
-        let view = BaseLabel()
-        view.text = title
+        let header: ReusableTableViewHeaderFooter = tableView.dequeueReusableHeaderFooter(for: section)
         
-        return view
+        presenter.setup(header: header, section: section)
+        
+        return header
     }
     
     
@@ -166,10 +166,6 @@ extension InfoGeneralViewController: UITableViewDelegate {
             return 150
         }
     }
-    
-    //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        <#code#>
-    //    }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         guard let presenter = presenter else {

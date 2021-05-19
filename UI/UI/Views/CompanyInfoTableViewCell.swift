@@ -12,7 +12,7 @@ public class CompanyInfoTableViewCell: UITableViewCell {
     //MARK: - Properties
     //MARK: UI
     private lazy var titleLabel: BaseLabel = {
-        let view = BaseLabel()
+        let view = BaseLabel(style: .body)
         
         view.numberOfLines = 0
         
@@ -46,6 +46,7 @@ extension CompanyInfoTableViewCell {
 //MARK: - Private methods
 private extension CompanyInfoTableViewCell {
     func setupUI() {
+        backgroundColor = .clear
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { maker in
             maker.top.left.bottom.right.equalToSuperview().inset(8)
