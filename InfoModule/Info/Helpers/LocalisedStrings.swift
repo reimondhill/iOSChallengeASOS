@@ -20,6 +20,10 @@ struct LocalisedStrings {
         "error".localised
     }
     
+    static var companyInfoTitle: String {
+        "compnay_info_title".localised
+    }
+    
     static var errorUnableOpenURL: String {
         "error_unable_to_open_url".localised
     }

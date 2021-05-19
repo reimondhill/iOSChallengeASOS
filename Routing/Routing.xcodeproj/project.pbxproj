@@ -13,7 +13,6 @@
 		CFFF1CB42655355A0018B57D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CB32655355A0018B57D /* Router.swift */; };
 		CFFF1CC0265536B50018B57D /* ErrorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CBF265536B50018B57D /* ErrorRouter.swift */; };
 		CFFF1CC7265537980018B57D /* WebRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CC6265537980018B57D /* WebRouter.swift */; };
-		CFFF1CE426555ADB0018B57D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CE326555ADB0018B57D /* AppRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,6 @@
 		CFFF1CB32655355A0018B57D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CFFF1CBF265536B50018B57D /* ErrorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRouter.swift; sourceTree = "<group>"; };
 		CFFF1CC6265537980018B57D /* WebRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRouter.swift; sourceTree = "<group>"; };
-		CFFF1CE326555ADB0018B57D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		CFFF1CF626556BD20018B57D /* Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1D3726556F0A0018B57D /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1D4826556FBE0018B57D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +83,6 @@
 			children = (
 				CFFF1C8E265529A20018B57D /* Routing.h */,
 				CFFF1CC3265537570018B57D /* Abstractions */,
-				CFFF1CE226555AC40018B57D /* App */,
 				CFFF1CB7265535A70018B57D /* SupportingFiles */,
 			);
 			path = Routing;
@@ -124,14 +121,6 @@
 				CFFF1CC6265537980018B57D /* WebRouter.swift */,
 			);
 			path = Abstractions;
-			sourceTree = "<group>";
-		};
-		CFFF1CE226555AC40018B57D /* App */ = {
-			isa = PBXGroup;
-			children = (
-				CFFF1CE326555ADB0018B57D /* AppRouter.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		CFFF1CF526556BD20018B57D /* Frameworks */ = {
@@ -253,7 +242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFF1CE426555ADB0018B57D /* AppRouter.swift in Sources */,
 				CFFF1CB42655355A0018B57D /* Router.swift in Sources */,
 				CFFF1CC7265537980018B57D /* WebRouter.swift in Sources */,
 				CFFF1CC0265536B50018B57D /* ErrorRouter.swift in Sources */,

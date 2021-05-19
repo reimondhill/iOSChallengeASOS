@@ -34,6 +34,7 @@ class InfoGeneralPresenter {
     //MARK: - Properties
     private let companyFetcher: CompanyInfoFetcherInterface
     private let launchesFetcher: LaunchesFetcherInterface
+    private let rocketFetcher: RocketFetcherInterface
     private let router: InfoGeneralRouterInterface & WebRouter
     
     private let queue = DispatchQueue(label: "InfoGeneralPresenter", qos: .background, attributes: [])
@@ -68,9 +69,11 @@ class InfoGeneralPresenter {
     //MARK: - Constructor
     init(companyFetcher: CompanyInfoFetcherInterface,
          launchesFetcher: LaunchesFetcherInterface,
+         rocketFetcher: RocketFetcherInterface,
          router: InfoGeneralRouterInterface & WebRouter) {
         self.companyFetcher = companyFetcher
         self.launchesFetcher = launchesFetcher
+        self.rocketFetcher = rocketFetcher
         self.router = router
     }
 }

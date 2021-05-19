@@ -13,6 +13,9 @@ public protocol AppPresenterInterface {
     func setupApplication()
 }
 
+public protocol AppPresenterOutput: class {}
+
+
 public class AppPresenter {
     //MARK: - Properties
     let companyInfoFetcher: CompanyInfoFetcherInterface
@@ -41,6 +44,8 @@ public class AppPresenter {
 //MARK: - AppPresenterInterface implementation
 extension AppPresenter: AppPresenterInterface {
     public func setupApplication() {
+        //Some others in the future
         
+        router.routeGeneralInfo(companyInfoFetcher: companyInfoFetcher, launchesFetcher: launchesFetcher, rocketFetcher: rocketFetcher)
     }
 }

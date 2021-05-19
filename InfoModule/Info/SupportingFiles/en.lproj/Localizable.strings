@@ -12,6 +12,8 @@
 "error" = "Error";
 "error_unable_to_open_url" = "Unable to open URL";
 
+"compnay_info_title" = "Company Info";
+
 "header_title_company" = "Company Info";
 "header_title_launches" = "Launches";
 

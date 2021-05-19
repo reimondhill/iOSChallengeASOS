@@ -18,6 +18,8 @@
 		CFF43E64265439460029698D /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E63265439460029698D /* Presentation.framework */; };
 		CFF43E67265439510029698D /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E66265439510029698D /* UI.framework */; };
 		CFFF1CD9265559550018B57D /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CD8265559550018B57D /* AppModule.swift */; };
+		CFFF1D892655763C0018B57D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1D882655763C0018B57D /* AppRouter.swift */; };
+		CFFF1D90265576600018B57D /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1D8F265576600018B57D /* AppPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		CFF43E63265439460029698D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF43E66265439510029698D /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1CD8265559550018B57D /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
+		CFFF1D882655763C0018B57D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		CFFF1D8F265576600018B57D /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 		CFFF1CD7265558EA0018B57D /* AppModule */ = {
 			isa = PBXGroup;
 			children = (
+				CFFF1D8F265576600018B57D /* AppPresenter.swift */,
+				CFFF1D882655763C0018B57D /* AppRouter.swift */,
 				CFFF1CD8265559550018B57D /* AppModule.swift */,
 			);
 			path = AppModule;
@@ -297,6 +303,8 @@
 			files = (
 				CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */,
 				CFFF1CD9265559550018B57D /* AppModule.swift in Sources */,
+				CFFF1D90265576600018B57D /* AppPresenter.swift in Sources */,
+				CFFF1D892655763C0018B57D /* AppRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

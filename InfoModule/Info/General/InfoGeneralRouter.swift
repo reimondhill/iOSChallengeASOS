@@ -12,7 +12,7 @@ import SafariServices
 
 protocol InfoGeneralRouterInterface: Router {}
 
-class InfoGeneralRouter {
+class InfoGeneralRouter: InfoGeneralRouterInterface {
     //MARK: - Properties
     weak var context: UIViewController?
     weak var host: UIViewController?
@@ -22,22 +22,25 @@ class InfoGeneralRouter {
         self.context = context
         self.host = host
     }
-}
-
-
-//MARK: - InfoGeneralRouterInterface implementation
-extension InfoGeneralRouter: InfoGeneralRouterInterface {
-    var parent: Router? {
-        get {
-            nil
-        }
-        set {
-            
-        }
-    }
+    
+    
+    //MARK: - InfoGeneralRouterInterface implementation
+    weak var parent: Router?
     
     func start() {
+        guard let context = context else {
+            return
+        }
         
+        if let host = host as? UINavigationController {
+            if host.viewControllers.count == 0 {
+                host.setViewControllers([context], animated: true)
+            } else {
+                host.pushViewController(context, animated: true)
+            }
+        } else if host != nil {
+            host?.present(context, animated: true, completion: nil)
+        }
     }
 }
 

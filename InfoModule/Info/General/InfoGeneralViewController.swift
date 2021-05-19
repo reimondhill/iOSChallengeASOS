@@ -70,6 +70,7 @@ extension InfoGeneralViewController {
 //MARK: - Private methods
 private extension InfoGeneralViewController {
     func setupUI() {
+        title = LocalisedStrings.companyInfoTitle
         //STYLE HERE!!!
         view.backgroundColor = .white
         
