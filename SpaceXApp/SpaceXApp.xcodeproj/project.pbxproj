@@ -17,6 +17,7 @@
 		CFF43E61265439360029698D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E60265439360029698D /* Core.framework */; };
 		CFF43E64265439460029698D /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E63265439460029698D /* Presentation.framework */; };
 		CFF43E67265439510029698D /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E66265439510029698D /* UI.framework */; };
+		CFFF1CD9265559550018B57D /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1CD8265559550018B57D /* AppModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CFF43E60265439360029698D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF43E63265439460029698D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF43E66265439510029698D /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1CD8265559550018B57D /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4D569326503C6200E33199 /* AppDelegate.swift */,
+				CFFF1CD7265558EA0018B57D /* AppModule */,
 				CF700A772653AAEB00C25819 /* SupportingFiles */,
 			);
 			path = SpaceXApp;
@@ -153,6 +156,14 @@
 				CF4D56A126503C6400E33199 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CFFF1CD7265558EA0018B57D /* AppModule */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF1CD8265559550018B57D /* AppModule.swift */,
+			);
+			path = AppModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4D569426503C6200E33199 /* AppDelegate.swift in Sources */,
+				CFFF1CD9265559550018B57D /* AppModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,13 +16,17 @@
 		CF700A5E2653A7C800C25819 /* InfoGeneralPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A5D2653A7C800C25819 /* InfoGeneralPresenter.swift */; };
 		CF700A602653A7FF00C25819 /* InfoGeneralRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A5F2653A7FF00C25819 /* InfoGeneralRouter.swift */; };
 		CF700A622653A82800C25819 /* InfoGeneralModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A612653A82800C25819 /* InfoGeneralModule.swift */; };
-		CF700A852653AFE400C25819 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A842653AFE400C25819 /* Core.framework */; };
-		CF700A8A2653B33900C25819 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A892653B33900C25819 /* Data.framework */; };
-		CF700A8D2653B33F00C25819 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A8C2653B33F00C25819 /* Presentation.framework */; };
-		CF700A902653B34400C25819 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A8F2653B34400C25819 /* UI.framework */; };
 		CFF43E6F265448BC0029698D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFF43E71265448BC0029698D /* Localizable.strings */; };
-		CFFF1CCB26553BF60018B57D /* Routing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1CCA26553BF60018B57D /* Routing.framework */; };
-		CFFF1CCC26553BF60018B57D /* Routing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1CCA26553BF60018B57D /* Routing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFF1D6B265571940018B57D /* Routing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D6A265571940018B57D /* Routing.framework */; };
+		CFFF1D6C265571940018B57D /* Routing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D6A265571940018B57D /* Routing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFF1D78265574630018B57D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D77265574630018B57D /* Core.framework */; };
+		CFFF1D79265574630018B57D /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D77265574630018B57D /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFF1D7C265574670018B57D /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D7B265574670018B57D /* Data.framework */; };
+		CFFF1D7D265574670018B57D /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D7B265574670018B57D /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFF1D802655746B0018B57D /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D7F2655746B0018B57D /* Presentation.framework */; };
+		CFFF1D812655746B0018B57D /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D7F2655746B0018B57D /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFF1D852655747B0018B57D /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D842655747B0018B57D /* UI.framework */; };
+		CFFF1D862655747B0018B57D /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D842655747B0018B57D /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +40,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CFFF1CCD26553BF60018B57D /* Embed Frameworks */ = {
+		CFFF1D6D265571940018B57D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CFFF1CCC26553BF60018B57D /* Routing.framework in Embed Frameworks */,
+				CFFF1D7D265574670018B57D /* Data.framework in Embed Frameworks */,
+				CFFF1D862655747B0018B57D /* UI.framework in Embed Frameworks */,
+				CFFF1D6C265571940018B57D /* Routing.framework in Embed Frameworks */,
+				CFFF1D812655746B0018B57D /* Presentation.framework in Embed Frameworks */,
+				CFFF1D79265574630018B57D /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +80,12 @@
 		CF700A8F2653B34400C25819 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF43E70265448BC0029698D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFFF1CCA26553BF60018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D6A265571940018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D77265574630018B57D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D7B265574670018B57D /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D7F2655746B0018B57D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D832655746E0018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D842655747B0018B57D /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +93,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF700A8A2653B33900C25819 /* Data.framework in Frameworks */,
-				CF700A852653AFE400C25819 /* Core.framework in Frameworks */,
-				CF700A902653B34400C25819 /* UI.framework in Frameworks */,
-				CF700A8D2653B33F00C25819 /* Presentation.framework in Frameworks */,
-				CFFF1CCB26553BF60018B57D /* Routing.framework in Frameworks */,
+				CFFF1D7C265574670018B57D /* Data.framework in Frameworks */,
+				CFFF1D852655747B0018B57D /* UI.framework in Frameworks */,
+				CFFF1D6B265571940018B57D /* Routing.framework in Frameworks */,
+				CFFF1D802655746B0018B57D /* Presentation.framework in Frameworks */,
+				CFFF1D78265574630018B57D /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +199,12 @@
 		CF700A632653A8C800C25819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFFF1D842655747B0018B57D /* UI.framework */,
+				CFFF1D832655746E0018B57D /* Routing.framework */,
+				CFFF1D7F2655746B0018B57D /* Presentation.framework */,
+				CFFF1D7B265574670018B57D /* Data.framework */,
+				CFFF1D77265574630018B57D /* Core.framework */,
+				CFFF1D6A265571940018B57D /* Routing.framework */,
 				CFFF1CCA26553BF60018B57D /* Routing.framework */,
 				CF700A8F2653B34400C25819 /* UI.framework */,
 				CF700A8C2653B33F00C25819 /* Presentation.framework */,
@@ -220,7 +240,7 @@
 				CF700A3726539F6900C25819 /* Sources */,
 				CF700A3826539F6900C25819 /* Frameworks */,
 				CF700A3926539F6900C25819 /* Resources */,
-				CFFF1CCD26553BF60018B57D /* Embed Frameworks */,
+				CFFF1D6D265571940018B57D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

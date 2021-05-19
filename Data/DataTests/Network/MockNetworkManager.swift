@@ -8,7 +8,7 @@
 import Foundation
 @testable import Data
 
-class MockNetworkManager {
+public class MockNetworkManager {
     //MARK: - Class model
     typealias T = (Codable, Decodable)
     enum MockNetworkManagerError: Error {

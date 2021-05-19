@@ -66,6 +66,8 @@
 		CFF43E7926544D510029698D /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		CFF43E7D265462010029698D /* CompanyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CFFF1D3D26556F2C0018B57D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF1D56265570510018B57D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				CF7D182326510DFB003A3DA9 /* UI */,
 				CF7D182E26510DFB003A3DA9 /* UITests */,
 				CF7D182226510DFB003A3DA9 /* Products */,
+				CFFF1D3C26556F2C0018B57D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +208,15 @@
 				CFF43E7926544D510029698D /* ReusableView.swift */,
 			);
 			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		CFFF1D3C26556F2C0018B57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF1D56265570510018B57D /* Presentation.framework */,
+				CFFF1D3D26556F2C0018B57D /* Presentation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

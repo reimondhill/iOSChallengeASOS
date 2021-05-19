@@ -22,13 +22,13 @@
 		CFB991E226514C7800F84BD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E126514C7800F84BD0 /* Constants.swift */; };
 		CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */; };
 		CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */; };
-		CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
 		CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */; };
 		CFC201B12652940A008C5E8D /* LaunchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B02652940A008C5E8D /* LaunchesFetcher.swift */; };
 		CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B2265294B0008C5E8D /* BaseFetcher.swift */; };
 		CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B4265295B8008C5E8D /* APIVersionControl.swift */; };
 		CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */; };
 		CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984C82655142F005C7743 /* RocketFetcherTests.swift */; };
+		CFFF1CF0265562780018B57D /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,9 +377,9 @@
 			files = (
 				CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */,
 				CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */,
-				CFB991EE2651648E00F84BD0 /* MockNetworkManager.swift in Sources */,
 				CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */,
 				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
+				CFFF1CF0265562780018B57D /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
