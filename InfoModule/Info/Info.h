@@ -2,7 +2,7 @@
 //  Info.h
 //  Info
 //
-//  Created by Ramon Haro Marques on 18/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 #import <Foundation/Foundation.h>

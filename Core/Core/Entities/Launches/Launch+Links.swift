@@ -8,13 +8,13 @@
 import Foundation
 
 extension Launch {
-    struct Links {
+    public struct Links {
         //MARK: - Properties
-        let presskitURL: URL?
-        let webcastURL: URL?
-        let youtubeID: String?
-        let articleURL: URL?
-        let wikipediaURL: URL?
+        public let presskitURL: URL?
+        public let webcastURL: URL?
+        public let youtubeID: String?
+        public let articleURL: URL?
+        public let wikipediaURL: URL?
         
         
         //MARK: - Constructor

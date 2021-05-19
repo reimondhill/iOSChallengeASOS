@@ -19,7 +19,7 @@ fileprivate extension HTTPMethodType {
     }
 }
 
-@objc class NativeNetworkManager: NSObject {
+@objc public class NativeNetworkManager: NSObject {
     //MARK: - Properties
     private lazy var urlSession: URLSession = {
         let sessionConfig = URLSessionConfiguration.default
@@ -60,10 +60,6 @@ private extension NativeNetworkManager {
 //    func generateError(from data: Data, preferredError: Error? = nil) -> Error {
 //        if let error1 = try? JSONDecoder().decode(APIError1.self, from: data) {
 //            return error1
-//        } else if let error2 = try? JSONDecoder().decode(APIError2.self, from: data) {
-//            return error2
-//        } else if let error3 = try? JSONDecoder().decode(APIError3.self, from: data) {
-//            return error3
 //        } else {
 //            return preferredError ?? NetworkFetcherError.unknown
 //        }
@@ -102,7 +98,7 @@ private extension NativeNetworkManager {
 //MARK: - Public methods
 //MARK: NetworkFetcher implementation
 extension NativeNetworkManager: NetworkFetcher {
-    func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
+    public func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
         let urlRequest: URLRequest
         do {
             urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers, params: params)
@@ -126,7 +122,7 @@ extension NativeNetworkManager: NetworkFetcher {
         }
     }
 
-    func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<Data,Error>) -> Void) {
+    public func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<Data,Error>) -> Void) {
         let urlRequest: URLRequest
         do {
             urlRequest = try generateURLRequest(url: url, httpMethodType: httpMethodType, headers: headers, params: params)

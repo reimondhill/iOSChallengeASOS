@@ -9,10 +9,10 @@ import Foundation
 
 public struct Links {
     //MARK: - Properties
-    let website: URL?
-    let flickr: URL?
-    let twitter: URL?
-    let elonTwitter: URL?
+    public let website: URL?
+    public let flickr: URL?
+    public let twitter: URL?
+    public let elonTwitter: URL?
 
     
     //MARK: - Constructor

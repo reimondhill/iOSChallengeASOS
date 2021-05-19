@@ -9,32 +9,32 @@ import Foundation
 
 public struct Launch {
     //MARK: - Properties
-    let id: String
-    let name: String
-    let details: String?
-    let flightNumber: Int
-    let success: Bool?
-    let launchpad: String
+    public let id: String
+    public let name: String
+    public let details: String?
+    public let flightNumber: Int
+    public let success: Bool?
+    public let launchpad: String
     
-    let fireUTCDate: String?
-    let fireDateEpoch: Int?
-    let dateUTC: String?
-    let dateEpoch: Int?
-    let dateLocal: String?
-    let datePrecision: DatePrecision
+    public let fireUTCDate: String?
+    public let fireDateEpoch: Int?
+    public let dateUTC: String?
+    public let dateEpoch: Int?
+    public let dateLocal: String?
+    public let datePrecision: DatePrecision
     
-    let crew:[String]
-    let ships:[String]
-    let capsules:[String]
-    let payloads: [String]
-    let autoUpdate: Bool
-    let launchLibraryID: String?
-    let tbd: Bool
-    let net: Bool
-    let window: Int
-    let rocket: String
+    public let crew:[String]
+    public let ships:[String]
+    public let capsules:[String]
+    public let payloads: [String]
+    public let autoUpdate: Bool
+    public let launchLibraryID: String?
+    public let tbd: Bool
+    public let net: Bool
+    public let window: Int
+    public let rocket: String
 
-    let links: Launch.Links?
+    public let links: Launch.Links?
     //let cores: [Launc.Core]
     //let fairings: Launch.Fairings?
     //let failures: [Launch.Failure]?

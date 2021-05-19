@@ -17,7 +17,7 @@ public class LaunchesFetcher: BaseFetcher {
 
 //MARK: - LaunchesFetcherInterface implementation
 extension LaunchesFetcher: LaunchesFetcherInterface {
-    func getLaunch(completion: @escaping (Result<[Launch], Error>) -> Void) {
+    public func getLaunch(completion: @escaping (Result<[Launch], Error>) -> Void) {
         let url = baseURL
             .appendingPathComponent(Self.apiVersion)
             .appendingPathComponent(Endpoints.allLaunches.rawValue)

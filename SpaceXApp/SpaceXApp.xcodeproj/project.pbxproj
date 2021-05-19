@@ -14,6 +14,10 @@
 		CF4D56AB26503C6400E33199 /* SpaceXAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56AA26503C6400E33199 /* SpaceXAppTests.swift */; };
 		CF4D56B626503C6400E33199 /* SpaceXAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4D56B526503C6400E33199 /* SpaceXAppUITests.swift */; };
 		CF700A782653AE8B00C25819 /* Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A732653AABB00C25819 /* Info.framework */; };
+		CFF43E5D265439320029698D /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E5C265439320029698D /* Data.framework */; };
+		CFF43E61265439360029698D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E60265439360029698D /* Core.framework */; };
+		CFF43E64265439460029698D /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E63265439460029698D /* Presentation.framework */; };
+		CFF43E67265439510029698D /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF43E66265439510029698D /* UI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		CF4D56B526503C6400E33199 /* SpaceXAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAppUITests.swift; sourceTree = "<group>"; };
 		CF4D56B726503C6400E33199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF700A732653AABB00C25819 /* Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF43E5C265439320029698D /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF43E60265439360029698D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF43E63265439460029698D /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF43E66265439510029698D /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF43E5D265439320029698D /* Data.framework in Frameworks */,
+				CFF43E67265439510029698D /* UI.framework in Frameworks */,
+				CFF43E61265439360029698D /* Core.framework in Frameworks */,
+				CFF43E64265439460029698D /* Presentation.framework in Frameworks */,
 				CF700A782653AE8B00C25819 /* Info.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +139,10 @@
 		CF700A722653AABB00C25819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFF43E66265439510029698D /* UI.framework */,
+				CFF43E63265439460029698D /* Presentation.framework */,
+				CFF43E60265439360029698D /* Core.framework */,
+				CFF43E5C265439320029698D /* Data.framework */,
 				CF700A732653AABB00C25819 /* Info.framework */,
 			);
 			name = Frameworks;

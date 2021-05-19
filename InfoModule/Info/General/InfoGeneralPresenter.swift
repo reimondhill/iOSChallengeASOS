@@ -2,7 +2,228 @@
 //  InfoGeneralPresenter.swift
 //  Info
 //
-//  Created by Ramon Haro Marques on 18/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 import Foundation
+import Core
+import Data
+import Presentation
+
+public enum InfoGeneralPresenterCellType {
+    case info
+    case launch
+}
+
+public protocol InfoGeneralPresenterInterface: ListPresesnter {
+    func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType
+    
+    func setup(cell: LaunchPresentableItem, indexPath: IndexPath)
+    
+    func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath)
+}
+
+public protocol InfoGeneralPresenterOutput: ViewReloader {
+    
+}
+
+
+class InfoGeneralPresenter {
+    //MARK: - Properties
+    private let companyFetcher: CompanyInfoFetcherInterface
+    private let launchesFetcher: LaunchesFetcherInterface
+    
+    private let queue = DispatchQueue(label: "InfoGeneralPresenter", qos: .background, attributes: [])
+    
+    public weak var view: (InfoGeneralPresenterOutput & ProcessingDisplayable)?
+    
+    private var isProcessing: Bool = false {
+        didSet {
+            if isProcessing != oldValue {
+                view?.processingDisplayable(isProcessing: isProcessing)
+            }
+        }
+    }
+    
+    private var companyInfo: CompanyInfo? {
+        didSet {
+            if companyInfo != oldValue {
+                view?.viewReloaderReloadView()
+            }
+        }
+    }
+    
+    private var launches: [Launch]? {
+        didSet {
+            if launches != oldValue {
+                view?.viewReloaderReloadView()
+            }
+        }
+    }
+    
+    
+    //MARK: - Constructor
+    init(companyFetcher: CompanyInfoFetcherInterface, launchesFetcher: LaunchesFetcherInterface) {
+        self.companyFetcher = companyFetcher
+        self.launchesFetcher = launchesFetcher
+    }
+}
+
+
+//MARK: - Private methods
+private extension InfoGeneralPresenter {
+    func fetchCompanyInfo(completion: @escaping (Result<CompanyInfo, Error>) -> Void) {
+        companyFetcher.getInfo(completion: completion)
+    }
+    
+    func fetchLaunches(completion: @escaping (Result<[Launch], Error>) -> Void) {
+        launchesFetcher.getLaunch(completion: completion)
+    }
+    
+    func fetchAllAndOrganise(completion: @escaping (Bool)->Void) {
+        queue.sync {
+            var allSucces: [Bool] = [Bool].init(repeating: true, count: 0)
+            let queue = OperationQueue()
+            
+            queue.addOperation { [weak self] in
+                self?.fetchCompanyInfo { [weak self] result in
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    switch result {
+                    case .success(let companyInfo):
+                        self.companyInfo = companyInfo
+                        print("Hey company")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        allSucces[0] = false
+                    }
+                }
+            }
+            
+            queue.addOperation { [weak self] in
+                self?.fetchLaunches(completion: { [weak self] result in
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    switch result {
+                    case .success(let launches):
+                        self.launches = launches
+                        print("Hey launches")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        allSucces[1] = false
+                    }
+                })
+            }
+            
+            print("Hey waiting")
+            queue.waitUntilAllOperationsAreFinished()
+            print("Hey there")
+            completion(allSucces.filter({ $0 == true }).count == 0)
+        }
+    }
+}
+
+
+//MARK: - Public methods
+//MARK: - InfoGeneralPresenter implementation
+extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
+    //MARK: Presenter
+    func viewDidLoad() {
+        
+    }
+    
+    func reload(silently: Bool) {
+        if !silently {
+            isProcessing = true
+        }
+        
+        fetchAllAndOrganise(completion: { [weak self] success in
+            guard let self = self else {
+                return
+            }
+            
+            if !silently {
+                self.isProcessing = false
+            }
+        })
+        
+    }
+    
+    
+    //MARK: ListPresesnter
+    func numberOfSections() -> Int {
+        return 2
+    }
+    
+    func numberOfItems(section: Int) -> Int {
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return launches?.count ?? 0
+        default:
+            return 0
+        }
+    }
+    
+    func headerTitle(section: Int) -> String? {
+        switch section {
+        case 0:
+            return LocalisedStrings.headerTitleCompany
+        case 1:
+            return LocalisedStrings.headerTitleLaunches
+        default:
+            return nil
+        }
+    }
+    
+    func canSelect(indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func didSeclect(indexPath: IndexPath) {
+        
+    }
+    
+    
+    //MARK: InfoGeneralPresenterInterface implementation
+    func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType {
+        if indexPath.section == 0 {
+            return .info
+        } else {
+            return .launch
+        }
+    }
+    
+    func setup(cell: LaunchPresentableItem, indexPath: IndexPath) {
+        guard let launch = launches?[safe: indexPath.row] else {
+            return
+        }
+        
+        cell.setup(launchItem: launch)
+    }
+    
+    func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {
+        guard let companyInfo = companyInfo else {
+            return
+        }
+        
+        let message = String(format: LocalisedStrings.companyInfoDescription,
+                             companyInfo.name,
+                             companyInfo.founder,
+                             String(companyInfo.founded),
+                             String(companyInfo.employees),
+                             String(companyInfo.launchSites),
+                             String(companyInfo.valuation))
+        
+        cell.setup(companyInfo: message)
+    }
+}

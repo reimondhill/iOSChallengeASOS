@@ -17,7 +17,7 @@ public class CompanyInfoFetcher: BaseFetcher {
 
 //MARK: - CompanyInfoFetcherInterface implementation
 extension CompanyInfoFetcher: CompanyInfoFetcherInterface {
-    func getInfo(completion: @escaping (Result<CompanyInfo, Error>) -> Void) {
+    public func getInfo(completion: @escaping (Result<CompanyInfo, Error>) -> Void) {
         let url = baseURL
             .appendingPathComponent(Self.apiVersion)
             .appendingPathComponent(Endpoints.info.rawValue)

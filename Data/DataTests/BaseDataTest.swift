@@ -2,7 +2,7 @@
 //  BaseDataTest.swift
 //  DataTests
 //
-//  Created by Ramon Haro Marques on 18/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 import XCTest

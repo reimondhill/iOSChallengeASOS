@@ -14,7 +14,7 @@ public class BaseFetcher {
     
     
     //MARK: - Constructor
-    init(networkFetcher: NetworkFetcher, baseURL: URL) {
+    public init(networkFetcher: NetworkFetcher, baseURL: URL) {
         self.networkFetcher = networkFetcher
         self.baseURL = baseURL
     }

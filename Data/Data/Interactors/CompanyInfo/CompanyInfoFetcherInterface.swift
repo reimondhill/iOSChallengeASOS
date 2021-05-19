@@ -8,7 +8,7 @@
 import Foundation
 import Core
 
-protocol CompanyInfoFetcherInterface {
+public protocol CompanyInfoFetcherInterface {
     /// Fetches the company information
     /// - Parameters:
     ///   - completion: Callback called when the process finishes

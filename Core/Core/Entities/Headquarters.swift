@@ -9,9 +9,9 @@ import Foundation
 
 public struct Headquarters {
     //MARK: - Properties
-    let address: String
-    let city: String
-    let state: String
+    public let address: String
+    public let city: String
+    public let state: String
     
     
     //MARK: - Constructor

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF5F75222654FE2400E38C2C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75212654FE2400E38C2C /* String+Extensions.swift */; };
+		CF5F7525265504A300E38C2C /* RocketFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F7524265504A300E38C2C /* RocketFetcherInterface.swift */; };
+		CF5F75272655059F00E38C2C /* RocketFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75262655059F00E38C2C /* RocketFetcher.swift */; };
 		CF6CEAC6265244D4004C22AD /* LaunchesFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */; };
 		CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A2D2653964E00C25819 /* BaseDataTest.swift */; };
 		CF700A7B2653AF4E00C25819 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D185B26513F59003A3DA9 /* Core.framework */; };
@@ -14,7 +17,7 @@
 		CF7D17F826510D7B003A3DA9 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7D17EA26510D7B003A3DA9 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */; };
 		CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */; };
-		CF7D18402651270A003A3DA9 /* strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* strings.strings */; };
+		CF7D18402651270A003A3DA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* Localizable.strings */; };
 		CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */; };
 		CFB991E226514C7800F84BD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E126514C7800F84BD0 /* Constants.swift */; };
 		CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF5F75212654FE2400E38C2C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CF5F7524265504A300E38C2C /* RocketFetcherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketFetcherInterface.swift; sourceTree = "<group>"; };
+		CF5F75262655059F00E38C2C /* RocketFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketFetcher.swift; sourceTree = "<group>"; };
 		CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFetcherInterface.swift; sourceTree = "<group>"; };
 		CF700A2D2653964E00C25819 /* BaseDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataTest.swift; sourceTree = "<group>"; };
 		CF7D17E726510D7B003A3DA9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +53,7 @@
 		CF7D17F726510D7B003A3DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
 		CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
-		CF7D183F2651270A003A3DA9 /* strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = strings.strings; sourceTree = "<group>"; };
+		CF7D183F2651270A003A3DA9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworkManager.swift; sourceTree = "<group>"; };
 		CF7D185926513E52003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D185B26513F59003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +99,23 @@
 			);
 			sourceTree = "<group>";
 		};
+		CF5F75202654FE0E00E38C2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F75212654FE2400E38C2C /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF5F75232655046D00E38C2C /* Rocket */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F7524265504A300E38C2C /* RocketFetcherInterface.swift */,
+				CF5F75262655059F00E38C2C /* RocketFetcher.swift */,
+			);
+			path = Rocket;
+			sourceTree = "<group>";
+		};
 		CF6CEAC4265244AE004C22AD /* Launches */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +139,7 @@
 			children = (
 				CF7D17EA26510D7B003A3DA9 /* Data.h */,
 				CF7D184426512D4B003A3DA9 /* Interactors */,
+				CF5F75202654FE0E00E38C2C /* Extensions */,
 				CF7D183E2651240B003A3DA9 /* Helpers */,
 				CF7D183926511002003A3DA9 /* Network */,
 				CF7D18412651272F003A3DA9 /* SupportingFiles */,
@@ -156,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CF7D17EB26510D7B003A3DA9 /* Info.plist */,
-				CF7D183F2651270A003A3DA9 /* strings.strings */,
+				CF7D183F2651270A003A3DA9 /* Localizable.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -164,10 +188,11 @@
 		CF7D184426512D4B003A3DA9 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				CFC201B4265295B8008C5E8D /* APIVersionControl.swift */,
 				CFC201B2265294B0008C5E8D /* BaseFetcher.swift */,
 				CFB991E326514D3500F84BD0 /* CompanyInfo */,
 				CF6CEAC4265244AE004C22AD /* Launches */,
-				CFC201B4265295B8008C5E8D /* APIVersionControl.swift */,
+				CF5F75232655046D00E38C2C /* Rocket */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -309,7 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7D18402651270A003A3DA9 /* strings.strings in Resources */,
+				CF7D18402651270A003A3DA9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF5F75272655059F00E38C2C /* RocketFetcher.swift in Sources */,
 				CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */,
+				CF5F75222654FE2400E38C2C /* String+Extensions.swift in Sources */,
 				CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */,
 				CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */,
 				CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */,
@@ -335,6 +362,7 @@
 				CFC201B12652940A008C5E8D /* LaunchesFetcher.swift in Sources */,
 				CF6CEAC6265244D4004C22AD /* LaunchesFetcherInterface.swift in Sources */,
 				CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */,
+				CF5F7525265504A300E38C2C /* RocketFetcherInterface.swift in Sources */,
 				CFB991E226514C7800F84BD0 /* Constants.swift in Sources */,
 				CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */,
 			);

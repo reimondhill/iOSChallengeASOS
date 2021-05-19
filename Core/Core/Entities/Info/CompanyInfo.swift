@@ -9,22 +9,22 @@ import Foundation
 
 public struct CompanyInfo {
     //MARK: - Properties
-    let id: String
-    let name: String
-    let summary: String
-    let founder: String
-    let founded: Int
-    let headquarters: Headquarters
-    let valuation: Int
-    let employees: Int
-    let vehicles: Int
-    let launchSites: Int
-    let testSites: Int
-    let ceo: String
-    let cto: String
-    let coo: String
-    let ctoPropulsion: String
-    let links: Links?
+    public let id: String
+    public let name: String
+    public let summary: String
+    public let founder: String
+    public let founded: Int
+    public let headquarters: Headquarters
+    public let valuation: Int
+    public let employees: Int
+    public let vehicles: Int
+    public let launchSites: Int
+    public let testSites: Int
+    public let ceo: String
+    public let cto: String
+    public let coo: String
+    public let ctoPropulsion: String
+    public let links: Links?
     
     
     //MARK: - Constructor

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Type of network request
-enum HTTPMethodType: String{
+public enum HTTPMethodType: String{
     /// GET HTTP method
     case get = "GET"
     /// POST HTTP method
@@ -55,7 +55,7 @@ enum NetworkError: LocalizedError {
     }
 }
 
-protocol NetworkFetcher {
+public protocol NetworkFetcher {
     /// Fetches a Codable
     /// - Parameters:
     ///   - url: URL for the request

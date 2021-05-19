@@ -1,0 +1,12 @@
+/* 
+  strings.strings
+  InfoModule
+
+  Created by Ramon Haro Marques
+  
+*/
+
+"header_title_company" = "Company Info";
+"header_title_launches" = "Launches";
+
+"company_info_description" = "%@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@.";
