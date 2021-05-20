@@ -20,7 +20,7 @@ public struct LaunchPresentableItemInfo {
     public let mission: String
     public let date: String
     public let rocket: String
-    public let days: String
+    public let days: Int
     public let logoImageURL: URL?
     public let status: Status
     
@@ -31,11 +31,11 @@ public struct LaunchPresentableItemInfo {
         
         if let epoch = launch.fireDateEpoch ?? launch.dateEpoch {
             let launchDate = Date(timeIntervalSince1970: TimeInterval(epoch))
-            self.date = launchDate.monthDayYear
-            self.days = String(Date().days(from: launchDate))
+            self.date = launchDate.monthDayYearAtHour()
+            self.days = Date().days(from: launchDate)
         } else {
             self.date = "-"
-            self.days = "-"
+            self.days = 0
         }
         
         self.rocket = "N/A"

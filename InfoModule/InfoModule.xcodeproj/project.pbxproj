@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF524BE826566F8500EFC807 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF524BE726566F8500EFC807 /* Constants.swift */; };
+		CF524BEA2656710500EFC807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF524BE92656710500EFC807 /* Assets.xcassets */; };
 		CF5F75072654D83F00E38C2C /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */; };
 		CF5F750A2654D8A000E38C2C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75092654D8A000E38C2C /* String+Extensions.swift */; };
 		CF700A4526539F6900C25819 /* Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A3B26539F6900C25819 /* Info.framework */; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF524BE726566F8500EFC807 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF524BE92656710500EFC807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
 		CF5F75092654D8A000E38C2C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CF700A3B26539F6900C25819 /* Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 		CF5F75052654D7FB00E38C2C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CF524BE726566F8500EFC807 /* Constants.swift */,
 				CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */,
 			);
 			path = Helpers;
@@ -171,6 +176,7 @@
 		CF700A582653A70900C25819 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CF524BE92656710500EFC807 /* Assets.xcassets */,
 				CF700A3F26539F6900C25819 /* Info.plist */,
 				CFF43E71265448BC0029698D /* Localizable.strings */,
 			);
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF524BEA2656710500EFC807 /* Assets.xcassets in Resources */,
 				CFF43E6F265448BC0029698D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +345,7 @@
 				CF700A5C2653A7B900C25819 /* InfoGeneralViewController.swift in Sources */,
 				CF700A622653A82800C25819 /* InfoGeneralModule.swift in Sources */,
 				CF700A5E2653A7C800C25819 /* InfoGeneralPresenter.swift in Sources */,
+				CF524BE826566F8500EFC807 /* Constants.swift in Sources */,
 				CF5F750A2654D8A000E38C2C /* String+Extensions.swift in Sources */,
 				CF5F75072654D83F00E38C2C /* LocalisedStrings.swift in Sources */,
 			);

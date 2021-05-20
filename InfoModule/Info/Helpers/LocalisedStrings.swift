@@ -20,12 +20,16 @@ struct LocalisedStrings {
         "error".localised
     }
     
-    static var companyInfoTitle: String {
-        "compnay_info_title".localised
-    }
-    
     static var errorUnableOpenURL: String {
         "error_unable_to_open_url".localised
+    }
+    
+    static var errorNoURLsAvailable: String {
+        "error_no_urls_to_open".localised
+    }
+    
+    static var companyInfoTitle: String {
+        "compnay_info_title".localised
     }
     
     static var headerTitleCompany: String {
@@ -38,5 +42,13 @@ struct LocalisedStrings {
     
     static var companyInfoDescription: String {
         "company_info_description".localised
+    }
+    
+    static var yearSelectTitle: String {
+        "year_select_title".localised
+    }
+    
+    static var urlSelectTitle: String {
+        "url_select_title".localised
     }
 }

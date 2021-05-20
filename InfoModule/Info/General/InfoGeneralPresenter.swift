@@ -11,6 +11,10 @@ import Data
 import Routing
 import Presentation
 
+public enum InfoGeneralPresenterSorting {
+    case ascending
+    case descending
+}
 
 public enum InfoGeneralPresenterCellType {
     case info
@@ -18,6 +22,12 @@ public enum InfoGeneralPresenterCellType {
 }
 
 public protocol InfoGeneralPresenterInterface: ListPresesnter {
+    var sortingOrder: InfoGeneralPresenterSorting { get }
+    
+    func showOrderList()
+    
+    func showFilterList()
+    
     func setup(header: HeaderPresentableItem, section: Int)
     
     func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType
@@ -27,7 +37,9 @@ public protocol InfoGeneralPresenterInterface: ListPresesnter {
     func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath)
 }
 
-public protocol InfoGeneralPresenterOutput: ViewReloader {}
+public protocol InfoGeneralPresenterOutput: ViewReloader {
+    func infoGeneralPresenterOutput(sortingOrderChanged sortingOrder: InfoGeneralPresenterSorting)
+}
 
 
 class InfoGeneralPresenter {
@@ -35,7 +47,7 @@ class InfoGeneralPresenter {
     private let companyFetcher: CompanyInfoFetcherInterface
     private let launchesFetcher: LaunchesFetcherInterface
     private let rocketFetcher: RocketFetcherInterface
-    private let router: InfoGeneralRouterInterface & WebRouter
+    private let router: InfoGeneralRouterInterface & ErrorRouter & WebRouter
     
     private let queue = DispatchQueue(label: "InfoGeneralPresenter", qos: .background, attributes: [])
     
@@ -46,6 +58,22 @@ class InfoGeneralPresenter {
             if isProcessing != oldValue {
                 view?.processingDisplayable(isProcessing: isProcessing)
             }
+        }
+    }
+    
+    private var _sortingOrder: InfoGeneralPresenterSorting = .descending {
+        didSet {
+            guard _sortingOrder != oldValue else {
+                return
+            }
+            
+            view?.infoGeneralPresenterOutput(sortingOrderChanged: _sortingOrder)
+            launches = sort(launches: launches, sortingOrder: _sortingOrder)
+        }
+    }
+    private (set) var yearFilter: String? {
+        didSet {
+            view?.viewReloaderReloadView()
         }
     }
     
@@ -70,7 +98,7 @@ class InfoGeneralPresenter {
     init(companyFetcher: CompanyInfoFetcherInterface,
          launchesFetcher: LaunchesFetcherInterface,
          rocketFetcher: RocketFetcherInterface,
-         router: InfoGeneralRouterInterface & WebRouter) {
+         router: InfoGeneralRouterInterface & ErrorRouter & WebRouter) {
         self.companyFetcher = companyFetcher
         self.launchesFetcher = launchesFetcher
         self.rocketFetcher = rocketFetcher
@@ -90,48 +118,59 @@ private extension InfoGeneralPresenter {
     }
     
     func fetchAllAndOrganise(completion: @escaping (Bool)->Void) {
-        queue.sync {
-            var allSucces: [Bool] = [Bool].init(repeating: true, count: 0)
-            let queue = OperationQueue()
+        queue.async {
+            var allSucces: [Bool] = [Bool].init(repeating: true, count: 2)
+            var allFinish: [Bool] = [Bool].init(repeating: false, count: 2)
             
-            queue.addOperation { [weak self] in
-                self?.fetchCompanyInfo { [weak self] result in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    switch result {
-                    case .success(let companyInfo):
-                        self.companyInfo = companyInfo
-                        print("Hey company")
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        allSucces[0] = false
-                    }
+            self.fetchCompanyInfo { [weak self] result in
+                guard let self = self else {
+                    return
                 }
+                
+                switch result {
+                case .success(let companyInfo):
+                    self.companyInfo = companyInfo
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    allSucces[0] = false
+                }
+                
+                allFinish[0] = true
             }
             
-            queue.addOperation { [weak self] in
-                self?.fetchLaunches(completion: { [weak self] result in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    switch result {
-                    case .success(let launches):
-                        self.launches = launches
-                        print("Hey launches")
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        allSucces[1] = false
-                    }
-                })
+            self.fetchLaunches(completion: { [weak self] result in
+                guard let self = self else {
+                    return
+                }
+                
+                switch result {
+                case .success(let launches):
+                    self.launches = self.sort(launches: launches, sortingOrder: self._sortingOrder)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    allSucces[1] = false
+                }
+                allFinish[1] = true
+            })
+            
+            while allFinish.filter({ $0 == false }).count > 0 {
+                usleep(100000)
             }
             
-            print("Hey waiting")
-            queue.waitUntilAllOperationsAreFinished()
-            print("Hey there")
             completion(allSucces.filter({ $0 == true }).count == 0)
+        }
+    }
+    
+    func sort(launches: [Launch]?, sortingOrder: InfoGeneralPresenterSorting) -> [Launch] {
+        guard let launches = launches else {
+            return []
+        }
+        
+        switch _sortingOrder {
+        case .ascending:
+            return launches.sorted(by: { $0.dateEpoch ?? 0 < $1.dateEpoch ?? 0 } )
+        case .descending:
+            return launches.sorted(by: { $0.dateEpoch ?? 0 > $1.dateEpoch ?? 0 } )
         }
     }
 }
@@ -142,7 +181,8 @@ private extension InfoGeneralPresenter {
 extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     //MARK: Presenter
     func viewDidLoad() {
-        
+        view?.viewReloaderReloadView()
+        view?.infoGeneralPresenterOutput(sortingOrderChanged: _sortingOrder)
     }
     
     func reload(silently: Bool) {
@@ -205,12 +245,38 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     func didSeclect(indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            guard let links = launches?[safe: indexPath.row]?.links,
-                  let url = links.articleURL ?? links.wikipediaURL ?? links.webcastURL else {
+            guard let links = launches?[safe: indexPath.row]?.links else {
+                router.showError(title: LocalisedStrings.error, message: LocalisedStrings.errorNoURLsAvailable)
                 return
             }
             
-            router.route(url: url, type: .external)
+            var options: [(String,URL)] = []
+            if let articleURL = links.articleURL {
+                options.append(("Article", articleURL))
+            }
+            
+            if let wikipediaURL = links.wikipediaURL {
+                options.append(("Wikipedia", wikipediaURL))
+            }
+            
+            if let webcastURL = links.webcastURL {
+                options.append(("WebCast", webcastURL))
+            }
+            
+            guard options.count > 0 else {
+                router.showError(title: LocalisedStrings.error, message: LocalisedStrings.errorNoURLsAvailable)
+                return
+            }
+            
+            router.routeSelectorModule(options: options.map({$0.0}), title: LocalisedStrings.urlSelectTitle) { [options, weak self] indexSelected in
+                guard let self = self,
+                      let url = options[safe: indexSelected]?.1 else {
+                    return
+                }
+                
+                self.router.route(url: url, type: .safariView)
+            }
+            
         default:
             return
         }
@@ -218,6 +284,44 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     
     
     //MARK: InfoGeneralPresenterInterface implementation
+    var sortingOrder: InfoGeneralPresenterSorting {
+        _sortingOrder
+    }
+    
+    func showOrderList() {
+        switch _sortingOrder {
+        case .ascending:
+            _sortingOrder  = .descending
+        case .descending:
+            _sortingOrder = .ascending
+        }
+    }
+    
+    func showFilterList() {
+        guard let launches = launches else {
+            return
+        }
+        
+        let years = launches
+            .compactMap({ $0.dateEpoch })
+            .map({ Date(timeIntervalSince1970: TimeInterval($0)) })
+            .map({ $0.year })
+            .unique
+            .sorted(by: { $0 > $1 })
+        
+        router.routeSelectorModule(options: years, title: LocalisedStrings.yearSelectTitle, completion: { [years, weak self] selectedIndex in
+            guard let self = self else {
+                return
+            }
+            
+            guard let value = years[safe: selectedIndex] else {
+                return
+            }
+            
+            self.yearFilter = value
+        })
+    }
+    
     func setup(header: HeaderPresentableItem, section: Int) {
         header.set(title: headerTitle(section: section))
     }

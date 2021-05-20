@@ -15,9 +15,9 @@ import SDWebImage
 public class LaunchItemTableViewCell: UITableViewCell {
     //MARK: - Class model
     struct Style {
-        static let wrapperViewInsets: UIEdgeInsets = .init(top: Padding.small, left: Padding.medium, bottom: Padding.medium, right: Padding.medium)
-        static let missionImageViewSize: CGSize = IconSizes.medium
-        static let statusImageViewSize: CGSize = IconSizes.large
+        static let wrapperViewInsets: UIEdgeInsets = .init(top: Padding.small, left: Padding.small, bottom: Padding.medium, right: Padding.small)
+        static let missionImageViewSize: CGSize = IconSizes.large
+        static let statusImageViewSize: CGSize = IconSizes.medium
         
         static let infoStackViewInsets: UIEdgeInsets = .init(top: 0, left: Padding.medium, bottom: 0, right: Padding.medium)
         static let infoStackVerticalSpacing: CGFloat = Padding.small
@@ -49,7 +49,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
         
         view.axis = .vertical
         view.alignment = .leading
-        view.distribution = .fillEqually
+        view.distribution = .fillProportionally
         view.spacing = Style.infoStackVerticalSpacing
         
         view.addArrangedSubview(missionItemStackView)
@@ -102,7 +102,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var dateTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = "\(LocalisedStrings.dateTitle):"
+        view.text = "\(LocalisedStrings.dateTimeTitle):"
         
         return view
     }()
@@ -154,7 +154,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var daysTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = "\(LocalisedStrings.dateDays):"
+        view.text = "\(LocalisedStrings.days):"
         
         return view
     }()
@@ -216,6 +216,7 @@ private extension LaunchItemTableViewCell {
             maker.top.equalToSuperview().inset(Style.infoStackViewInsets.top)
             maker.left.equalTo(missionImageView.snp.right).inset(-Style.infoStackViewInsets.left)
             maker.right.equalTo(statusImageView.snp.left).inset(-Style.infoStackViewInsets.right)
+            maker.bottom.equalToSuperview()
         }
     }
 }
@@ -245,6 +246,13 @@ extension LaunchItemTableViewCell: LaunchPresentableItem {
         missionLabel.text = launchItem.mission
         dateLabel.text = launchItem.date
         rocketLabel.text = launchItem.rocket
-        daysLabel.text = launchItem.days
+        
+        if launchItem.days < 0 {
+            daysTitleLabel.text = "\(LocalisedStrings.daysSinceNow):"
+            daysLabel.text = String(abs(launchItem.days))
+        } else {
+            daysTitleLabel.text = "\(LocalisedStrings.daysFromNow):"
+            daysLabel.text = String(abs(launchItem.days))
+        }
     }
 }

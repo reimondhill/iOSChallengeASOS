@@ -8,15 +8,24 @@
 import Foundation
 
 public extension Date {
-    /// It returns the date as String formatted like 'Feb 23, 2019'
-    var monthDayYear: String {
+    /// Returns the year component as 4 characters string
+    var year: String {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
         
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
+    /// It returns the date as String formatted like 'Feb 29, 2022 'at' HH:MM:SS'
+    func monthDayYearAtHour(separator: String = "@") -> String {
+        let dateFormatter = DateFormatter()
+        //"'MMM' 'd', 'yyyy' at 'HH:mm:ss'"
+        dateFormatter.dateFormat = "MMM' 'd', 'yyyy' \(separator) 'HH:mm:ss"
         dateFormatter.timeZone = .current
         
         return dateFormatter.string(from: self)
     }
+    
     
     /// Returns the number of days from another date
     /// - Parameters:

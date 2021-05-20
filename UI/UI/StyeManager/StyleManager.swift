@@ -10,8 +10,9 @@ import UIKit
 public class StyleManager {
     public static func setupNavigationStyle() {
         if #available(iOS 13.0, *) {
-            let standard = UINavigationBarAppearance()
+            UINavigationBar.appearance().tintColor = UIColor.navigationTint
             
+            let standard = UINavigationBarAppearance()
             standard.configureWithOpaqueBackground()
             standard.backgroundColor = UIColor.navigationBackground
             standard.titleTextAttributes = [.foregroundColor: UIColor.navigationTint]
@@ -19,6 +20,7 @@ public class StyleManager {
             let button = UIBarButtonItemAppearance(style: .plain)
             button.normal.titleTextAttributes = [.foregroundColor: UIColor.navigationTint]
             standard.buttonAppearance = button
+            
             
             UINavigationBar.appearance().standardAppearance = standard
         } else {

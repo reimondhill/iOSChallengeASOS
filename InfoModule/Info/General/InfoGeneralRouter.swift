@@ -10,7 +10,9 @@ import Routing
 import UIKit
 import SafariServices
 
-protocol InfoGeneralRouterInterface: Router {}
+protocol InfoGeneralRouterInterface: Router {
+    func routeSelectorModule(options: [String], title: String, completion: @escaping (Int)->())
+}
 
 class InfoGeneralRouter: InfoGeneralRouterInterface {
     //MARK: - Properties
@@ -42,10 +44,19 @@ class InfoGeneralRouter: InfoGeneralRouterInterface {
             host?.present(context, animated: true, completion: nil)
         }
     }
+    
+    func routeSelectorModule(options: [String], title: String, completion: @escaping (Int)->()) {
+        guard let context = context else {
+            completion(-1)
+            return
+        }
+        
+        context.showSelectableAlert(options: options, title: title, cancelText: LocalisedStrings.cancel, completion: completion)
+    }
 }
 
 
-//MARK: -
+//MARK: - ErrorRouter implementation
 extension InfoGeneralRouter: ErrorRouter {
     func showError(title: String, message: String?) {
         context?.showAlert(title: title, message: message, buttonText: LocalisedStrings.ok)

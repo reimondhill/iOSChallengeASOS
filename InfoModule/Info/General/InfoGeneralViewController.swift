@@ -16,6 +16,14 @@ class InfoGeneralViewController: UIViewController {
     //MARK: - Properties
     var presenter: InfoGeneralPresenterInterface?
     
+    private let refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        
+        control.tintColor = UIColor.primaryText
+        
+        return control
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent
@@ -24,23 +32,36 @@ class InfoGeneralViewController: UIViewController {
         }
     }
     
+    
     //MARK: UI
-    lazy private var indicatorView: BaseLoaderIndicator = {
+    private lazy var filterButton: UIBarButtonItem = {
+        let view: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "FilterIcon", in: Constants.bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(filterButtonClicked))
+        
+        return view
+    }()
+    
+    private lazy var orderButton: UIBarButtonItem = {
+        let view: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(orderButtonClicked))
+        
+        return view
+    }()
+    
+    private lazy var indicatorView: BaseLoaderIndicator = {
         let view = BaseLoaderIndicator()
         
         return view
     }()
     
-    lazy private var tableView: BaseTableView = {
+    private lazy var tableView: BaseTableView = {
         let view = BaseTableView()
-        
-        view.rowHeight = UITableView.automaticDimension
-        view.estimatedRowHeight = UITableView.automaticDimension
         
         view.register(header: ReusableTableViewHeaderFooter.self)
         view.registerEmptyCell()
         view.register(CompanyInfoTableViewCell.self)
         view.register(LaunchItemTableViewCell.self)
+        
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
+        view.addSubview(refreshControl)
         
         view.dataSource = self
         view.delegate = self
@@ -69,7 +90,7 @@ extension InfoGeneralViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         presenter?.reload(silently: false)
     }
 }
@@ -81,10 +102,25 @@ private extension InfoGeneralViewController {
         view.backgroundColor = UIColor.primaryBackground
         title = LocalisedStrings.companyInfoTitle
         
+        navigationItem.setRightBarButtonItems([orderButton, filterButton], animated: true)
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
+    }
+    
+    @objc func filterButtonClicked() {
+        presenter?.showFilterList()
+    }
+    
+    @objc func orderButtonClicked() {
+        presenter?.showOrderList()
+    }
+    
+    @objc func refreshControlAction() {
+        presenter?.reload(silently: false)
+        refreshControl.endRefreshing()
     }
 }
 
@@ -104,6 +140,17 @@ extension InfoGeneralViewController: InfoGeneralPresenterOutput {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+    
+    func infoGeneralPresenterOutput(sortingOrderChanged sortingOrder: InfoGeneralPresenterSorting) {
+        let imageName: String
+        switch sortingOrder {
+        case .ascending:
+            imageName = "SortAscIcon"
+        case .descending:
+            imageName = "SortDescIcon"
+        }
+        orderButton.image = UIImage(named: imageName, in: Constants.bundle, compatibleWith: nil)
     }
 }
 
@@ -128,14 +175,17 @@ extension InfoGeneralViewController: UITableViewDataSource {
             return tableView.dequeueEmptyCell(forIndexPath: indexPath)
         }
         
+        
         switch presenter.cellType(indexPath: indexPath) {
         case .info:
             let cell: CompanyInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             presenter.setup(cell: cell, indexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
         case .launch:
             let cell: LaunchItemTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             presenter.setup(cell: cell, indexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -167,11 +217,11 @@ extension InfoGeneralViewController: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
-        } else {
-            return 150
-        }
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {

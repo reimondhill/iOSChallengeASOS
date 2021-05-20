@@ -15,6 +15,15 @@ public extension Collection {
     subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[ index] : nil
     }
+    
+    
+}
+
+public extension Collection where Element: Hashable {
+    var unique: [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
+    }
 }
 
 public extension MutableCollection {
@@ -26,7 +35,7 @@ public extension MutableCollection {
         get {
             return indices.contains(index) ? self[ index] : nil
         }
-
+        
         set(newValue) {
             if let newValue = newValue, indices.contains(index) {
                 self[ index] = newValue

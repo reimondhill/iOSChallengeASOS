@@ -6,7 +6,10 @@
   
 */
 
-"mission_date" = "Date";
-"mission_days" = "Days";
+"days" = "Days";
+"days_from_now" = "Days from now";
+"days_since_now" = "Days since now";
+
+"date_time_title" = "Date/time";
 "mission_title" = "Mission";
 "rocket_title" = "Rocket";

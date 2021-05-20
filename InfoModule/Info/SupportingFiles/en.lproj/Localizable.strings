@@ -11,6 +11,7 @@
 
 "error" = "Error";
 "error_unable_to_open_url" = "Unable to open URL";
+"error_no_urls_to_open" = "There are no URLs to show";
 
 "compnay_info_title" = "SpaceX";
 
@@ -18,3 +19,6 @@
 "header_title_launches" = "Launches";
 
 "company_info_description" = "%@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@.";
+
+"year_select_title" = "Select year to fil";
+"url_select_title" = "Select URL to show";
