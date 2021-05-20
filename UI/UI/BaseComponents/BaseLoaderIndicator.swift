@@ -56,8 +56,7 @@ public extension BaseLoaderIndicator.Configuration {
         style = .white
         #endif
         
-        //STYLE HERE!!!
-        return BaseLoaderIndicator.Configuration(style: style, color: UIColor.white, hidesWhenStopped: true)
+        return BaseLoaderIndicator.Configuration(style: style, color: UIColor.primaryText, hidesWhenStopped: true)
     }()
 }
 

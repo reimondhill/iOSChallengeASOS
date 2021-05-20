@@ -13,16 +13,26 @@ public class StyleManager {
             let standard = UINavigationBarAppearance()
             
             standard.configureWithOpaqueBackground()
-            standard.backgroundColor = UIColor.navigationBackgroundColor
-            standard.titleTextAttributes = [.foregroundColor: UIColor.navigationTintColor]
+            standard.backgroundColor = UIColor.navigationBackground
+            standard.titleTextAttributes = [.foregroundColor: UIColor.navigationTint]
             
             let button = UIBarButtonItemAppearance(style: .plain)
-            button.normal.titleTextAttributes = [.foregroundColor: UIColor.navigationTintColor]
+            button.normal.titleTextAttributes = [.foregroundColor: UIColor.navigationTint]
             standard.buttonAppearance = button
             
             UINavigationBar.appearance().standardAppearance = standard
         } else {
-            // Fallback on earlier versions
+            let appearance = UINavigationBar.appearance()
+            appearance.backgroundColor = UIColor.navigationBackground
+            appearance.barTintColor = UIColor.navigationBackground
+            appearance.tintColor = UIColor.navigationTint
+            
+            appearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor : UIColor.navigationTint
+            ]
+            appearance.largeTitleTextAttributes = [
+                NSAttributedString.Key.foregroundColor : UIColor.navigationTint
+            ]
         }
     }
 }

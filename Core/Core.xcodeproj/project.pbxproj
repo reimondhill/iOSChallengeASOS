@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1C3A33265636F0003371E4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C3A32265636F0003371E4 /* Date+Extensions.swift */; };
 		CF5F752A2655062B00E38C2C /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75292655062B00E38C2C /* Rocket.swift */; };
 		CF6CEAC126523D10004C22AD /* Headquarters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC026523D10004C22AD /* Headquarters.swift */; };
 		CF6CEAC326524090004C22AD /* EntityFactory+Headquarters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF1C3A32265636F0003371E4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		CF5F75292655062B00E38C2C /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		CF6CEAC026523D10004C22AD /* Headquarters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headquarters.swift; sourceTree = "<group>"; };
 		CF6CEAC226524090004C22AD /* EntityFactory+Headquarters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Headquarters.swift"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				CFF43E81265467AE0029698D /* Collection+Extensions.swift */,
 				CF7D184A26512F95003A3DA9 /* URL+Extensions.swift */,
 				CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */,
+				CF1C3A32265636F0003371E4 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				CF6CEACA26524794004C22AD /* EntityFactory+Links.swift in Sources */,
 				CF7D18602651406C003A3DA9 /* Logger.swift in Sources */,
 				CF6CEAC8265245BD004C22AD /* Links.swift in Sources */,
+				CF1C3A33265636F0003371E4 /* Date+Extensions.swift in Sources */,
 				CFC984CB26551A35005C7743 /* EntityFactory+Rocket.swift in Sources */,
 				CF6CEAC126523D10004C22AD /* Headquarters.swift in Sources */,
 				CFB991F6265177ED00F84BD0 /* EntityFactory+CompanyInfo.swift in Sources */,

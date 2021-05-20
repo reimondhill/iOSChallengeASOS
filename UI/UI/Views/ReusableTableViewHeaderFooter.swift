@@ -35,6 +35,8 @@ public class ReusableTableViewHeaderFooter: UITableViewHeaderFooterView {
 //MARK: - Private methods
 private extension ReusableTableViewHeaderFooter {
     func setupUI() {
+        contentView.backgroundColor = UIColor.navigationBackground
+        
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (maker) in
             maker.left.bottom.equalToSuperview().inset(Padding.small)

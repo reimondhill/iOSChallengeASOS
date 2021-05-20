@@ -31,8 +31,7 @@ public extension LoaderDisplayable {
             }
             view.bringSubviewToFront(self.loadingIndicator)
             self.loadingIndicator.isHidden = false
-            //STYLE HERE!!!
-            self.loadingIndicator.backgroundColor = isSofter ? UIColor.black.withAlphaComponent(0.45) : UIColor.black
+            self.loadingIndicator.backgroundColor = isSofter ? UIColor.primaryBackground.withAlphaComponent(0.45) : UIColor.black
             self.loadingIndicator.startAnimating()
         }
     }

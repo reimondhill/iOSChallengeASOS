@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-deletex1.png",
+      "filename" : "icons8-question_markx1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-deletex2.png",
+      "filename" : "icons8-question_markx2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-deletex3.png",
+      "filename" : "icons8-question_markx3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

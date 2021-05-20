@@ -49,7 +49,7 @@ private extension CompanyInfoTableViewCell {
         backgroundColor = .clear
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { maker in
-            maker.top.left.bottom.right.equalToSuperview().inset(8)
+            maker.top.left.bottom.right.equalToSuperview().inset(Padding.medium)
         }
     }
 }

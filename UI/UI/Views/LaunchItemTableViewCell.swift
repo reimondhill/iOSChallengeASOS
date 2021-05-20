@@ -224,12 +224,27 @@ private extension LaunchItemTableViewCell {
 //MARK: - LaunchPresentableItem implementation
 extension LaunchItemTableViewCell: LaunchPresentableItem {
     public func setup(launchItem: LaunchPresentableItemInfo) {
-        missionImageView.sd_setImage(with: launchItem.logoImageURL)
-        //statusImageView.image = UIImage(named: "SuccessIcon", in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
+        if let logoURL = launchItem.logoImageURL {
+            missionImageView.sd_setImage(with: logoURL)
+        } else {
+            missionImageView.image = UIImage(named: "RocketCircleLogo", in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
+        }
+        
+        let imageConfiguration: (name: String, tintColor: UIColor)
+        switch launchItem.status {
+        case .succes:
+            imageConfiguration = ("SuccessIcon", UIColor.success)
+        case .failed:
+            imageConfiguration = ("FailIcon", UIColor.error)
+        case .unknown:
+            imageConfiguration = ("UnknownIcon", UIColor.primaryText)
+        }
+        statusImageView.image = UIImage(named: imageConfiguration.name, in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
+        statusImageView.tintColor = imageConfiguration.tintColor
         
         missionLabel.text = launchItem.mission
         dateLabel.text = launchItem.date
         rocketLabel.text = launchItem.rocket
-        daysLabel.text = "-1"
+        daysLabel.text = launchItem.days
     }
 }

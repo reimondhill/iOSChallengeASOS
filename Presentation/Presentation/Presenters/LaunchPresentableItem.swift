@@ -9,24 +9,44 @@ import Foundation
 import Core
 
 public struct LaunchPresentableItemInfo {
+    //MARK: - Class model
+    public enum Status: CaseIterable {
+        case succes
+        case failed
+        case unknown
+    }
+    
     //MARK: - Properties
     public let mission: String
     public let date: String
     public let rocket: String
+    public let days: String
     public let logoImageURL: URL?
+    public let status: Status
     
     
     //MARK: - Constructor
     public init(launch: Launch) {
         self.mission = launch.name
+        
         if let epoch = launch.fireDateEpoch ?? launch.dateEpoch {
-            self.date = "\(Date(timeIntervalSince1970: TimeInterval(epoch)))"
+            let launchDate = Date(timeIntervalSince1970: TimeInterval(epoch))
+            self.date = launchDate.monthDayYear
+            self.days = String(Date().days(from: launchDate))
         } else {
-            self.date = ""
+            self.date = "-"
+            self.days = "-"
         }
         
-        self.rocket = "-"
+        self.rocket = "N/A"
+        
         self.logoImageURL = launch.links?.patch?.smallURL ?? launch.links?.patch?.largeURL
+        
+        if let success = launch.success {
+            self.status = success ? .succes:.failed
+        } else {
+            self.status = .unknown
+        }
     }
 }
 

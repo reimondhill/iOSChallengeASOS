@@ -78,7 +78,7 @@ extension InfoGeneralViewController {
 //MARK: - Private methods
 private extension InfoGeneralViewController {
     func setupUI() {
-        view.backgroundColor = UIColor.primaryBackgroundColor
+        view.backgroundColor = UIColor.primaryBackground
         title = LocalisedStrings.companyInfoTitle
         
         view.addSubview(tableView)

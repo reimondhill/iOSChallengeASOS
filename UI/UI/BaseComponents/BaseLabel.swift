@@ -44,23 +44,22 @@ private extension BaseLabel {
     func setupUI() {
         numberOfLines = 1
         textAlignment = .justified
-        //STYLE HERE!!!
     }
     
     func update(style: Style) {
         switch style {
         case .title:
             font = UIFont.title
-            textColor = UIColor.primaryTextColor
+            textColor = UIColor.primaryText
         case .body:
             font = UIFont.body
-            textColor = UIColor.primaryTextColor
+            textColor = UIColor.primaryText
         case .bodyBold:
             font = UIFont.bodyBold
-            textColor = UIColor.primaryTextColor
+            textColor = UIColor.primaryText
         case .bodySecondary:
             font = UIFont.body
-            textColor = UIColor.secondaryTextColor
+            textColor = UIColor.secondaryText
         }
     }
 }
