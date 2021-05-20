@@ -16,9 +16,12 @@ public class LaunchItemTableViewCell: UITableViewCell {
     //MARK: - Class model
     struct Style {
         static let wrapperViewInsets: UIEdgeInsets = .init(top: Padding.small, left: Padding.medium, bottom: Padding.medium, right: Padding.medium)
-        static let missionImageViewSize: CGSize = .init(width: 32, height: 32)
-        static let statusImageViewSize: CGSize = .init(width: 48, height: 48)
+        static let missionImageViewSize: CGSize = IconSizes.medium
+        static let statusImageViewSize: CGSize = IconSizes.large
+        
         static let infoStackViewInsets: UIEdgeInsets = .init(top: 0, left: Padding.medium, bottom: 0, right: Padding.medium)
+        static let infoStackVerticalSpacing: CGFloat = Padding.small
+        static let infoStackHorizontalSpacing: CGFloat = Padding.small
     }
     
     //MARK: - Properties
@@ -45,8 +48,9 @@ public class LaunchItemTableViewCell: UITableViewCell {
         let view = BaseStackView()
         
         view.axis = .vertical
-        view.alignment = .fill
+        view.alignment = .leading
         view.distribution = .fillEqually
+        view.spacing = Style.infoStackVerticalSpacing
         
         view.addArrangedSubview(missionItemStackView)
         view.addArrangedSubview(dateItemStackView)
@@ -62,6 +66,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .leading
         view.distribution = .fillProportionally
+        view.spacing = Style.infoStackHorizontalSpacing
         
         view.addArrangedSubview(missionTitleLabel)
         view.addArrangedSubview(missionLabel)
@@ -71,7 +76,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var missionTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = LocalisedStrings.missionTitle
+        view.text = "\(LocalisedStrings.missionTitle):"
         
         return view
     }()
@@ -87,6 +92,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .leading
         view.distribution = .fillProportionally
+        view.spacing = Style.infoStackHorizontalSpacing
         
         view.addArrangedSubview(dateTitleLabel)
         view.addArrangedSubview(dateLabel)
@@ -96,7 +102,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var dateTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = LocalisedStrings.dateTitle
+        view.text = "\(LocalisedStrings.dateTitle):"
         
         return view
     }()
@@ -112,6 +118,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .leading
         view.distribution = .fillProportionally
+        view.spacing = Style.infoStackHorizontalSpacing
         
         view.addArrangedSubview(rocketTitleLabel)
         view.addArrangedSubview(rocketLabel)
@@ -121,7 +128,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var rocketTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = LocalisedStrings.rocketTitle
+        view.text = "\(LocalisedStrings.rocketTitle):"
         
         return view
     }()
@@ -137,6 +144,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .leading
         view.distribution = .fillProportionally
+        view.spacing = Style.infoStackHorizontalSpacing
         
         view.addArrangedSubview(daysTitleLabel)
         view.addArrangedSubview(daysLabel)
@@ -146,7 +154,7 @@ public class LaunchItemTableViewCell: UITableViewCell {
     private lazy var daysTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
-        view.text = LocalisedStrings.dateDays
+        view.text = "\(LocalisedStrings.dateDays):"
         
         return view
     }()
@@ -215,13 +223,13 @@ private extension LaunchItemTableViewCell {
 
 //MARK: - LaunchPresentableItem implementation
 extension LaunchItemTableViewCell: LaunchPresentableItem {
-    public func setup(launchItem: Launch) {
-        missionImageView.sd_setImage(with: launchItem.links?.patch?.smallURL ?? launchItem.links?.patch?.largeURL)
-        statusImageView.image = UIImage(named: "SuccessIcon", in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
+    public func setup(launchItem: LaunchPresentableItemInfo) {
+        missionImageView.sd_setImage(with: launchItem.logoImageURL)
+        //statusImageView.image = UIImage(named: "SuccessIcon", in: Bundle(for: LaunchItemTableViewCell.self), compatibleWith: nil)
         
-        missionLabel.text = "MMM"
-        dateLabel.text = "TO"
-        rocketLabel.text = "ROO"
+        missionLabel.text = launchItem.mission
+        dateLabel.text = launchItem.date
+        rocketLabel.text = launchItem.rocket
         daysLabel.text = "-1"
     }
 }

@@ -235,7 +235,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
             return
         }
         
-        cell.setup(launchItem: launch)
+        cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch))
     }
     
     func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {
