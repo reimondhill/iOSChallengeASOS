@@ -185,6 +185,12 @@ extension LaunchItemTableViewCell {
         
         missionImageView.image = nil
         statusImageView.image = nil
+        
+        missionLabel.text = nil
+        dateLabel.text = nil
+        rocketLabel.text = nil
+        daysTitleLabel.text = "\(LocalisedStrings.days):"
+        daysLabel.text = nil
     }
 }
 

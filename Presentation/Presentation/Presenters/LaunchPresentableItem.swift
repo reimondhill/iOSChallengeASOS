@@ -26,12 +26,12 @@ public struct LaunchPresentableItemInfo {
     
     
     //MARK: - Constructor
-    public init(launch: Launch) {
+    public init(launch: Launch, dateSeparator: String) {
         self.mission = launch.name
         
         if let epoch = launch.fireDateEpoch ?? launch.dateEpoch {
             let launchDate = Date(timeIntervalSince1970: TimeInterval(epoch))
-            self.date = launchDate.monthDayYearAtHour()
+            self.date = launchDate.monthDayYearAtHour(separator: dateSeparator)
             self.days = Date().days(from: launchDate)
         } else {
             self.date = "-"

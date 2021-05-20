@@ -71,10 +71,21 @@ class InfoGeneralPresenter {
             launches = sort(launches: launches, sortingOrder: _sortingOrder)
         }
     }
+    
     private (set) var yearFilter: String? {
         didSet {
-            view?.viewReloaderReloadView()
+            updateFilteredLaunches()
         }
+    }
+    
+    private (set) var successFilter: LaunchPresentableItemInfo.Status? {
+        didSet {
+            updateFilteredLaunches()
+        }
+    }
+    
+    var hasFilter: Bool {
+        yearFilter != nil || successFilter != nil
     }
     
     private var companyInfo: CompanyInfo? {
@@ -87,9 +98,13 @@ class InfoGeneralPresenter {
     
     private var launches: [Launch]? {
         didSet {
-            if launches != oldValue {
-                view?.viewReloaderReloadView()
-            }
+            updateFilteredLaunches()
+        }
+    }
+    
+    private var filteredLaunches: [Launch]? {
+        didSet {
+            view?.viewReloaderReloadView()
         }
     }
     
@@ -173,6 +188,92 @@ private extension InfoGeneralPresenter {
             return launches.sorted(by: { $0.dateEpoch ?? 0 > $1.dateEpoch ?? 0 } )
         }
     }
+    
+    func updateFilteredLaunches() {
+        guard var launches = launches else {
+            filteredLaunches = nil
+            return
+        }
+        
+        if let yearFilter = yearFilter {
+            launches = launches.filter({ launch in
+                guard let dateEpoch = launch.dateEpoch else {
+                    return true
+                }
+                
+                return Date(timeIntervalSince1970: TimeInterval(dateEpoch)).year == yearFilter
+            })
+        }
+        
+        if let successFilter = successFilter {
+            launches = launches.filter({ launch in
+                switch successFilter {
+                case .succes:
+                    guard let success = launch.success else {
+                        return false
+                    }
+                    
+                    return success
+                case .failed:
+                    guard let success = launch.success else {
+                        return false
+                    }
+                    
+                    return !success
+                case .unknown:
+                    return launch.success == nil
+                }
+            })
+        }
+        
+        filteredLaunches = launches
+    }
+    
+    func showYearSelection() {
+        guard let launches = launches else {
+            return
+        }
+        let years = launches
+            .compactMap({ $0.dateEpoch })
+            .map({ Date(timeIntervalSince1970: TimeInterval($0)) })
+            .map({ $0.year })
+            .unique
+            .sorted(by: { $0 > $1 })
+        
+        
+        
+        router.routeSelectorModule(options: years, title: LocalisedStrings.yearSelectTitle, completion: { [years, weak self] selectedIndex in
+            guard let self = self else {
+                return
+            }
+            
+            guard let value = years[safe: selectedIndex] else {
+                return
+            }
+            
+            self.yearFilter = value
+        })
+    }
+    
+    func showSuccessSelection() {
+        let options:[(title: String, status: LaunchPresentableItemInfo.Status)] = [
+            (LocalisedStrings.success, .succes),
+            (LocalisedStrings.failed, .failed),
+            (LocalisedStrings.unknown, .unknown)
+        ]
+        
+        router.routeSelectorModule(options: options.map({ $0.title }), title: LocalisedStrings.yearSelectTitle, completion: { [options, weak self] selectedIndex in
+            guard let self = self else {
+                return
+            }
+            
+            guard let value = options[safe: selectedIndex] else {
+                return
+            }
+            
+            self.successFilter = value.status
+        })
+    }
 }
 
 
@@ -213,7 +314,10 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         case 0:
             return 1
         case 1:
-            return launches?.count ?? 0
+            guard let filteredLaunches = filteredLaunches else {
+                return 0
+            }
+            return filteredLaunches.count
         default:
             return 0
         }
@@ -245,7 +349,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     func didSeclect(indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            guard let links = launches?[safe: indexPath.row]?.links else {
+            guard let links = filteredLaunches?[safe: indexPath.row]?.links else {
                 router.showError(title: LocalisedStrings.error, message: LocalisedStrings.errorNoURLsAvailable)
                 return
             }
@@ -298,28 +402,29 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     }
     
     func showFilterList() {
-        guard let launches = launches else {
-            return
+        var options: [String] = []
+        
+        options.append(LocalisedStrings.filterYear)
+        
+        options.append(LocalisedStrings.filterSuccess)
+        
+        if hasFilter {
+            options.append(LocalisedStrings.clearFilter)
         }
         
-        let years = launches
-            .compactMap({ $0.dateEpoch })
-            .map({ Date(timeIntervalSince1970: TimeInterval($0)) })
-            .map({ $0.year })
-            .unique
-            .sorted(by: { $0 > $1 })
-        
-        router.routeSelectorModule(options: years, title: LocalisedStrings.yearSelectTitle, completion: { [years, weak self] selectedIndex in
-            guard let self = self else {
+        router.routeSelectorModule(options: options, title: LocalisedStrings.chooseOption) { [weak self] indexSelected in
+            switch indexSelected {
+            case 0:
+                self?.showYearSelection()
+            case 1:
+                self?.showSuccessSelection()
+            case 2:
+                self?.yearFilter = nil
+                self?.successFilter = nil
+            default:
                 return
             }
-            
-            guard let value = years[safe: selectedIndex] else {
-                return
-            }
-            
-            self.yearFilter = value
-        })
+        }
     }
     
     func setup(header: HeaderPresentableItem, section: Int) {
@@ -335,11 +440,11 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     }
     
     func setup(cell: LaunchPresentableItem, indexPath: IndexPath) {
-        guard let launch = launches?[safe: indexPath.row] else {
+        guard let launch = filteredLaunches?[safe: indexPath.row] else {
             return
         }
         
-        cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch))
+        cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch, dateSeparator: LocalisedStrings.dateSeparator))
     }
     
     func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {

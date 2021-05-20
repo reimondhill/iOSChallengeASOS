@@ -16,6 +16,38 @@ struct LocalisedStrings {
         "cancel".localised
     }
     
+    static var success: String {
+        "success".localised
+    }
+    
+    static var failed: String {
+        "failed".localised
+    }
+    
+    static var unknown: String {
+        "unknown".localised
+    }
+    
+    static var dateSeparator: String {
+        "date_separator".localised
+    }
+    
+    static var filterYear: String {
+        "filter_year".localised
+    }
+    
+    static var filterSuccess: String {
+        "filter_success".localised
+    }
+    
+    static var clearFilter: String {
+        "clear_filter".localised
+    }
+    
+    static var chooseOption: String {
+        "choose_option".localised
+    }
+    
     static var error: String {
         "error".localised
     }
@@ -46,6 +78,10 @@ struct LocalisedStrings {
     
     static var yearSelectTitle: String {
         "year_select_title".localised
+    }
+    
+    static var successSelectTitle: String {
+        "success_select_title".localised
     }
     
     static var urlSelectTitle: String {
