@@ -1,0 +1,21 @@
+/* 
+  strings.strings
+  Data
+
+  Created by Ramon Haro Marques
+*/
+
+/// Returns a localised message for a generic unknown error
+"error_unknown" = "An unknown error has occured";
+
+/// Returns a localised message for a general network error
+"network_error" = "There has been a network problem";
+
+/// Returns a localised message for a network error invalid params
+"network_error_invalid_params" = "Invalid params sent with the network request";
+
+/// Returns a localised message for a network error invalid url
+"network_error_invalid_url" = "Invalid URL sent with the network request";
+
+/// Returns a localised message for a network error data corrupted: 500, 404 ...
+"network_error_data_corrupted" = "Unable to get data";

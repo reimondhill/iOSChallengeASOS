@@ -11,9 +11,15 @@
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Routing/Routing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UI/UI.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:SpaceXApp/SpaceXApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InfoModule/InfoModule.xcodeproj">
    </FileRef>
 </Workspace>

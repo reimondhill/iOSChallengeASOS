@@ -1,0 +1,37 @@
+/* 
+  strings.strings
+  InfoModule
+
+  Created by Ramon Haro Marques
+  
+*/
+
+"ok" = "Ok";
+"cancel" = "Cancel";
+
+"success" = "Success";
+"failed" = "Failed";
+
+"unknown" = "Unknown";
+
+"date_separator" = "at";
+
+"filter_year" = "Filter by year";
+"filter_success" = "Filter by success";
+"clear_filter" = "Clear filters";
+"choose_option" = "Choose an option";
+
+"error" = "Error";
+"error_unable_to_open_url" = "Unable to open URL";
+"error_no_urls_to_open" = "There are no URLs to show";
+
+"compnay_info_title" = "SpaceX";
+
+"header_title_company" = "Company Info";
+"header_title_launches" = "Launches";
+
+"company_info_description" = "%@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@.";
+
+"year_select_title" = "Select year to filter";
+"success_select_title" = "Select mission success status";
+"url_select_title" = "Select URL to show";

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  UI
+
+  Created by Ramon Haro Marques
+  
+*/
+
+"days" = "Days";
+"days_from_now" = "Days from now";
+"days_since_now" = "Days since now";
+
+"date_time_title" = "Date/time";
+"mission_title" = "Mission";
+"rocket_title" = "Rocket";
