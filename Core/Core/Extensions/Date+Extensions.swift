@@ -17,11 +17,12 @@ public extension Date {
     }
     
     /// It returns the date as String formatted like 'Feb 29, 2022 'at' HH:MM:SS'
-    func monthDayYearAtHour(separator: String = "@") -> String {
+    /// - Parameters:
+    ///   - separator: The text between Date and Hour
+    func monthDayYearAtHour(separator: String) -> String {
         let dateFormatter = DateFormatter()
-        //"'MMM' 'd', 'yyyy' at 'HH:mm:ss'"
+        
         dateFormatter.dateFormat = "MMM' 'd', 'yyyy' \(separator) 'HH:mm:ss"
-        dateFormatter.timeZone = .current
         
         return dateFormatter.string(from: self)
     }

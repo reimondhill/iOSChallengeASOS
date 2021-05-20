@@ -27,7 +27,7 @@ public class MockNetworkManager {
 }
 
 extension MockNetworkManager: NetworkFetcher {
-    func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
+    public func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
         spyURL = url
         spyHTTPMethodType = httpMethodType
         spyHeaders = headers
@@ -40,7 +40,7 @@ extension MockNetworkManager: NetworkFetcher {
         }
     }
     
-    func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String : String], params: [String : Any], completion: @escaping (Result<Data, Error>) -> Void) {
+    public func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String : String], params: [String : Any], completion: @escaping (Result<Data, Error>) -> Void) {
         if let injectedData = injectedData {
             completion(.success(injectedData))
         } else {

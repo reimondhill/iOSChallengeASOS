@@ -129,6 +129,7 @@
 			children = (
 				CF5F7524265504A300E38C2C /* RocketFetcherInterface.swift */,
 				CF5F75262655059F00E38C2C /* RocketFetcher.swift */,
+				CFD7E84C265703D3003F1C16 /* Tests */,
 			);
 			path = Rocket;
 			sourceTree = "<group>";
@@ -138,6 +139,7 @@
 			children = (
 				CF6CEAC5265244D3004C22AD /* LaunchesFetcherInterface.swift */,
 				CFC201B02652940A008C5E8D /* LaunchesFetcher.swift */,
+				CFD7E84E265704C6003F1C16 /* Tests */,
 			);
 			path = Launches;
 			sourceTree = "<group>";
@@ -169,7 +171,6 @@
 			children = (
 				CF700A2D2653964E00C25819 /* BaseDataTest.swift */,
 				CFB991EA2651643200F84BD0 /* Network */,
-				CFB991EB2651644800F84BD0 /* Interactors */,
 				CFB991EF265164C000F84BD0 /* SupportingFiles */,
 			);
 			path = DataTests;
@@ -228,6 +229,7 @@
 			children = (
 				CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */,
 				CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */,
+				CFD7E84D265704A8003F1C16 /* Tests */,
 			);
 			path = CompanyInfo;
 			sourceTree = "<group>";
@@ -240,16 +242,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		CFB991EB2651644800F84BD0 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */,
-				CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */,
-				CFC984C82655142F005C7743 /* RocketFetcherTests.swift */,
-			);
-			path = Interactors;
-			sourceTree = "<group>";
-		};
 		CFB991EF265164C000F84BD0 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +249,30 @@
 				CFB991EC2651648D00F84BD0 /* DataTests-Bridging-Header.h */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CFD7E84C265703D3003F1C16 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CFC984C82655142F005C7743 /* RocketFetcherTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CFD7E84D265704A8003F1C16 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CFB991F026516C1A00F84BD0 /* CompanyInfoFetcherTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CFD7E84E265704C6003F1C16 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
