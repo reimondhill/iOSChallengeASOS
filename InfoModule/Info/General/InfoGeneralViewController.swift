@@ -180,12 +180,10 @@ extension InfoGeneralViewController: UITableViewDataSource {
         case .info:
             let cell: CompanyInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             presenter.setup(cell: cell, indexPath: indexPath)
-            cell.selectionStyle = .none
             return cell
         case .launch:
             let cell: LaunchItemTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             presenter.setup(cell: cell, indexPath: indexPath)
-            cell.selectionStyle = .none
             return cell
         }
     }

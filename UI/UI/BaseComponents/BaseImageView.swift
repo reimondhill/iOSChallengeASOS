@@ -5,14 +5,14 @@
 //  Created by Ramon Haro Marques
 //
 
-import UIKit
+import UIKit 
 
 class BaseImageView: UIImageView {
     //MARK: - Properties
     
     
     //MARK: - Constructor
-    init() {
+    public init() {
         super.init(frame: .zero)
         
         setupUI()

@@ -30,9 +30,4 @@ class URLExtensionsTests: XCTestCase {
         
         XCTAssertTrue((url?.absoluteString == "\(baseURL)?id=1&name=foo") || (url?.absoluteString == "\(baseURL)?name=foo&id=1"))
     }
-    
-    func test_GivenNotValidRFCURLAndParams_WhenAppended_ThenAssertURLContainsParams() {
-        let url = Constants.rfc3986NotBaseURL.appending(params: params)
-        XCTAssertNil(url)
-    }
 }

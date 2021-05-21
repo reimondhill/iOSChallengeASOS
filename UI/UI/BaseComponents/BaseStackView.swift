@@ -7,15 +7,20 @@
 
 import UIKit
 
-class BaseStackView: UIStackView {
+public class BaseStackView: UIStackView {
     //MARK: - Properties
-    
+    var configuration: BaseStackView.Configuration {
+        didSet {
+            setupUI(configuration: configuration)
+        }
+    }
     
     //MARK: - Constructor
-    init() {
+    public init(configuration: BaseStackView.Configuration = .default) {
+        self.configuration = configuration
         super.init(frame: .zero)
         
-        setupUI()
+        setupUI(configuration: configuration)
     }
     
     required init(coder: NSCoder) {
@@ -26,7 +31,23 @@ class BaseStackView: UIStackView {
 
 //MARK: - Private methods
 private extension BaseStackView {
-    func setupUI() {
-        spacing = Padding.xSmall
+    func setupUI(configuration: BaseStackView.Configuration) {
+        spacing = configuration.spacing
     }
+}
+
+
+//MARK: - Configuration
+public extension BaseStackView {
+    struct Configuration {
+        public let spacing: CGFloat
+    }
+}
+
+//MARK: Defined Configurations
+public extension BaseStackView.Configuration {
+    static let `default`: BaseStackView.Configuration = {
+        
+        return BaseStackView.Configuration(spacing: Padding.xSmall)
+    }()
 }

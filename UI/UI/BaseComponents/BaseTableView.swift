@@ -9,12 +9,18 @@ import UIKit
 
 public class BaseTableView: UITableView {
     //MARK: - Properties
-    
+    var configuration: BaseTableView.Configuration {
+        didSet {
+            setupUI(configuration: configuration)
+        }
+    }
     
     //MARK: - Constructor
-    public init() {
+    public init(configuration: BaseTableView.Configuration = .default) {
+        self.configuration = configuration
         super.init(frame: .zero, style: .plain)
-        setupUI()
+        
+        setupUI(configuration: configuration)
     }
     
     required init?(coder: NSCoder) {
@@ -25,8 +31,23 @@ public class BaseTableView: UITableView {
 
 //MARK: - Private methods
 private extension BaseTableView {
-    func setupUI() {
-        backgroundColor = .clear
-        tableFooterView = UIView()
+    func setupUI(configuration: BaseTableView.Configuration) {
+        backgroundColor = configuration.backgroundColor
     }
+}
+
+
+//MARK: - Configuration
+public extension BaseTableView {
+    struct Configuration {
+        public let backgroundColor: UIColor
+    }
+}
+
+//MARK: Defined Configurations
+public extension BaseTableView.Configuration {
+    static let `default`: BaseTableView.Configuration = {
+        
+        return BaseTableView.Configuration(backgroundColor: UIColor.clear)
+    }()
 }

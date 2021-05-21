@@ -12,7 +12,7 @@ import Presentation
 import SnapKit
 import SDWebImage
 
-public class LaunchItemTableViewCell: UITableViewCell {
+public class LaunchItemTableViewCell: BaseTableViewCell {
     //MARK: - Class model
     struct Style {
         static let wrapperViewInsets: UIEdgeInsets = .init(top: Padding.small, left: Padding.small, bottom: Padding.medium, right: Padding.small)
@@ -73,14 +73,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         
         return view
     }()
-    private lazy var missionTitleLabel: BaseLabel = {
+    private (set) lazy var missionTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
         view.text = "\(LocalisedStrings.missionTitle):"
         
         return view
     }()
-    private lazy var missionLabel: BaseLabel = {
+    private (set) lazy var missionLabel: BaseLabel = {
         let view = BaseLabel(style: .body)
         
         return view
@@ -99,14 +99,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         
         return view
     }()
-    private lazy var dateTitleLabel: BaseLabel = {
+    private (set) lazy var dateTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
         view.text = "\(LocalisedStrings.dateTimeTitle):"
         
         return view
     }()
-    private lazy var dateLabel: BaseLabel = {
+    private (set) lazy var dateLabel: BaseLabel = {
         let view = BaseLabel(style: .body)
         
         return view
@@ -125,14 +125,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         
         return view
     }()
-    private lazy var rocketTitleLabel: BaseLabel = {
+    private (set) lazy var rocketTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
         view.text = "\(LocalisedStrings.rocketTitle):"
         
         return view
     }()
-    private lazy var rocketLabel: BaseLabel = {
+    private (set) lazy var rocketLabel: BaseLabel = {
         let view = BaseLabel(style: .body)
         
         return view
@@ -151,14 +151,14 @@ public class LaunchItemTableViewCell: UITableViewCell {
         
         return view
     }()
-    private lazy var daysTitleLabel: BaseLabel = {
+    private (set) lazy var daysTitleLabel: BaseLabel = {
         let view = BaseLabel(style: .bodyBold)
         
         view.text = "\(LocalisedStrings.days):"
         
         return view
     }()
-    private lazy var daysLabel: BaseLabel = {
+    private (set) lazy var daysLabel: BaseLabel = {
         let view = BaseLabel(style: .body)
         
         return view
@@ -198,8 +198,6 @@ extension LaunchItemTableViewCell {
 //MARK: - Private methods
 private extension LaunchItemTableViewCell {
     func setupUI() {
-        backgroundColor = .clear
-        
         addSubview(wrapperView)
         wrapperView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview().inset(Style.wrapperViewInsets)
@@ -253,12 +251,7 @@ extension LaunchItemTableViewCell: LaunchPresentableItem {
         dateLabel.text = launchItem.date
         rocketLabel.text = launchItem.rocket
         
-        if launchItem.days < 0 {
-            daysTitleLabel.text = "\(LocalisedStrings.daysSinceNow):"
-            daysLabel.text = String(abs(launchItem.days))
-        } else {
-            daysTitleLabel.text = "\(LocalisedStrings.daysFromNow):"
-            daysLabel.text = String(abs(launchItem.days))
-        }
+        daysTitleLabel.text = "\(launchItem.days < 0 ? LocalisedStrings.daysSinceNow:LocalisedStrings.daysFromNow):"
+        daysLabel.text = String(launchItem.days)
     }
 }

@@ -24,7 +24,36 @@ class RocketFetcherTests: BaseDataTest {
     
     
     //MARK: - Test functions
-    func test_GivenRocketFetcher_T() {
+    func test_GivenRocketFetcher_ThenAssertFetchAllRockets() {
+        let injectedRockets: [Rocket] = [EntityFactory.falcon1Rocket, EntityFactory.falconHeavyRocket]
+        networkFetcher.injectedCodable = injectedRockets
+        
+        let rocketFetcher = RocketFetcher(networkFetcher: networkFetcher, baseURL: baseURL)
+        
+        let expectedURL: URL = baseURL
+            .appendingPathComponent(RocketFetcher.apiVersion)
+            .appendingPathComponent(RocketFetcher.Endpoints.allRockets.rawValue)
+            
+        let expectedHTTPMethodType: HTTPMethodType = .get
+        
+        expect(description: "Testing RocketFetcher", completion: { [weak self] expectation in
+            rocketFetcher.fetchRockets(completion: { result in
+                switch result {
+                case .success(let rockets):
+                    XCTAssertEqual(rockets, injectedRockets)
+                    XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
+                    XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                
+                expectation.fulfill()
+            })
+        })
+        
+    }
+    
+    func test_GivenRocketFetcher_ThenAssertFetchRocket() {
         let injectedRocket: Rocket = EntityFactory.falcon1Rocket
         networkFetcher.injectedCodable = injectedRocket
         
