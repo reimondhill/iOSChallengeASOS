@@ -10,7 +10,7 @@ import Routing
 import UIKit
 import SafariServices
 
-protocol InfoGeneralRouterInterface: Router {
+public protocol InfoGeneralRouterInterface: Router {
     func routeSelectorModule(options: [String], title: String, completion: @escaping (Int)->())
 }
 

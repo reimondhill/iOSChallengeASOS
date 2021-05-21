@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		CF524BE826566F8500EFC807 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF524BE726566F8500EFC807 /* Constants.swift */; };
 		CF524BEA2656710500EFC807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF524BE92656710500EFC807 /* Assets.xcassets */; };
+		CF5503492657DB8500D0299D /* InfoGeneralPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5503482657DB8500D0299D /* InfoGeneralPresenterTests.swift */; };
 		CF5F75072654D83F00E38C2C /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */; };
 		CF5F750A2654D8A000E38C2C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F75092654D8A000E38C2C /* String+Extensions.swift */; };
 		CF700A4526539F6900C25819 /* Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF700A3B26539F6900C25819 /* Info.framework */; };
-		CF700A4A26539F6900C25819 /* InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A4926539F6900C25819 /* InfoTests.swift */; };
 		CF700A4C26539F6900C25819 /* Info.h in Headers */ = {isa = PBXBuildFile; fileRef = CF700A3E26539F6900C25819 /* Info.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF700A5C2653A7B900C25819 /* InfoGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A5B2653A7B900C25819 /* InfoGeneralViewController.swift */; };
 		CF700A5E2653A7C800C25819 /* InfoGeneralPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A5D2653A7C800C25819 /* InfoGeneralPresenter.swift */; };
 		CF700A602653A7FF00C25819 /* InfoGeneralRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A5F2653A7FF00C25819 /* InfoGeneralRouter.swift */; };
 		CF700A622653A82800C25819 /* InfoGeneralModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF700A612653A82800C25819 /* InfoGeneralModule.swift */; };
+		CFD8A9412657E465000D4BF3 /* MockInfoGeneralRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8A9402657E465000D4BF3 /* MockInfoGeneralRouter.swift */; };
+		CFD8A94726581A6D000D4BF3 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8A94626581A6D000D4BF3 /* MockNetworkManager.swift */; };
 		CFF43E6F265448BC0029698D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFF43E71265448BC0029698D /* Localizable.strings */; };
 		CFFF1D6B265571940018B57D /* Routing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D6A265571940018B57D /* Routing.framework */; };
 		CFFF1D6C265571940018B57D /* Routing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF1D6A265571940018B57D /* Routing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -62,13 +64,13 @@
 /* Begin PBXFileReference section */
 		CF524BE726566F8500EFC807 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF524BE92656710500EFC807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF5503482657DB8500D0299D /* InfoGeneralPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGeneralPresenterTests.swift; sourceTree = "<group>"; };
 		CF5F75062654D83F00E38C2C /* LocalisedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisedStrings.swift; sourceTree = "<group>"; };
 		CF5F75092654D8A000E38C2C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CF700A3B26539F6900C25819 /* Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF700A3E26539F6900C25819 /* Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Info.h; sourceTree = "<group>"; };
 		CF700A3F26539F6900C25819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF700A4426539F6900C25819 /* InfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF700A4926539F6900C25819 /* InfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTests.swift; sourceTree = "<group>"; };
 		CF700A4B26539F6900C25819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF700A5B2653A7B900C25819 /* InfoGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGeneralViewController.swift; sourceTree = "<group>"; };
 		CF700A5D2653A7C800C25819 /* InfoGeneralPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGeneralPresenter.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		CF700A892653B33900C25819 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF700A8C2653B33F00C25819 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF700A8F2653B34400C25819 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD8A9402657E465000D4BF3 /* MockInfoGeneralRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInfoGeneralRouter.swift; sourceTree = "<group>"; };
+		CFD8A94626581A6D000D4BF3 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		CFF43E70265448BC0029698D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFFF1CCA26553BF60018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF1D6A265571940018B57D /* Routing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Routing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF5503472657DAED00D0299D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CF5503482657DB8500D0299D /* InfoGeneralPresenterTests.swift */,
+				CFD8A9402657E465000D4BF3 /* MockInfoGeneralRouter.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		CF5F75052654D7FB00E38C2C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +180,7 @@
 		CF700A4826539F6900C25819 /* InfoTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF700A4926539F6900C25819 /* InfoTests.swift */,
+				CFD8A94526581A6C000D4BF3 /* Network */,
 				CF700A592653A71D00C25819 /* SupportingFiles */,
 			);
 			path = InfoTests;
@@ -198,6 +211,7 @@
 				CF700A5B2653A7B900C25819 /* InfoGeneralViewController.swift */,
 				CF700A5D2653A7C800C25819 /* InfoGeneralPresenter.swift */,
 				CF700A5F2653A7FF00C25819 /* InfoGeneralRouter.swift */,
+				CF5503472657DAED00D0299D /* Tests */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -222,6 +236,14 @@
 				CF700A642653A8C800C25819 /* Core.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFD8A94526581A6C000D4BF3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CFD8A94626581A6D000D4BF3 /* MockNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +377,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF700A4A26539F6900C25819 /* InfoTests.swift in Sources */,
+				CFD8A9412657E465000D4BF3 /* MockInfoGeneralRouter.swift in Sources */,
+				CF5503492657DB8500D0299D /* InfoGeneralPresenterTests.swift in Sources */,
+				CFD8A94726581A6D000D4BF3 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

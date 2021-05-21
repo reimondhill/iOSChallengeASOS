@@ -42,12 +42,12 @@ public protocol InfoGeneralPresenterOutput: ViewReloader {
 }
 
 
-class InfoGeneralPresenter {
+public class InfoGeneralPresenter {
     //MARK: - Properties
-    private let companyFetcher: CompanyInfoFetcherInterface
-    private let launchesFetcher: LaunchesFetcherInterface
-    private let rocketFetcher: RocketFetcherInterface
-    private let router: InfoGeneralRouterInterface & ErrorRouter & WebRouter
+    let companyFetcher: CompanyInfoFetcherInterface
+    let launchesFetcher: LaunchesFetcherInterface
+    let rocketFetcher: RocketFetcherInterface
+    let router: InfoGeneralRouterInterface & ErrorRouter & WebRouter
     
     private let queue = DispatchQueue(label: "InfoGeneralPresenter", qos: .background, attributes: [])
     
@@ -112,10 +112,10 @@ class InfoGeneralPresenter {
     
     
     //MARK: - Constructor
-    init(companyFetcher: CompanyInfoFetcherInterface,
-         launchesFetcher: LaunchesFetcherInterface,
-         rocketFetcher: RocketFetcherInterface,
-         router: InfoGeneralRouterInterface & ErrorRouter & WebRouter) {
+    public init(companyFetcher: CompanyInfoFetcherInterface,
+                launchesFetcher: LaunchesFetcherInterface,
+                rocketFetcher: RocketFetcherInterface,
+                router: InfoGeneralRouterInterface & ErrorRouter & WebRouter) {
         self.companyFetcher = companyFetcher
         self.launchesFetcher = launchesFetcher
         self.rocketFetcher = rocketFetcher
@@ -303,12 +303,12 @@ private extension InfoGeneralPresenter {
 //MARK: - InfoGeneralPresenter implementation
 extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     //MARK: Presenter
-    func viewDidLoad() {
+    public func viewDidLoad() {
         view?.viewReloaderReloadView()
         view?.infoGeneralPresenterOutput(sortingOrderChanged: _sortingOrder)
     }
     
-    func reload(silently: Bool) {
+    public func reload(silently: Bool) {
         if !silently {
             isProcessing = true
         }
@@ -327,11 +327,11 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     
     
     //MARK: ListPresesnter
-    func numberOfSections() -> Int {
+    public func numberOfSections() -> Int {
         return 2
     }
     
-    func numberOfItems(section: Int) -> Int {
+    public func numberOfItems(section: Int) -> Int {
         switch section{
         case 0:
             return 1
@@ -345,11 +345,11 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func canShowHeader(section: Int) -> Bool {
+    public func canShowHeader(section: Int) -> Bool {
         headerTitle(section: section) != nil
     }
     
-    func headerTitle(section: Int) -> String? {
+    public func headerTitle(section: Int) -> String? {
         switch section {
         case 0:
             return LocalisedStrings.headerTitleCompany
@@ -360,7 +360,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func canSelect(indexPath: IndexPath) -> Bool {
+    public func canSelect(indexPath: IndexPath) -> Bool {
         if indexPath.section == 0 {
             return false
         } else {
@@ -368,7 +368,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func didSeclect(indexPath: IndexPath) {
+    public func didSeclect(indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
             guard let links = filteredLaunches?[safe: indexPath.row]?.links else {
@@ -410,11 +410,11 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
     
     
     //MARK: InfoGeneralPresenterInterface implementation
-    var sortingOrder: InfoGeneralPresenterSorting {
+    public var sortingOrder: InfoGeneralPresenterSorting {
         _sortingOrder
     }
     
-    func showOrderList() {
+    public func showOrderList() {
         switch _sortingOrder {
         case .ascending:
             _sortingOrder  = .descending
@@ -423,7 +423,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func showFilterList() {
+    public func showFilterList() {
         var options: [String] = []
         
         options.append(LocalisedStrings.filterYear)
@@ -449,11 +449,11 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func setup(header: HeaderPresentableItem, section: Int) {
+    public func setup(header: HeaderPresentableItem, section: Int) {
         header.set(title: headerTitle(section: section))
     }
     
-    func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType {
+    public func cellType(indexPath: IndexPath) -> InfoGeneralPresenterCellType {
         if indexPath.section == 0 {
             return .info
         } else {
@@ -461,7 +461,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         }
     }
     
-    func setup(cell: LaunchPresentableItem, indexPath: IndexPath) {
+    public func setup(cell: LaunchPresentableItem, indexPath: IndexPath) {
         guard let launch = filteredLaunches?[safe: indexPath.row] else {
             return
         }
@@ -469,7 +469,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
         cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch, rocket: rockets?.first(where: { $0.id == launch.rocket }), dateSeparator: LocalisedStrings.dateSeparator))
     }
     
-    func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {
+    public func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {
         guard let companyInfo = companyInfo else {
             return
         }

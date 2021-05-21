@@ -2,7 +2,7 @@
 //  CollectionExtensionsTests.swift
 //  CoreTests
 //
-//  Created by Ramon Haro Marques on
+//  Created by Ramon Haro Marques
 //
 
 import XCTest

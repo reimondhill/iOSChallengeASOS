@@ -1,6 +1,6 @@
 //
 //  MockNetworkManager.swift
-//  DataTests
+//  InfoTests
 //
 //  Created by Ramon Haro Marques
 //

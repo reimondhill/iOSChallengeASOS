@@ -152,8 +152,8 @@
 				CF7D17CD26510D4A003A3DA9 /* Core.h */,
 				CF7D184726512DF1003A3DA9 /* Entities */,
 				CFB991F22651770600F84BD0 /* EntityFactory */,
-				CF7D18612651407B003A3DA9 /* Helpers */,
 				CF7D184626512DDF003A3DA9 /* Extensions */,
+				CF7D18612651407B003A3DA9 /* Helpers */,
 				CF7D184526512D68003A3DA9 /* SupportingFiles */,
 			);
 			path = Core;

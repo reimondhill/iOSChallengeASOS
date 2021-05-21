@@ -1,6 +1,6 @@
 //
 //  String+Extensions.swift
-//  Info
+//  Data
 //
 //  Created by Ramon Haro Marques
 //

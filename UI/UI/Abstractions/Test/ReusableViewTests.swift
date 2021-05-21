@@ -2,7 +2,7 @@
 //  ReusableViewTests.swift
 //  UITests
 //
-//  Created by Ramon Haro Marques on 21/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 import XCTest

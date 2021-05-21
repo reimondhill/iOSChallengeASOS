@@ -2,7 +2,7 @@
 //  DateExtensionsTests.swift
 //  CoreTests
 //
-//  Created by Ramon Haro Marques on 20/05/2021.
+//  Created by Ramon Haro Marques
 //
 
 import XCTest
