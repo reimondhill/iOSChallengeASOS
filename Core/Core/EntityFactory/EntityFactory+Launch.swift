@@ -10,7 +10,7 @@ import Foundation
 public extension EntityFactory {
     ///Launch 'Crew-1' in 2020
     static let crew1Launch: Launch = Launch(id: "5eb87d4dffd86e000604b38e",
-                                            name: "'Crew-1",
+                                            name: "Crew-1",
                                             details: "SpaceX will launch the first operational mission of its Crew Dragon vehicle as part of NASA's Commercial Crew Transportation Capability Program (CCtCap), carrying 3 NASA astronauts and 1 JAXA astronaut to the International Space Station. This mission will be the second crewed flight to launch from the United States since the end of the Space Shuttle program in 2011.",
                                             flightNumber: 107,
                                             success: true,

@@ -51,15 +51,19 @@ private extension BaseLabel {
         case .title:
             font = UIFont.title
             textColor = UIColor.primaryText
+            highlightedTextColor = UIColor.secondaryText
         case .body:
             font = UIFont.body
             textColor = UIColor.primaryText
+            highlightedTextColor = UIColor.secondaryText
         case .bodyBold:
             font = UIFont.bodyBold
             textColor = UIColor.primaryText
+            highlightedTextColor = UIColor.secondaryText
         case .bodySecondary:
             font = UIFont.body
             textColor = UIColor.secondaryText
+            highlightedTextColor = UIColor.secondaryText
         }
     }
 }

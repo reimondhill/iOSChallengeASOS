@@ -20,6 +20,7 @@
 		CF7D183D26512402003A3DA9 /* LocalisedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D183C26512402003A3DA9 /* LocalisedStrings.swift */; };
 		CF7D18402651270A003A3DA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF7D183F2651270A003A3DA9 /* Localizable.strings */; };
 		CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */; };
+		CF91FA202657845C0097C790 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91FA1F2657845C0097C790 /* XCTestCase+Extensions.swift */; };
 		CFB991E226514C7800F84BD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E126514C7800F84BD0 /* Constants.swift */; };
 		CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */; };
 		CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */; };
@@ -73,6 +74,7 @@
 		CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworkManager.swift; sourceTree = "<group>"; };
 		CF7D185926513E52003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7D185B26513F59003A3DA9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF91FA1F2657845C0097C790 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		CFB991E126514C7800F84BD0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CFB991E426514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcherInterface.swift; sourceTree = "<group>"; };
 		CFB991E826515D5300F84BD0 /* CompanyInfoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetcher.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CF700A2D2653964E00C25819 /* BaseDataTest.swift */,
+				CF91FA1F2657845C0097C790 /* XCTestCase+Extensions.swift */,
 				CFB991EA2651643200F84BD0 /* Network */,
 				CFB991EF265164C000F84BD0 /* SupportingFiles */,
 			);
@@ -411,6 +414,7 @@
 				CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */,
 				CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */,
 				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
+				CF91FA202657845C0097C790 /* XCTestCase+Extensions.swift in Sources */,
 				CFFF1CF0265562780018B57D /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

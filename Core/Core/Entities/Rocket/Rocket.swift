@@ -11,12 +11,14 @@ public struct Rocket {
     //MARK: - Properties
     public let id: String
     public let name: String
+    public let type: Group
     
     
     //MARK: - Constructor
-    init(id: String, name: String) {
+    init(id: String, name: String, type: Group) {
         self.id = id
         self.name = name
+        self.type = type
     }
 }
 
@@ -26,6 +28,7 @@ extension Rocket: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case type
     }
     
     public init(from decoder: Decoder) throws {
@@ -33,6 +36,7 @@ extension Rocket: Codable {
         
         id = try container.decode(String.self, forKey: CodingKeys.id)
         name = try container.decode(String.self, forKey: CodingKeys.name)
+        type = try container.decodeIfPresent(Rocket.Group.self, forKey: CodingKeys.type) ?? .unknown
     }
 }
 
@@ -42,6 +46,7 @@ extension Rocket: Equatable {
     public static func ==(lhs: Rocket, rhs: Rocket) -> Bool {
         return
             lhs.id == rhs.id &&
-            lhs.name == rhs.name
+            lhs.name == rhs.name &&
+            lhs.type == rhs.type
     }
 }

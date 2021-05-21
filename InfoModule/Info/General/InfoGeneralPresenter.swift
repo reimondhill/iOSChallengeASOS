@@ -96,6 +96,8 @@ class InfoGeneralPresenter {
         }
     }
     
+    private var rockets: [Rocket]?
+    
     private var launches: [Launch]? {
         didSet {
             updateFilteredLaunches()
@@ -128,14 +130,18 @@ private extension InfoGeneralPresenter {
         companyFetcher.getInfo(completion: completion)
     }
     
+    func fetchRockets(completion: @escaping (Result<[Rocket], Error>) -> Void) {
+        rocketFetcher.fetchRockets(completion: completion)
+    }
+    
     func fetchLaunches(completion: @escaping (Result<[Launch], Error>) -> Void) {
         launchesFetcher.getLaunch(completion: completion)
     }
     
     func fetchAllAndOrganise(completion: @escaping (Bool)->Void) {
         queue.async {
-            var allSucces: [Bool] = [Bool].init(repeating: true, count: 2)
-            var allFinish: [Bool] = [Bool].init(repeating: false, count: 2)
+            var allSucces: [Bool] = [Bool].init(repeating: true, count: 3)
+            var allFinish: [Bool] = [Bool].init(repeating: false, count: 3)
             
             self.fetchCompanyInfo { [weak self] result in
                 guard let self = self else {
@@ -153,6 +159,22 @@ private extension InfoGeneralPresenter {
                 allFinish[0] = true
             }
             
+            self.fetchRockets { [weak self] result in
+                guard let self = self else {
+                    return
+                }
+                
+                switch result {
+                case .success(let rockets):
+                    self.rockets = rockets
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    allSucces[1] = false
+                }
+                
+                allFinish[1] = true
+            }
+            
             self.fetchLaunches(completion: { [weak self] result in
                 guard let self = self else {
                     return
@@ -163,9 +185,9 @@ private extension InfoGeneralPresenter {
                     self.launches = self.sort(launches: launches, sortingOrder: self._sortingOrder)
                 case .failure(let error):
                     print(error.localizedDescription)
-                    allSucces[1] = false
+                    allSucces[2] = false
                 }
-                allFinish[1] = true
+                allFinish[2] = true
             })
             
             while allFinish.filter({ $0 == false }).count > 0 {
@@ -444,7 +466,7 @@ extension InfoGeneralPresenter: InfoGeneralPresenterInterface {
             return
         }
         
-        cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch, dateSeparator: LocalisedStrings.dateSeparator))
+        cell.setup(launchItem: LaunchPresentableItemInfo(launch: launch, rocket: rockets?.first(where: { $0.id == launch.rocket }), dateSeparator: LocalisedStrings.dateSeparator))
     }
     
     func setup(cell: CompanyInfoPresentableItem, indexPath: IndexPath) {

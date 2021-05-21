@@ -24,8 +24,11 @@ public class BaseLoaderIndicator: UIActivityIndicatorView {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    private func setupUI(configuration: BaseLoaderIndicator.Configuration) {
+//MARK: - Private methods
+private extension BaseLoaderIndicator {
+    func setupUI(configuration: BaseLoaderIndicator.Configuration) {
         style = configuration.style
         color = configuration.color
         hidesWhenStopped = configuration.hidesWhenStopped
@@ -36,9 +39,9 @@ public class BaseLoaderIndicator: UIActivityIndicatorView {
 //MARK: - Configuration
 public extension BaseLoaderIndicator {
     struct Configuration {
-        let style: UIActivityIndicatorView.Style
-        let color: UIColor
-        let hidesWhenStopped: Bool
+        public let style: UIActivityIndicatorView.Style
+        public let color: UIColor
+        public let hidesWhenStopped: Bool
     }
 }
 

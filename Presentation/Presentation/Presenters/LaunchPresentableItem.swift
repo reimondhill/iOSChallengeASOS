@@ -19,14 +19,14 @@ public struct LaunchPresentableItemInfo {
     //MARK: - Properties
     public let mission: String
     public let date: String
-    public let rocket: String
+    public let rocket: String 
     public let days: Int
     public let logoImageURL: URL?
     public let status: Status
     
     
     //MARK: - Constructor
-    public init(launch: Launch, dateSeparator: String) {
+    public init(launch: Launch, rocket: Rocket?, dateSeparator: String) {
         self.mission = launch.name
         
         if let epoch = launch.fireDateEpoch ?? launch.dateEpoch {
@@ -38,7 +38,11 @@ public struct LaunchPresentableItemInfo {
             self.days = 0
         }
         
-        self.rocket = "N/A"
+        if let rocket = rocket {
+            self.rocket = "\(rocket.name)/\(rocket.type.rawValue.capitalized)"
+        } else {
+            self.rocket = "N/A"
+        }
         
         self.logoImageURL = launch.links?.patch?.smallURL ?? launch.links?.patch?.largeURL
         
