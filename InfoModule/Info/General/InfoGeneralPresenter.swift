@@ -61,7 +61,7 @@ class InfoGeneralPresenter {
         }
     }
     
-    private var _sortingOrder: InfoGeneralPresenterSorting = .descending {
+    private var _sortingOrder: InfoGeneralPresenterSorting = .ascending {
         didSet {
             guard _sortingOrder != oldValue else {
                 return
