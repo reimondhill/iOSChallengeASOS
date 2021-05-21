@@ -37,7 +37,7 @@ class LaunchPresentableItemInfoTests: XCTestCase {
         
         XCTAssertEqual(launchPresentableItemInfo.mission, "Crew-1")
         XCTAssertEqual(launchPresentableItemInfo.date, "Nov 11, 2020 at 16:17:00")
-        XCTAssertEqual(launchPresentableItemInfo.rocket, "Falcon 1/Rocket")
+        XCTAssertEqual(launchPresentableItemInfo.rocket, "Falcon 1 / Rocket")
         XCTAssertEqual(launchPresentableItemInfo.logoImageURL, URL(string: "https://imgur.com/6RnqgLW.png"))
         XCTAssertEqual(launchPresentableItemInfo.status, .succes)
     }
@@ -50,7 +50,7 @@ class LaunchPresentableItemInfoTests: XCTestCase {
         
         XCTAssertEqual(launchPresentableItemInfo.mission, "GPS III SV05")
         XCTAssertEqual(launchPresentableItemInfo.date, "Jun 17, 2021 at 22:00:00")
-        XCTAssertEqual(launchPresentableItemInfo.rocket, "Falcon Heavy/Unknown")
+        XCTAssertEqual(launchPresentableItemInfo.rocket, "Falcon Heavy / Unknown")
         XCTAssertEqual(launchPresentableItemInfo.logoImageURL, URL(string: "https://imgur.com/6RnqgLW.png"))
         XCTAssertEqual(launchPresentableItemInfo.status, .unknown)
     }

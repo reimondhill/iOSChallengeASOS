@@ -251,12 +251,7 @@ extension LaunchItemTableViewCell: LaunchPresentableItem {
         dateLabel.text = launchItem.date
         rocketLabel.text = launchItem.rocket
         
-        if launchItem.days < 0 {
-            daysTitleLabel.text = "\(LocalisedStrings.daysSinceNow):"
-            daysLabel.text = String(abs(launchItem.days))
-        } else {
-            daysTitleLabel.text = "\(LocalisedStrings.daysFromNow):"
-            daysLabel.text = String(abs(launchItem.days))
-        }
+        daysTitleLabel.text = "\(launchItem.days < 0 ? LocalisedStrings.daysSinceNow:LocalisedStrings.daysFromNow):"
+        daysLabel.text = String(launchItem.days)
     }
 }

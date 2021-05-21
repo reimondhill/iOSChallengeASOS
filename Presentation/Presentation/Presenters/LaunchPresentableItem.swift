@@ -39,7 +39,7 @@ public struct LaunchPresentableItemInfo {
         }
         
         if let rocket = rocket {
-            self.rocket = "\(rocket.name)/\(rocket.type.rawValue.capitalized)"
+            self.rocket = "\(rocket.name) / \(rocket.type.rawValue.capitalized)"
         } else {
             self.rocket = "N/A"
         }

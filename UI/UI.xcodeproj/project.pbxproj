@@ -33,6 +33,8 @@
 		CF8DD1742657A528007B68D8 /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DD1732657A528007B68D8 /* TestTableView.swift */; };
 		CF8DD1782657A684007B68D8 /* CompanyInfoTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DD1772657A684007B68D8 /* CompanyInfoTableViewCellTests.swift */; };
 		CF8DD17C2657A83E007B68D8 /* LaunchItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DD17B2657A83E007B68D8 /* LaunchItemTableViewCellTests.swift */; };
+		CF8DD1852657BE9E007B68D8 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8DD1842657BE9E007B68D8 /* Presentation.framework */; };
+		CF8DD1862657BE9E007B68D8 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8DD1842657BE9E007B68D8 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF91FA1426577B890097C790 /* LoaderDisplayableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91FA1326577B890097C790 /* LoaderDisplayableTests.swift */; };
 		CF91FA1626577D190097C790 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91FA1526577D190097C790 /* TestView.swift */; };
 		CF91FA1826577F2E0097C790 /* ReusableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91FA1726577F2D0097C790 /* ReusableViewTests.swift */; };
@@ -65,6 +67,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF8DD1872657BE9E007B68D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF8DD1862657BE9E007B68D8 /* Presentation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CF21C3342655A84400CBD7F8 /* LightNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightNavigationController.swift; sourceTree = "<group>"; };
 		CF5F75112654DDF700E38C2C /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -92,6 +108,7 @@
 		CF8DD1732657A528007B68D8 /* TestTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		CF8DD1772657A684007B68D8 /* CompanyInfoTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoTableViewCellTests.swift; sourceTree = "<group>"; };
 		CF8DD17B2657A83E007B68D8 /* LaunchItemTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemTableViewCellTests.swift; sourceTree = "<group>"; };
+		CF8DD1842657BE9E007B68D8 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF91FA1226577B880097C790 /* UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF91FA1326577B890097C790 /* LoaderDisplayableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderDisplayableTests.swift; sourceTree = "<group>"; };
 		CF91FA1526577D190097C790 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -125,6 +142,7 @@
 			files = (
 				CF5F750D2654DCDB00E38C2C /* SDWebImage in Frameworks */,
 				CF5F750F2654DCDB00E38C2C /* SDWebImageMapKit in Frameworks */,
+				CF8DD1852657BE9E007B68D8 /* Presentation.framework in Frameworks */,
 				CFF43E5426542F0D0029698D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +359,7 @@
 		CFFF1D3C26556F2C0018B57D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF8DD1842657BE9E007B68D8 /* Presentation.framework */,
 				CF91FA1B265783F40097C790 /* Core.framework */,
 				CFFF1D56265570510018B57D /* Presentation.framework */,
 				CFFF1D3D26556F2C0018B57D /* Presentation.framework */,
@@ -370,6 +389,7 @@
 				CF7D181D26510DFB003A3DA9 /* Sources */,
 				CF7D181E26510DFB003A3DA9 /* Frameworks */,
 				CF7D181F26510DFB003A3DA9 /* Resources */,
+				CF8DD1872657BE9E007B68D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

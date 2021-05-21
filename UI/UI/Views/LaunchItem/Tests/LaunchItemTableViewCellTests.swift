@@ -36,7 +36,7 @@ class LaunchItemTableViewCellTests: XCTestCase {
         XCTAssertEqual(cell.missionLabel.text, launchPresentableItemInfo.mission)
         XCTAssertEqual(cell.dateLabel.text, launchPresentableItemInfo.date)
         XCTAssertEqual(cell.rocketLabel.text, launchPresentableItemInfo.rocket)
-        XCTAssertEqual(cell.daysLabel.text, String(abs(launchPresentableItemInfo.days)))
+        XCTAssertEqual(cell.daysLabel.text, String(launchPresentableItemInfo.days))
         
         XCTAssertEqual(cell.backgroundColor, configuration.backgroundColor)
         XCTAssertEqual(cell.selectedBackgroundView?.backgroundColor, configuration.selectedBackgroundColor)
