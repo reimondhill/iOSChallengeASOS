@@ -31,7 +31,7 @@ class GeneralInfoTests: BaseFeature {
     
     //MARK: - Test functions
     func test_GeneralInfoListSetup() {
-        let exp = expectation(description: "Foo")
+        let exp = expectation(description: "General info UI Tests")
         DispatchQueue.main.asyncAfter(deadline: .now()+5, execute: {
             guard let table = self.app?.tables.firstMatch else {
                 XCTFail("Invalid layout")
