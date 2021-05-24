@@ -329,8 +329,8 @@
 			children = (
 				CF5F751E2654FB1300E38C2C /* String+Extensions.swift */,
 				CFFF1DD0265588C20018B57D /* UIDevice+Extensions.swift */,
-				CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */,
 				CFF43E5A2654366A0029698D /* UITableView+Extensions.swift */,
+				CFFF1CD026554D7B0018B57D /* UIViewController+Extensions.swift */,
 				CF8DD16A2657A198007B68D8 /* Tests */,
 			);
 			path = Extensions;

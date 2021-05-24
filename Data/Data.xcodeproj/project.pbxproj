@@ -30,7 +30,7 @@
 		CFC201B5265295B8008C5E8D /* APIVersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B4265295B8008C5E8D /* APIVersionControl.swift */; };
 		CFC201B7265298D1008C5E8D /* LaunchesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC201B6265298D1008C5E8D /* LaunchesFetcherTests.swift */; };
 		CFC984C92655142F005C7743 /* RocketFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984C82655142F005C7743 /* RocketFetcherTests.swift */; };
-		CFFF1CF0265562780018B57D /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
+		CFD8A94E265A4EEE000D4BF3 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,7 +173,6 @@
 			children = (
 				CF700A2D2653964E00C25819 /* BaseDataTest.swift */,
 				CF91FA1F2657845C0097C790 /* XCTestCase+Extensions.swift */,
-				CFB991EA2651643200F84BD0 /* Network */,
 				CFB991EF265164C000F84BD0 /* SupportingFiles */,
 			);
 			path = DataTests;
@@ -184,6 +183,7 @@
 			children = (
 				CF7D183A2651231F003A3DA9 /* NetworkFetcher.swift */,
 				CF7D18422651286E003A3DA9 /* NativeNetworkManager.swift */,
+				CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -235,14 +235,6 @@
 				CFD7E84D265704A8003F1C16 /* Tests */,
 			);
 			path = CompanyInfo;
-			sourceTree = "<group>";
-		};
-		CFB991EA2651643200F84BD0 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				CFB991ED2651648E00F84BD0 /* MockNetworkManager.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		CFB991EF265164C000F84BD0 /* SupportingFiles */ = {
@@ -394,6 +386,7 @@
 				CF7D183B2651231F003A3DA9 /* NetworkFetcher.swift in Sources */,
 				CF5F75222654FE2400E38C2C /* String+Extensions.swift in Sources */,
 				CF7D18432651286E003A3DA9 /* NativeNetworkManager.swift in Sources */,
+				CFD8A94E265A4EEE000D4BF3 /* MockNetworkManager.swift in Sources */,
 				CFB991E526514DFC00F84BD0 /* CompanyInfoFetcherInterface.swift in Sources */,
 				CFC201B3265294B0008C5E8D /* BaseFetcher.swift in Sources */,
 				CFB991E926515D5300F84BD0 /* CompanyInfoFetcher.swift in Sources */,
@@ -415,7 +408,6 @@
 				CF700A2E2653964E00C25819 /* BaseDataTest.swift in Sources */,
 				CFB991F126516C1A00F84BD0 /* CompanyInfoFetcherTests.swift in Sources */,
 				CF91FA202657845C0097C790 /* XCTestCase+Extensions.swift in Sources */,
-				CFFF1CF0265562780018B57D /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

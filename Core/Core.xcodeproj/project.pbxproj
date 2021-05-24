@@ -33,6 +33,7 @@
 		CFC984CB26551A35005C7743 /* EntityFactory+Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */; };
 		CFD7E8492656F942003F1C16 /* CollectionExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7E8482656F942003F1C16 /* CollectionExtensionsTests.swift */; };
 		CFD7E84B2656FCDE003F1C16 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7E84A2656FCDE003F1C16 /* DateExtensionsTests.swift */; };
+		CFD8A960265B701E000D4BF3 /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8A95F265B701E000D4BF3 /* ProcessInfo+Extensions.swift */; };
 		CFF43E82265467AE0029698D /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF43E81265467AE0029698D /* Collection+Extensions.swift */; };
 		CFFF1E61265598D60018B57D /* Launch+Links+Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF1E60265598D60018B57D /* Launch+Links+Patch.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		CFC984CA26551A35005C7743 /* EntityFactory+Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityFactory+Rocket.swift"; sourceTree = "<group>"; };
 		CFD7E8482656F942003F1C16 /* CollectionExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionsTests.swift; sourceTree = "<group>"; };
 		CFD7E84A2656FCDE003F1C16 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
+		CFD8A95F265B701E000D4BF3 /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
 		CFF43E81265467AE0029698D /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		CFFF1E60265598D60018B57D /* Launch+Links+Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+Links+Patch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,8 +184,9 @@
 			children = (
 				CFF43E81265467AE0029698D /* Collection+Extensions.swift */,
 				CF1C3A32265636F0003371E4 /* Date+Extensions.swift */,
-				CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */,
+				CFD8A95F265B701E000D4BF3 /* ProcessInfo+Extensions.swift */,
 				CF7D184A26512F95003A3DA9 /* URL+Extensions.swift */,
+				CF7D184826512E93003A3DA9 /* URLRequest+Extensions.swift */,
 				CFD7E8472656F8F4003F1C16 /* Tests */,
 			);
 			path = Extensions;
@@ -237,8 +240,8 @@
 			children = (
 				CFD7E8482656F942003F1C16 /* CollectionExtensionsTests.swift */,
 				CFD7E84A2656FCDE003F1C16 /* DateExtensionsTests.swift */,
-				CF7D1854265139BD003A3DA9 /* URLRequestExtensionsTests.swift */,
 				CF7D185126513676003A3DA9 /* URLExtensionsTests.swift */,
+				CF7D1854265139BD003A3DA9 /* URLRequestExtensionsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CF7D184B26512F95003A3DA9 /* URL+Extensions.swift in Sources */,
 				CFC201B92652E1A6008C5E8D /* EntityFactory+Launch.swift in Sources */,
 				CFB991E726514E5800F84BD0 /* CompanyInfo.swift in Sources */,
+				CFD8A960265B701E000D4BF3 /* ProcessInfo+Extensions.swift in Sources */,
 				CFF43E82265467AE0029698D /* Collection+Extensions.swift in Sources */,
 				CFFF1E61265598D60018B57D /* Launch+Links+Patch.swift in Sources */,
 				CF5F752A2655062B00E38C2C /* Rocket.swift in Sources */,
