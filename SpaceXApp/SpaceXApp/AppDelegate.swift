@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    lazy var processInfo = ProcessInfo()
+    
     
     //MARK: - UIApplicationDelegate implementation
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -24,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         
         StyleManager.setupNavigationStyle()
-        let result = AppModule.setup(window: window!, isUITest: false)
+        let result = AppModule.setup(window: window!, isUITest: processInfo.isUITesting)
         result.router.start()
         result.presenter.setupApplication()
         

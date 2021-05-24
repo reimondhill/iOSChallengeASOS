@@ -170,8 +170,8 @@
 			children = (
 				CF700A3E26539F6900C25819 /* Info.h */,
 				CF5F75082654D88000E38C2C /* Extensions */,
-				CF5F75052654D7FB00E38C2C /* Helpers */,
 				CF700A5A2653A78E00C25819 /* General */,
+				CF5F75052654D7FB00E38C2C /* Helpers */,
 				CF700A582653A70900C25819 /* SupportingFiles */,
 			);
 			path = Info;

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Data
 
 class BaseDataTest: XCTestCase {
     //MARK: - Properties

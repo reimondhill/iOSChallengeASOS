@@ -147,8 +147,8 @@
 		CFF43E442653F5CB0029698D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CF8DD17F2657B095007B68D8 /* PresentationTests-Bridging-Header.h */,
 				CF7D181426510DBF003A3DA9 /* Info.plist */,
+				CF8DD17F2657B095007B68D8 /* PresentationTests-Bridging-Header.h */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";

@@ -28,7 +28,7 @@ public struct CompanyInfo {
     
     
     //MARK: - Constructor
-    init(id: String, name: String, summary: String, founder: String, founded: Int, headquarters: Headquarters, valuation: Int, employees: Int, vehicles: Int, launchSites: Int, testSites: Int, ceo: String, cto: String, coo: String, ctoPropulsion: String, links: Links) {
+    public init(id: String, name: String, summary: String, founder: String, founded: Int, headquarters: Headquarters, valuation: Int, employees: Int, vehicles: Int, launchSites: Int, testSites: Int, ceo: String, cto: String, coo: String, ctoPropulsion: String, links: Links) {
         self.id = id
         self.name = name
         self.summary = summary
@@ -45,27 +45,6 @@ public struct CompanyInfo {
         self.coo = coo
         self.ctoPropulsion = ctoPropulsion
         self.links = links
-    }
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        id = try container.decode(String.self, forKey: CodingKeys.id)
-        name = try container.decode(String.self, forKey: CodingKeys.name)
-        summary = try container.decode(String.self, forKey: CodingKeys.summary)
-        founder = try container.decode(String.self, forKey: CodingKeys.founder)
-        founded = try container.decode(Int.self, forKey: CodingKeys.founded)
-        headquarters = try container.decode(Headquarters.self, forKey: CodingKeys.headquarters)
-        valuation = try container.decode(Int.self, forKey: CodingKeys.valuation)
-        employees = try container.decode(Int.self, forKey: CodingKeys.employees)
-        vehicles = try container.decode(Int.self, forKey: CodingKeys.vehicles)
-        launchSites = try container.decode(Int.self, forKey: CodingKeys.launchSites)
-        testSites = try container.decode(Int.self, forKey: CodingKeys.testSites)
-        ceo = try container.decode(String.self, forKey: CodingKeys.ceo)
-        cto = try container.decode(String.self, forKey: CodingKeys.cto)
-        coo = try container.decode(String.self, forKey: CodingKeys.coo)
-        ctoPropulsion = try container.decode(String.self, forKey: CodingKeys.ctoPropulsion)
-        links = try container.decodeIfPresent(Links.self, forKey: CodingKeys.links)
     }
 }
 
@@ -88,6 +67,27 @@ extension CompanyInfo: Codable {
         case coo
         case ctoPropulsion = "cto_propulsion"
         case links
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(String.self, forKey: CodingKeys.id)
+        name = try container.decode(String.self, forKey: CodingKeys.name)
+        summary = try container.decode(String.self, forKey: CodingKeys.summary)
+        founder = try container.decode(String.self, forKey: CodingKeys.founder)
+        founded = try container.decode(Int.self, forKey: CodingKeys.founded)
+        headquarters = try container.decode(Headquarters.self, forKey: CodingKeys.headquarters)
+        valuation = try container.decode(Int.self, forKey: CodingKeys.valuation)
+        employees = try container.decode(Int.self, forKey: CodingKeys.employees)
+        vehicles = try container.decode(Int.self, forKey: CodingKeys.vehicles)
+        launchSites = try container.decode(Int.self, forKey: CodingKeys.launchSites)
+        testSites = try container.decode(Int.self, forKey: CodingKeys.testSites)
+        ceo = try container.decode(String.self, forKey: CodingKeys.ceo)
+        cto = try container.decode(String.self, forKey: CodingKeys.cto)
+        coo = try container.decode(String.self, forKey: CodingKeys.coo)
+        ctoPropulsion = try container.decode(String.self, forKey: CodingKeys.ctoPropulsion)
+        links = try container.decodeIfPresent(Links.self, forKey: CodingKeys.links)
     }
 }
 
