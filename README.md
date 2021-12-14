@@ -1,4 +1,4 @@
-# iOSChallengeASOS
+# Space X iOS App
 
 **Space X** is a mobile aplication for iOS inspired by *Space X*. The app works on iOS11+ devices and supports both iPhone and iPad portrait and landscape designs.
 
