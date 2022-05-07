@@ -6,7 +6,8 @@
 //
 
 import XCTest
-import Core
+
+@testable import Utilities
 
 class URLRequestExtensionsTests: XCTestCase {
     //MARK: - Properties

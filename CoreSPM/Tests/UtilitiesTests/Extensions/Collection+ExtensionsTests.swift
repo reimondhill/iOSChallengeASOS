@@ -6,7 +6,8 @@
 //
 
 import XCTest
-@testable import Core
+
+@testable import Utilities
 
 class CollectionTests: XCTestCase {
     //MARK: - Properties

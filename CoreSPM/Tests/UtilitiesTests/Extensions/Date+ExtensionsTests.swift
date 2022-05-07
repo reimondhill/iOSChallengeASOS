@@ -7,6 +7,8 @@
 
 import XCTest
 
+@testable import Utilities
+
 class DateExtensionsTests: XCTestCase {
     //MARK: - Properties
     private let gmtTimeZone = TimeZone(abbreviation: "GMT")!
