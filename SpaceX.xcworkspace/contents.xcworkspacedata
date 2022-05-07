@@ -8,9 +8,6 @@
       location = "group:DataSPM">
    </FileRef>
    <FileRef
-      location = "group:Data/Data.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef

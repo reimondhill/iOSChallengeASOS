@@ -9,7 +9,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "DataSPM",
-            targets: ["Entities"]),
+            targets: ["Entities"]
+		),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,9 +21,19 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Entities",
-            dependencies: []),
+            dependencies: []
+		),
         .testTarget(
             name: "EntitiesTests",
-            dependencies: ["Entities"]),
+            dependencies: ["Entities"]
+		),
+		.target(
+			name: "API",
+			dependencies: []
+		),
+		.testTarget(
+			name: "APITests",
+			dependencies: ["API"]
+		),
     ]
 )
