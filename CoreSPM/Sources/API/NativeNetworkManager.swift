@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Core
+import Utilities
 
 fileprivate extension HTTPMethodType {
     func toURLRequestHTTPMethodType() -> String {

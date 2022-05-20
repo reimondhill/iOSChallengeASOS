@@ -27,13 +27,5 @@ let package = Package(
             name: "EntitiesTests",
             dependencies: ["Entities"]
 		),
-		.target(
-			name: "API",
-			dependencies: []
-		),
-		.testTarget(
-			name: "APITests",
-			dependencies: ["API"]
-		),
     ]
 )
