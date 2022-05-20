@@ -25,5 +25,13 @@ let package = Package(
 			name: "UtilitiesTests",
 			dependencies: ["Utilities"]
 		),
+		.target(
+			name: "API",
+			dependencies: ["Utilities"]
+		),
+		.testTarget(
+			name: "APITests",
+			dependencies: ["API"]
+		),
     ]
 )
