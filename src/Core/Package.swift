@@ -4,9 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "CoreSPM",
+    name: "Core",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v15),
 	],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -19,7 +19,7 @@ let package = Package(
 		.library(
 			name: "API",
 			targets: [
-				"API"
+				"API",
 			]
 		),
     ],
@@ -34,19 +34,35 @@ let package = Package(
 		),
 		.testTarget(
 			name: "UtilitiesTests",
-			dependencies: ["Utilities"]
+			dependencies: [
+				"Utilities",
+			]
 		),
 		.target(
+			name: "Localization",
+			dependencies: []
+		),
+//		.testTarget(
+//			name: "LocalizationTests",
+//			dependencies: ["Localization"]
+//		),
+		.target(
 			name: "API",
-			dependencies: ["Utilities"]
+			dependencies: [
+				"Utilities",
+			]
 		),
 		.target(
 			name: "APITestUtilities",
-			dependencies: ["API"]
+			dependencies: [
+				"API",
+			]
 		),
 		.testTarget(
 			name: "APITests",
-			dependencies: ["API"]
+			dependencies: [
+				"API",
+			]
 		),
     ]
 )

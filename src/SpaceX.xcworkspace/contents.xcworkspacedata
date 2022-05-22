@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CoreSPM">
+      location = "group:Core">
    </FileRef>
    <FileRef
       location = "group:DataSPM">

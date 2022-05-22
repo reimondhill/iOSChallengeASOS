@@ -15,12 +15,10 @@ public extension Collection {
     subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[ index] : nil
     }
-    
-    
 }
 
 public extension Collection where Element: Hashable {
-	/// Returns a new copy with non duplicate values
+	/// Returns a new copy with non duplicate values.
     var unique: [Element] {
         var set = Set<Element>()
         return filter { set.insert($0).inserted }
