@@ -26,7 +26,7 @@ extension RocketFetcher: RocketFetcherInterface {
         let params:[String:Any] = [:]
         
         networkFetcher.fetchCodable(url: url,
-                                    httpMethodType: .get,
+                                    HTTPMethod: .get,
                                     headers: headers,
                                     params: params,
                                     completion: completion)
@@ -42,7 +42,7 @@ extension RocketFetcher: RocketFetcherInterface {
         let params:[String:Any] = [:]
         
         networkFetcher.fetchCodable(url: url,
-                                    httpMethodType: .get,
+                                    HTTPMethod: .get,
                                     headers: headers,
                                     params: params,
                                     completion: completion)

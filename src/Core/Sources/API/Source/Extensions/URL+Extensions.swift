@@ -1,8 +1,5 @@
 //
-//  URL+Extensions.swift
-//  Core
-//
-//  Created by Ramon Haro Marques
+// Copyright © 2021 ReimondHill. All rights reserved.
 //
 
 import Foundation

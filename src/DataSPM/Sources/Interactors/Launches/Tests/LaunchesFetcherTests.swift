@@ -33,7 +33,7 @@ class LaunchesFetcherTests: BaseDataTest {
         let expectedURL: URL = baseURL
             .appendingPathComponent(LaunchesFetcher.apiVersion)
             .appendingPathComponent(LaunchesFetcher.Endpoints.allLaunches.rawValue)
-        let expectedHTTPMethodType: HTTPMethodType = .get        
+        let expectedHTTPMethod: HTTPMethod = .get        
         
         expect(description: "Testing LaunchesFetcher", completion: { [weak self] expectation in
             launchesFetcher.getLaunch { result in
@@ -41,7 +41,7 @@ class LaunchesFetcherTests: BaseDataTest {
                 case .success(let launches):
                     XCTAssertEqual(launches, injectedResponse)
                     XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
-                    XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
+                    XCTAssertEqual(expectedHTTPMethod, self?.networkFetcher.spyHTTPMethod)
                 case .failure(let error):
                     XCTFail(error.localizedDescription)
                 }

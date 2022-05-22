@@ -4,4 +4,4 @@
 
 import Foundation
 
-enum Localization {}
+public enum Localization {}

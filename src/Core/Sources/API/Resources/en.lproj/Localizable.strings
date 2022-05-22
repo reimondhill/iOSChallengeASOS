@@ -1,9 +1,6 @@
-/* 
-  strings.strings
-  Data
-
-  Created by Ramon Haro Marques
-*/
+//
+// Copyright © 2021 ReimondHill. All rights reserved.
+//
 
 /// Returns a localised message for a generic unknown error
 "error_unknown" = "An unknown error has occured";

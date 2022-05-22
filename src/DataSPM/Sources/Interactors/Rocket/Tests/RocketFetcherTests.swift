@@ -34,7 +34,7 @@ class RocketFetcherTests: BaseDataTest {
             .appendingPathComponent(RocketFetcher.apiVersion)
             .appendingPathComponent(RocketFetcher.Endpoints.allRockets.rawValue)
             
-        let expectedHTTPMethodType: HTTPMethodType = .get
+        let expectedHTTPMethod: HTTPMethod = .get
         
         expect(description: "Testing RocketFetcher", completion: { [weak self] expectation in
             rocketFetcher.fetchRockets(completion: { result in
@@ -42,7 +42,7 @@ class RocketFetcherTests: BaseDataTest {
                 case .success(let rockets):
                     XCTAssertEqual(rockets, injectedRockets)
                     XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
-                    XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
+                    XCTAssertEqual(expectedHTTPMethod, self?.networkFetcher.spyHTTPMethod)
                 case .failure(let error):
                     XCTFail(error.localizedDescription)
                 }
@@ -63,7 +63,7 @@ class RocketFetcherTests: BaseDataTest {
             .appendingPathComponent(RocketFetcher.apiVersion)
             .appendingPathComponent(RocketFetcher.Endpoints.allRockets.rawValue)
             .appendingPathComponent(injectedRocket.id)
-        let expectedHTTPMethodType: HTTPMethodType = .get
+        let expectedHTTPMethod: HTTPMethod = .get
         
         expect(description: "Testing RocketFetcher", completion: { [weak self] expectation in
             rocketFetcher.getRocket(id: injectedRocket.id, completion: { result in
@@ -71,7 +71,7 @@ class RocketFetcherTests: BaseDataTest {
                 case .success(let rocket):
                     XCTAssertEqual(rocket, injectedRocket)
                     XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
-                    XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
+                    XCTAssertEqual(expectedHTTPMethod, self?.networkFetcher.spyHTTPMethod)
                 case .failure(let error):
                     XCTFail(error.localizedDescription)
                 }

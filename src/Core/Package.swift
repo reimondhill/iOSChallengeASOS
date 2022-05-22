@@ -5,11 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "Core",
+	defaultLocalization: "en",
 	platforms: [
 		.iOS(.v15),
 	],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Utilities",
             targets: [
@@ -24,8 +24,6 @@ let package = Package(
 		),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
 		.target(
@@ -50,13 +48,21 @@ let package = Package(
 			name: "API",
 			dependencies: [
 				"Utilities",
+				"Localization",
+			],
+			exclude: [
+				"TestUtilities",
+			],
+			resources: [
+				.process("Resources"),
 			]
 		),
 		.target(
 			name: "APITestUtilities",
 			dependencies: [
 				"API",
-			]
+			],
+			path: "Sources/API/TestUtilities"
 		),
 		.testTarget(
 			name: "APITests",

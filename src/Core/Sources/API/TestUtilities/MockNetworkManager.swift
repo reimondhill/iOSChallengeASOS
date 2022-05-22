@@ -1,8 +1,5 @@
 //
-//  MockNetworkManager.swift
-//  DataTests
-//
-//  Created by Ramon Haro Marques
+// Copyright © 2021 ReimondHill. All rights reserved.
 //
 
 import Foundation
@@ -29,7 +26,7 @@ public class MockNetworkManager {
     public var injectedData: Data?
     
     public var spyURL: URL?
-    public var spyHTTPMethodType: HTTPMethodType?
+    public var spyHTTPMethod: HTTPMethod?
     public var spyHeaders: [String:String]?
     public var spyParams: [String:Any]?
     
@@ -62,9 +59,9 @@ private extension MockNetworkManager {
 
 //MARK: - NetworkFetcher implementation
 extension MockNetworkManager: NetworkFetcher {
-    public func fetchCodable<T:Codable>(url: URL, httpMethodType: HTTPMethodType, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
+    public func fetchCodable<T:Codable>(url: URL, HTTPMethod: HTTPMethod, headers: [String:String], params: [String:Any], completion: @escaping (Result<T,Error>) -> Void) {
         spyURL = url
-        spyHTTPMethodType = httpMethodType
+        spyHTTPMethod = HTTPMethod
         spyHeaders = headers
         spyParams = params
         
@@ -78,7 +75,7 @@ extension MockNetworkManager: NetworkFetcher {
         }
     }
     
-    public func fetchData(url: URL, httpMethodType: HTTPMethodType, headers: [String : String], params: [String : Any], completion: @escaping (Result<Data, Error>) -> Void) {
+    public func fetchData(url: URL, HTTPMethod: HTTPMethod, headers: [String : String], params: [String : Any], completion: @escaping (Result<Data, Error>) -> Void) {
         _ = getUITestInjectedResponse(url: url)
         
         if let injectedData = injectedData {

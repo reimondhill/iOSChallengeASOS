@@ -33,7 +33,7 @@ class CompanyInfoFetcherTests: BaseDataTest {
         let expectedURL: URL = baseURL
             .appendingPathComponent(CompanyInfoFetcher.apiVersion)
             .appendingPathComponent(CompanyInfoFetcher.Endpoints.info.rawValue)
-        let expectedHTTPMethodType: HTTPMethodType = .get
+        let expectedHTTPMethod: HTTPMethod = .get
         
         expect(description: "Testing CompanyInfoFetcher", completion: { [weak self] expectation in
             companyInfoFetcher.getInfo { [weak self] result in
@@ -41,7 +41,7 @@ class CompanyInfoFetcherTests: BaseDataTest {
                 case .success(let companyInfo):
                     XCTAssertEqual(injectedResponse, companyInfo)
                     XCTAssertEqual(expectedURL, self?.networkFetcher.spyURL)
-                    XCTAssertEqual(expectedHTTPMethodType, self?.networkFetcher.spyHTTPMethodType)
+                    XCTAssertEqual(expectedHTTPMethod, self?.networkFetcher.spyHTTPMethod)
                 case .failure(let error):
                     XCTFail(error.localizedDescription)
                 }
