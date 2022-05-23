@@ -11,8 +11,14 @@ let package = Package(
 	],
     products: [
         .library(
-            name: "Utilities",
+            name: "Localization",
             targets: [
+				"Localization",
+			]
+		),
+		.library(
+			name: "Utilities",
+			targets: [
 				"Utilities",
 			]
 		),
@@ -22,10 +28,24 @@ let package = Package(
 				"API",
 			]
 		),
+		.library(
+			name: "APITestUtilities",
+			targets: [
+				"APITestUtilities",
+			]
+		),
     ],
     dependencies: [
     ],
     targets: [
+		.target(
+			name: "Localization",
+			dependencies: []
+		),
+		.testTarget(
+			name: "LocalizationTests",
+			dependencies: ["Localization"]
+		),
 		.target(
 			name: "Utilities",
 			dependencies: []
@@ -36,14 +56,6 @@ let package = Package(
 				"Utilities",
 			]
 		),
-		.target(
-			name: "Localization",
-			dependencies: []
-		),
-//		.testTarget(
-//			name: "LocalizationTests",
-//			dependencies: ["Localization"]
-//		),
 		.target(
 			name: "API",
 			dependencies: [
@@ -67,7 +79,7 @@ let package = Package(
 		.testTarget(
 			name: "APITests",
 			dependencies: [
-				"API",
+				"APITestUtilities",
 			]
 		),
     ]

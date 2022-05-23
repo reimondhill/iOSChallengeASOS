@@ -25,8 +25,9 @@ public enum NetworkError: LocalizedError {
 	/// Error returned when ther is an unknown network problem
 	case unknown
 
-	//MARK: LocalizedError implementation
-	var errorDescription: String? {
+	//MARK: LocalizedError
+
+	public var errorDescription: String? {
 		switch self {
 		case .invalid:
 			return "Developer Error"

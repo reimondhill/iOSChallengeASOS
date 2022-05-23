@@ -5,11 +5,10 @@
 import Foundation
 
 public extension URLRequest {
-    /// Appends a list of headers to URLRequest
-    /// - Parameters:
-    ///   - headers: The list of headers
-    /// - Returns: The URLRequest with the list of headers
-    func appending(headers: [String : String]) -> URLRequest {
+    /// Appends a list of HTTP headers to URLRequest.
+    /// - Parameter headers: The HTTP headers to append.
+    /// - Returns: The URLRequest with the given HTTP headers.
+    func appending(headers: [HTTPHeader]) -> URLRequest {
         var urlRequest = self
         
         headers.forEach { (header) in
@@ -19,14 +18,23 @@ public extension URLRequest {
         return urlRequest
     }
     
-    /// Appends a list of parameters for a GET URL Request
+    /// Appends a list of parameters for a GET URL Request.
     /// - Parameters:
-    ///   - getParams: The params to be added
-    /// - Returns: The URLRequest with the GET params appended to the URL
-    func appending(getParams: [String : String]) -> URLRequest {
+    ///   - params: The params to be added.
+	///   - httpMethod: The HTTP method used.
+    /// - Returns: The URLRequest with the GET params appended to the URL.
+    func appending(
+		params: [URLQueryItem],
+		httpMethod: HTTPMethod
+	) -> URLRequest {
         var urlRequest = self
 
-        urlRequest.url = urlRequest.url?.appending(params: getParams)
+		switch httpMethod {
+		case .get:
+			urlRequest.url = urlRequest.url?.appending(params: params)
+		case .post:
+			urlRequest.httpBody = Data(params.utf8)
+		}
         
         return urlRequest
     }

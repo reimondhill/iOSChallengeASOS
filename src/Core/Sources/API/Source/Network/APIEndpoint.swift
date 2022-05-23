@@ -4,8 +4,6 @@
 
 import Foundation
 
-public typealias HTTPHeader = (key: String, value: String)
-
 public protocol APIEndpoint {
 	/// The HTTP method used in the call
 	var method: HTTPMethod { get }

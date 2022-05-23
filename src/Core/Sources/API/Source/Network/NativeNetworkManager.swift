@@ -5,7 +5,7 @@
 import Foundation
 import Utilities
 
-@objc public class NativeNetworkManager: NSObject {
+@objc public final class NativeNetworkManager: NSObject {
     //MARK: - Properties
 
     private lazy var urlSession: URLSession = {
@@ -21,30 +21,6 @@ import Utilities
 //MARK: - Private methods
 
 private extension NativeNetworkManager {
-    func generateURLRequest(url: URL, HTTPMethod: HTTPMethod, headers: [String : String] , params: [String : Any]) throws -> URLRequest {
-        // Create object
-        var urlRequest = URLRequest(url: url)
-        
-        // Setting HTTPMethod
-        urlRequest.httpMethod = HTTPMethod.toURLRequestHTTPMethod()
-
-        //Setting headers
-        urlRequest = urlRequest.appending(headers: headers)
-        
-        //Setting params
-        switch HTTPMethod {
-        case .get:
-            guard let params = params as? [String:String] else {
-                throw NetworkError.invalidParams
-            }
-            urlRequest = urlRequest.appending(getParams: params)
-        case .post:
-            break
-        }
-        
-        return urlRequest
-    }
-
     func performRequest(_ urlRequest: URLRequest, completion: @escaping ((Result<Data, Error>)->Void)) {
         guard urlRequest.url != nil else {
             completion(.failure(NetworkError.invalidURL))

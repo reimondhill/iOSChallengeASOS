@@ -1,0 +1,7 @@
+//
+// Copyright © 2022 ReimondHill. All rights reserved.
+//  
+
+import Foundation
+
+public typealias HTTPHeader = (key: String, value: String)
