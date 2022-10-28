@@ -5,6 +5,28 @@
 import Foundation
 
 public extension URLRequest {
+	convenience init(
+		url: URL,
+		endPoint: APIEndpoint
+	) {
+		self.init(url: url)
+
+		self.httpMethod = endPoint.method.rawValue.capitalized
+
+		// Appending headers
+		self.appending(headers: endPoint.headers)
+
+		// Appending Query parameters
+		self.appending(
+			params: endPoint.queryItems,
+			httpMethod: endPoint.method
+		)
+
+		// Appending endpoint
+		self.url?.pathComponents.append(endPoint.endpoint.path)
+
+		// Appending
+	}
     /// Appends a list of HTTP headers to URLRequest.
     /// - Parameter headers: The HTTP headers to append.
     /// - Returns: The URLRequest with the given HTTP headers.
