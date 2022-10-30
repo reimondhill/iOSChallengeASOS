@@ -4,60 +4,59 @@
 
 import Foundation
 
-public extension URLRequest {
-	convenience init(
+// MARK: - Constructors
+
+extension URLRequest {
+	public init(
 		url: URL,
-		endPoint: APIEndpoint
+		apiEndpoint: some APIEndpoint
 	) {
 		self.init(url: url)
+		httpMethod = apiEndpoint.method.rawValue.capitalized
 
-		self.httpMethod = endPoint.method.rawValue.capitalized
+		if let endpoint = apiEndpoint.endpoint {
+			if #available(iOS 16.0, *) {
+				self.url = self.url?.appending(path: endpoint.path)
+			} else {
+				self.url = self.url?.appendingPathComponent(endpoint.path)
+			}
+		}
 
-		// Appending headers
-		self.appending(headers: endPoint.headers)
+		if let headers = apiEndpoint.headers {
+			append(headers: headers)
+		}
 
-		// Appending Query parameters
-		self.appending(
-			params: endPoint.queryItems,
-			httpMethod: endPoint.method
-		)
-
-		// Appending endpoint
-		self.url?.pathComponents.append(endPoint.endpoint.path)
-
-		// Appending
+		if let queryItems = apiEndpoint.queryItems {
+			append(
+				queryItems: queryItems,
+				httpMethod: apiEndpoint.method
+			)
+		}
 	}
-    /// Appends a list of HTTP headers to URLRequest.
-    /// - Parameter headers: The HTTP headers to append.
-    /// - Returns: The URLRequest with the given HTTP headers.
-    func appending(headers: [HTTPHeader]) -> URLRequest {
-        var urlRequest = self
-        
-        headers.forEach { (header) in
-            urlRequest.addValue(header.value, forHTTPHeaderField: header.key)
-        }
-        
-        return urlRequest
-    }
-    
-    /// Appends a list of parameters for a GET URL Request.
-    /// - Parameters:
-    ///   - params: The params to be added.
-	///   - httpMethod: The HTTP method used.
-    /// - Returns: The URLRequest with the GET params appended to the URL.
-    func appending(
-		params: [URLQueryItem],
-		httpMethod: HTTPMethod
-	) -> URLRequest {
-        var urlRequest = self
+}
 
+// MARK: - helpers
+
+extension URLRequest {
+	mutating public func append(headers: [HTTPHeader]) {
+		headers.forEach { (header) in
+			addValue(header.value, forHTTPHeaderField: header.key)
+		}
+	}
+
+	mutating public func append(
+		queryItems: [URLQueryItem],
+		httpMethod: HTTPMethod
+	) {
 		switch httpMethod {
 		case .get:
-			urlRequest.url = urlRequest.url?.appending(params: params)
+			if #available(iOS 16.0, *) {
+				url = url?.appending(queryItems: queryItems)
+			} else {
+				url = url?.appending(params: queryItems)
+			}
 		case .post:
-			urlRequest.httpBody = Data(params.utf8)
+			httpBody = Data(queryItems.description.utf8)
 		}
-        
-        return urlRequest
-    }
+	}
 }

@@ -10,18 +10,6 @@ let package = Package(
 		.iOS(.v15),
 	],
     products: [
-        .library(
-            name: "Localization",
-            targets: [
-				"Localization",
-			]
-		),
-		.library(
-			name: "Utilities",
-			targets: [
-				"Utilities",
-			]
-		),
 		.library(
 			name: "API",
 			targets: [
@@ -34,28 +22,22 @@ let package = Package(
 				"APITestUtilities",
 			]
 		),
+        .library(
+            name: "Localization",
+            targets: [
+				"Localization",
+			]
+		),
+		.library(
+			name: "Utilities",
+			targets: [
+				"Utilities",
+			]
+		),
     ],
     dependencies: [
     ],
     targets: [
-		.target(
-			name: "Localization",
-			dependencies: []
-		),
-		.testTarget(
-			name: "LocalizationTests",
-			dependencies: ["Localization"]
-		),
-		.target(
-			name: "Utilities",
-			dependencies: []
-		),
-		.testTarget(
-			name: "UtilitiesTests",
-			dependencies: [
-				"Utilities",
-			]
-		),
 		.target(
 			name: "API",
 			dependencies: [
@@ -80,6 +62,24 @@ let package = Package(
 			name: "APITests",
 			dependencies: [
 				"APITestUtilities",
+			]
+		),
+		.target(
+			name: "Localization",
+			dependencies: []
+		),
+		.testTarget(
+			name: "LocalizationTests",
+			dependencies: ["Localization"]
+		),
+		.target(
+			name: "Utilities",
+			dependencies: []
+		),
+		.testTarget(
+			name: "UtilitiesTests",
+			dependencies: [
+				"Utilities",
 			]
 		),
     ]

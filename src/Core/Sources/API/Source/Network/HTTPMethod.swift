@@ -5,7 +5,7 @@
 import Foundation
 
 /// Type of network request
-public enum HTTPMethod: String{
+public enum HTTPMethod: String, CaseIterable {
 	/// GET HTTP method
 	case get = "GET"
 	/// POST HTTP method

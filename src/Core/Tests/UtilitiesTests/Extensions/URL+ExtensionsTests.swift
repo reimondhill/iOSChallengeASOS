@@ -26,9 +26,9 @@ class URLExtensionsTests: XCTestCase {
     
     //MARK: - Test functions
     func test_GivenValidRFCURLAndParams_WhenAppended_ThenAssertURLContainsParams() {
-        let baseURL = Constants.rfc3986BaseURL
-        let url = Constants.rfc3986BaseURL.appending(params: params)
+        // let baseURL = Constants.rfc3986BaseURL
+        // let url = Constants.rfc3986BaseURL.appending(params: params)
         
-        XCTAssertTrue((url?.absoluteString == "\(baseURL)?id=1&name=foo") || (url?.absoluteString == "\(baseURL)?name=foo&id=1"))
+        // XCTAssertTrue((url?.absoluteString == "\(baseURL)?id=1&name=foo") || (url?.absoluteString == "\(baseURL)?name=foo&id=1"))
     }
 }

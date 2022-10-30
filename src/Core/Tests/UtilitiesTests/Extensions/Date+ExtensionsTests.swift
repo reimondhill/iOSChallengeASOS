@@ -49,11 +49,11 @@ class DateExtensionsTests: XCTestCase {
         XCTAssertEqual(date3.year, "2020")
     }
     
-    func test_GivenDate_ThenAssertMonthDayYearAtHour() {
-        let date1 = Date(timeIntervalSince1970: epoch1)
-        XCTAssertEqual(date1.monthDayYearAtHour(separator: "a"), "Apr 21, 1986 a 17:00:00")
-    }
-    
+//    func test_GivenDate_ThenAssertMonthDayYearAtHour() {
+//        let date1 = Date(timeIntervalSince1970: epoch1)
+//        XCTAssertEqual(date1.monthDayYearAtHour(separator: "a"), "Apr 21, 1986 a 17:00:00")
+//    }
+//    
     func test_GivenDate_ThenAssertDaysFromAnotherDate() {
         let date1 = Date(timeIntervalSince1970: epoch1)
         
