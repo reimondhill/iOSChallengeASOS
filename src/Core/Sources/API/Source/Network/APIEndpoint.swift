@@ -12,7 +12,7 @@ public protocol APIEndpoint {
 	var endpoint: URLComponents? { get }
 
 	/// Headers specific to this endpoint. These will take precedence if other headers with the same key are found when forming the request.
-	var headers: [HTTPHeader]? { get }
+	var headers: Set<HTTPHeader>? { get }
 
 	/// The items to query in the call. Defaults to no query.
 	var queryItems: [URLQueryItem]? { get }

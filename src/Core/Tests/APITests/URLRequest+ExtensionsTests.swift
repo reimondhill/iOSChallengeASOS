@@ -47,7 +47,7 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 		}
 	}
 
-	func test_GivenAPIEndpoint_WhenInitializing_ThenHeadersAreAdded() {
+	func test_GivenAPIEndpoint_WhenInitializing_ThenHeadersAreAdded() throws {
 		let testValues: [[HTTPHeader]?] = [
 			nil,
 			[
@@ -56,14 +56,16 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 			],
 		]
 
-		testValues.forEach { testValue in
+		try testValues.forEach { testValue in
 			let apiEndPoint = APIEndpointMock()
 			apiEndPoint.stubbedHeaders = testValue
 			let urlRequest = URLRequest(
 				url: url,
 				apiEndpoint: apiEndPoint
 			)
-			XCTAssertEqual(urlRequest.allHTTPHeaderFields?.count, testValue?.count ?? 0)
+
+			let allHTTPHeaderFields = try XCTUnwrap(urlRequest.allHTTPHeaderFields)
+			XCTAssertEqual(allHTTPHeaderFields, testValue?.asDictionary ?? [:])
 		}
 	}
 }
