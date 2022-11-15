@@ -26,9 +26,9 @@ final public class APIEndpointMock: APIEndpoint {
 		return stubbedEndpoint
 	}
 
-	public var stubbedHeaders: [HTTPHeader]?
+	public var stubbedHeaders: Set<HTTPHeader>?
 	public private(set) var didCallHeaders = false
-	public var headers: [HTTPHeader]? {
+	public var headers: Set<HTTPHeader>? {
 		didCallHeaders = true
 		return stubbedHeaders
 	}

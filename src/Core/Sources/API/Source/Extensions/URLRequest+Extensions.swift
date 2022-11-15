@@ -23,7 +23,7 @@ extension URLRequest {
 		}
 
 		if let headers = apiEndpoint.headers {
-			append(headers: headers)
+			append(headers: Array(headers))
 		}
 
 		if let queryItems = apiEndpoint.queryItems {
@@ -35,7 +35,7 @@ extension URLRequest {
 	}
 }
 
-// MARK: - helpers
+// MARK: - Helpers
 
 extension URLRequest {
 	mutating public func append(headers: [HTTPHeader]) {

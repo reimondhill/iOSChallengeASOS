@@ -16,6 +16,14 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 
 	// MARK: Constructor
 
+	func test_URL_WhenInitializing_ThenCorrectURL() {
+		let urlRequest = URLRequest(
+			url: url,
+			apiEndpoint: APIEndpointMock()
+		)
+		XCTAssertEqual(urlRequest.url, url)
+	}
+
 	func test_GivenAPIEndpoint_WhenInitializing_ThenHTTPMethodIsAdded() {
 		HTTPMethod.allCases.forEach { httpMethod in
 			let apiEndPoint = APIEndpointMock()
@@ -48,11 +56,11 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 	}
 
 	func test_GivenAPIEndpoint_WhenInitializing_ThenHeadersAreAdded() throws {
-		let testValues: [[HTTPHeader]?] = [
+		let testValues: [Set<HTTPHeader>?] = [
 			nil,
 			[
-				(key: "key1", value: "value1"),
-				(key: "key2", value: "value2"),
+				HTTPHeader(key: "key1", value: "value1"),
+				HTTPHeader(key: "key2", value: "value2"),
 			],
 		]
 
@@ -67,5 +75,9 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 			let allHTTPHeaderFields = try XCTUnwrap(urlRequest.allHTTPHeaderFields)
 			XCTAssertEqual(allHTTPHeaderFields, testValue?.asDictionary ?? [:])
 		}
+	}
+
+	func test_GivenGetPara_WhenInitializing_ThenParametersAreAdded() {
+		
 	}
 }

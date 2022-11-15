@@ -4,14 +4,16 @@
 
 import Foundation
 
-public typealias HTTPHeader = (key: String, value: String)
-
-extension HTTPHeader: Hashable {}
+public struct HTTPHeader: Hashable, Equatable {
+	public let key: String
+	public let value: String
+}
 
 extension Collection where Element == HTTPHeader {
 	public var asDictionary: [String : String] {
-		return Dictionary(
-			uniqueKeysWithValues: map{ ($0.key, $0.value) }
-		)
+		return reduce(into: [:]) { partialResult, element in
+			partialResult[element.key] = element.value
+		}
 	}
 }
+
