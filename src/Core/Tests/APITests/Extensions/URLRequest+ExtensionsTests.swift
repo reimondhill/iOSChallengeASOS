@@ -77,7 +77,31 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 		}
 	}
 
-	func test_GivenGetPara_WhenInitializing_ThenParametersAreAdded() {
-		
+	func test_GivenAPIEndpoint_WhenInitializing_ThenQueryItemsAreAdded() throws {
+		let testValues: [Set<URLQueryItem>?] = [
+			nil,
+			[
+				URLQueryItem(name: "name1", value: "value1"),
+				URLQueryItem(name: "name2", value: "value2"),
+			],
+		]
+
+		try testValues.forEach { testValue in
+			let apiEndPoint = APIEndpointMock()
+			apiEndPoint.stubbedQueryItems = testValue
+			let urlRequest = URLRequest(
+				url: url,
+				apiEndpoint: apiEndPoint
+			)
+
+			let url = try XCTUnwrap(urlRequest.url)
+			let urlComponents = try XCTUnwrap(URLComponents(string: url.absoluteString))
+			let queryItems = urlComponents.queryItems
+			if let testValue {
+				XCTAssertEqual(urlComponents.queryItems, Array(testValue))
+			} else {
+				XCTAssertNil(queryItems)
+			}
+		}
 	}
 }

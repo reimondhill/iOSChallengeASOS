@@ -27,36 +27,30 @@ extension URLRequest {
 		}
 
 		if let queryItems = apiEndpoint.queryItems {
-			append(
-				queryItems: queryItems,
-				httpMethod: apiEndpoint.method
-			)
+			if #available(iOS 16.0, *) {
+				self.url = self.url?.appending(queryItems: Array(queryItems))
+			} else {
+				self.url = self.url?.appending(params: Array(queryItems))
+			}
 		}
+
+		self.httpBody = try? generateHTTPBody(for: apiEndpoint)
 	}
 }
 
 // MARK: - Helpers
 
 extension URLRequest {
-	mutating public func append(headers: [HTTPHeader]) {
+	mutating func append(headers: [HTTPHeader]) {
 		headers.forEach { (header) in
 			addValue(header.value, forHTTPHeaderField: header.key)
 		}
 	}
 
-	mutating public func append(
-		queryItems: [URLQueryItem],
-		httpMethod: HTTPMethod
-	) {
-		switch httpMethod {
-		case .get:
-			if #available(iOS 16.0, *) {
-				url = url?.appending(queryItems: queryItems)
-			} else {
-				url = url?.appending(params: queryItems)
-			}
-		case .post:
-			httpBody = Data(queryItems.description.utf8)
+	func generateHTTPBody(for endpoint: some APIEndpoint) throws -> Data? {
+		if let encodable = endpoint.body as? Encodable {
+
 		}
+		return nil
 	}
 }

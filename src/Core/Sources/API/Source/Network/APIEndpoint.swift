@@ -15,7 +15,10 @@ public protocol APIEndpoint {
 	var headers: Set<HTTPHeader>? { get }
 
 	/// The items to query in the call. Defaults to no query.
-	var queryItems: [URLQueryItem]? { get }
+	var queryItems: Set<URLQueryItem>? { get }
+
+	/// The data that is encoded in the HTTP body. When `RequestBody` is `Void` this will default to `()`.
+	var body: RequestBody { get }
 
 	/// The type which is encoded the HTTP body. Use `Void`if the call doesn't send any data throug the Body.
 	associatedtype RequestBody = Void

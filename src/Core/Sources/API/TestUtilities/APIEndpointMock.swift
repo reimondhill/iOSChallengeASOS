@@ -33,9 +33,9 @@ final public class APIEndpointMock: APIEndpoint {
 		return stubbedHeaders
 	}
 
-	public var stubbedQueryItems: [URLQueryItem]?
+	public var stubbedQueryItems: Set<URLQueryItem>?
 	public private(set) var didCallQueryItems = false
-	public var queryItems: [URLQueryItem]? {
+	public var queryItems: Set<URLQueryItem>? {
 		didCallQueryItems = true
 		return stubbedQueryItems
 	}
