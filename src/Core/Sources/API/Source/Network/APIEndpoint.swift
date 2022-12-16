@@ -29,3 +29,12 @@ public protocol APIEndpoint {
 	/// The type which is decoded from the response's HTTP body when the status code is not a successful one.
 	associatedtype ResponseError = Void
 }
+
+extension APIEndpoint {
+	var contentType: String? {
+		guard let headers else {
+			return nil
+		}
+		return headers.first{ $0.key == HTTPHeaderFieldKey.contentType }?.value
+	}
+}

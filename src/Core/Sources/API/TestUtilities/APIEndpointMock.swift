@@ -39,4 +39,6 @@ final public class APIEndpointMock: APIEndpoint {
 		didCallQueryItems = true
 		return stubbedQueryItems
 	}
+
+	public var body: ()
 }

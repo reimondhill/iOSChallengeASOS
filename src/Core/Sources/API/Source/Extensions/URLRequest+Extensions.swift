@@ -47,10 +47,27 @@ extension URLRequest {
 		}
 	}
 
+	enum Error: Swift.Error {
+		case noEncodingSet
+		case encodingNotSupported
+	}
+	
 	func generateHTTPBody(for endpoint: some APIEndpoint) throws -> Data? {
-		if let encodable = endpoint.body as? Encodable {
+		if endpoint.body is Void {
+			return nil
+		} else {
+			guard let contentType = endpoint.contentType else {
+				throw Error.noEncodingSet
+			}
 
+			switch contentType {
+			case MIMEType.json:
+				return nil
+			case MIMEType.multipartFormData:
+				return nil
+			default:
+				throw Error.encodingNotSupported
+			}
 		}
-		return nil
 	}
 }
