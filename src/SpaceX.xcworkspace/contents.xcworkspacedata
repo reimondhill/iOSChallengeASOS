@@ -8,6 +8,9 @@
       location = "group:DataSPM">
    </FileRef>
    <FileRef
+      location = "group:TestingUtilities">
+   </FileRef>
+   <FileRef
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef
