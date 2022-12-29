@@ -36,6 +36,10 @@ let package = Package(
 		),
     ],
     dependencies: [
+		.package(
+			name: "TestingUtilities",
+			path: "../TestingUtilities"
+		)
     ],
     targets: [
 		.target(
@@ -62,6 +66,7 @@ let package = Package(
 			name: "APITests",
 			dependencies: [
 				"APITestUtilities",
+				"TestingUtilities",
 			]
 		),
 		.target(

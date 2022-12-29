@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TestingUtilities">
+   </FileRef>
+   <FileRef
       location = "group:Core">
    </FileRef>
    <FileRef
       location = "group:DataSPM">
-   </FileRef>
-   <FileRef
-      location = "group:TestingUtilities">
    </FileRef>
    <FileRef
       location = "group:Presentation/Presentation.xcodeproj">
