@@ -6,8 +6,12 @@ import Foundation
 
 /// Type of network request
 public enum HTTPMethod: String, CaseIterable {
-	/// GET HTTP method
+	case connect = "CONNECT"
+	case delete = "DELETE"
 	case get = "GET"
-	/// POST HTTP method
+	case head = "HEAD"
+	case options = "OPTIONS"
+	case trace = "TRACE"
 	case post = "POST"
+	case put = "PUT"
 }

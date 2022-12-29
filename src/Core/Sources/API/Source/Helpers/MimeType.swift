@@ -5,7 +5,9 @@
 import Foundation
 
 /// A namespace for supported MIME types.
-public enum MIMEType {
+public typealias MIMEType = String
+
+extension MIMEType {
 	public static let json = "application/json"
 	public static let BodyCoder = "application/x-www-form-urlencoded"
 	public static let javascript = "text/javascript"
