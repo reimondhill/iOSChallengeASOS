@@ -16,19 +16,19 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 
 	// MARK: Constructor
 
-	func test_URL_WhenInitializing_ThenCorrectURL() {
-		let urlRequest = URLRequest(
+	func test_URL_WhenInitializing_ThenCorrectURL() throws {
+		let urlRequest = try URLRequest(
 			url: url,
 			apiEndpoint: APIEndpointMock()
 		)
 		XCTAssertEqual(urlRequest.url, url)
 	}
 
-	func test_GivenAPIEndpoint_WhenInitializing_ThenHTTPMethodIsAdded() {
-		HTTPMethod.allCases.forEach { httpMethod in
+	func test_GivenAPIEndpoint_WhenInitializing_ThenHTTPMethodIsAdded() throws {
+		try HTTPMethod.allCases.forEach { httpMethod in
 			let apiEndPoint = APIEndpointMock()
 			apiEndPoint.stubbedMethod = httpMethod
-			let urlRequest = URLRequest(
+			let urlRequest = try URLRequest(
 				url: url,
 				apiEndpoint: apiEndPoint
 			)
@@ -36,16 +36,16 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 		}
 	}
 
-	func test_GivenAPIEndpoint_WhenInitializing_ThenEndpointsAreAdded() {
+	func test_GivenAPIEndpoint_WhenInitializing_ThenEndpointsAreAdded() throws {
 		let testValues: [URLComponents?] = [
 			nil,
 			URLComponents(string: "component1"),
 		]
 
-		testValues.forEach { testValue in
+		try testValues.forEach { testValue in
 			let apiEndPoint = APIEndpointMock()
 			apiEndPoint.stubbedEndpoint = testValue
-			let urlRequest = URLRequest(
+			let urlRequest = try URLRequest(
 				url: url,
 				apiEndpoint: apiEndPoint
 			)
@@ -67,7 +67,7 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 		try testValues.forEach { testValue in
 			let apiEndPoint = APIEndpointMock()
 			apiEndPoint.stubbedHeaders = testValue
-			let urlRequest = URLRequest(
+			let urlRequest = try URLRequest(
 				url: url,
 				apiEndpoint: apiEndPoint
 			)
@@ -89,7 +89,7 @@ final class URLRequest_ExtensionsTests: XCTestCase {
 		try testValues.forEach { testValue in
 			let apiEndPoint = APIEndpointMock()
 			apiEndPoint.stubbedQueryItems = testValue
-			let urlRequest = URLRequest(
+			let urlRequest = try URLRequest(
 				url: url,
 				apiEndpoint: apiEndPoint
 			)
