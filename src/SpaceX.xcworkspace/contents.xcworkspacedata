@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TestingUtilities">
+      location = "group:Core">
    </FileRef>
    <FileRef
-      location = "group:Core">
+      location = "group:Data">
    </FileRef>
    <FileRef
       location = "group:DataSPM">

@@ -1,30 +1,19 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "Core",
+	name: "Core",
 	defaultLocalization: "en",
 	platforms: [
 		.iOS(.v15),
+		.tvOS(.v15),
 	],
-    products: [
+	products: [
 		.library(
-			name: "API",
+			name: "Localization",
 			targets: [
-				"API",
-			]
-		),
-		.library(
-			name: "APITestUtilities",
-			targets: [
-				"APITestUtilities",
-			]
-		),
-        .library(
-            name: "Localization",
-            targets: [
 				"Localization",
 			]
 		),
@@ -34,48 +23,43 @@ let package = Package(
 				"Utilities",
 			]
 		),
-    ],
-    dependencies: [
-		.package(
+		.library(
 			name: "TestingUtilities",
-			path: "../TestingUtilities"
-		)
-    ],
-    targets: [
-		.target(
-			name: "API",
-			dependencies: [
-				"Utilities",
-				"Localization",
-			],
-			exclude: [
-				"TestUtilities",
-			],
-			resources: [
-				.process("Resources"),
-			]
-		),
-		.target(
-			name: "APITestUtilities",
-			dependencies: [
-				"API",
-			],
-			path: "Sources/API/TestUtilities"
-		),
-		.testTarget(
-			name: "APITests",
-			dependencies: [
-				"APITestUtilities",
+			targets: [
 				"TestingUtilities",
 			]
 		),
+	],
+	dependencies: [
+		.package(
+			url: "https://github.com/apple/swift-algorithms",
+			from: "1.0.0"
+		),
+		.package(
+			url: "https://github.com/apple/swift-numerics",
+			from: "1.0.0"
+		),
+	],
+	targets: [
 		.target(
 			name: "Localization",
 			dependencies: []
 		),
 		.testTarget(
 			name: "LocalizationTests",
-			dependencies: ["Localization"]
+			dependencies: [
+				.target(name: "Localization"),
+			]
+		),
+		.target(
+			name: "TestingUtilities",
+			dependencies: []
+		),
+		.testTarget(
+			name: "TestingUtilitiesTests",
+			dependencies: [
+				.target(name: "TestingUtilities"),
+			]
 		),
 		.target(
 			name: "Utilities",
@@ -84,8 +68,8 @@ let package = Package(
 		.testTarget(
 			name: "UtilitiesTests",
 			dependencies: [
-				"Utilities",
+				.target(name: "Utilities"),
 			]
 		),
-    ]
+	]
 )
