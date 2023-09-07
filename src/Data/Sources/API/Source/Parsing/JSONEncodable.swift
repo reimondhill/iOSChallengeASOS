@@ -17,6 +17,7 @@ extension JSONEncodable {
 		guard let jsonData else {
 			return nil
 		}
+
 		return String(
 			data: jsonData,
 			encoding: .utf8
@@ -28,7 +29,10 @@ extension JSONEncodable {
 
 extension Dictionary: JSONEncodable {
 	public var jsonData: Data? {
-		guard let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) else {
+		guard let data = try? JSONSerialization.data(
+			withJSONObject: self,
+			options: .prettyPrinted
+		) else {
 			return nil
 		}
 		return data

@@ -47,6 +47,7 @@ extension NativeNetworkManager {
 		guard let data else {
 			throw Error.invalidData
 		}
+
 		return try apiEndPoint.decodeResponse(
 			data: data,
 			urlResponse: urlResponse

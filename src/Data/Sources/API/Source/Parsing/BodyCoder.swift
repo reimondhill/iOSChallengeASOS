@@ -18,7 +18,10 @@ enum BodyCoder {
 		case (.json, let DecodableResult as Decodable.Type):
 			return try JSONCoder.decode(from: data, type: DecodableResult) as! T
 		default:
-			throw Error.cannotDecodeFromMIMEType(mimeType: mimeType, decodedType: type.self)
+			throw Error.cannotDecodeFromMIMEType(
+				mimeType: mimeType,
+				decodedType: type.self
+			)
 		}
 	}
 }
